@@ -3,6 +3,7 @@ package com.example.chahyunbin.cwapp;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
@@ -24,15 +25,19 @@ public class AddMember extends Activity {
         ageInput = (EditText)findViewById(R.id.ageInput);
         birthMonthInput = (EditText)findViewById(R.id.birthMonthInput);
         birthDayInput = (EditText)findViewById(R.id.birthDayInput);
+        final DBHelper dbHelper;
+        final String DBName = "person.db";
+        final int dbVersion = 1;
+        dbHelper = new DBHelper((DialogInterface.OnClickListener) this,DBName,null, dbVersion);
 
     btnSaveInfo.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            String name = nameInput.getText().toString().trim();
-            String phonenumber = phonenumberInput.getText().toString().trim();
-            int age = Integer.parseInt(ageInput.getText().toString().trim());
-            int month = Integer.parseInt(birthMonthInput.getText().toString().trim());
-            int day = Integer.parseInt(birthDayInput.getText().toString().trim());
+            final String name = nameInput.getText().toString().trim();
+            final String phonenumber = phonenumberInput.getText().toString().trim();
+            final int age = Integer.parseInt(ageInput.getText().toString().trim());
+            final int month = Integer.parseInt(birthMonthInput.getText().toString().trim());
+            final int day = Integer.parseInt(birthDayInput.getText().toString().trim());
 
             AlertDialog.Builder builder =  new AlertDialog.Builder(AddMember.this);
             builder.setTitle("저장");
@@ -42,9 +47,25 @@ public class AddMember extends Activity {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
 
+                    SQLiteDatabase db;
+                    String sql;
+
+
+                    db = dbHelper.getWritableDatabase();
+                    sql = String.format("INSERT INTO person VALUES (NULL, '%s', '%s', '%d', '%d', '%d');", name, phonenumber,age,month,day);
+                    db.execSQL(sql);
+
+
                 }
-            })
+            });
           //  builder.setPositiveButton();
+
+            builder.setNegativeButton("취소", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.cancel();
+                }
+            });
 
 
 
