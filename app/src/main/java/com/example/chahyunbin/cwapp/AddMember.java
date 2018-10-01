@@ -28,7 +28,7 @@ public class AddMember extends Activity {
         final DBHelper dbHelper;
         final String DBName = "person.db";
         final int dbVersion = 1;
-        dbHelper = new DBHelper((DialogInterface.OnClickListener) this,DBName,null, dbVersion);
+        dbHelper = new DBHelper(this,DBName,null, dbVersion);
 
     btnSaveInfo.setOnClickListener(new View.OnClickListener() {
         @Override
