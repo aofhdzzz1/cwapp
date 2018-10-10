@@ -1,8 +1,13 @@
 <component name="libraryTable">
   <library name="Gradle: android.arch.lifecycle:viewmodel-1.1.1">
     <CLASSES>
+<<<<<<< Updated upstream
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/f14ae7e1e99446ae942bed87d822291d/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/f14ae7e1e99446ae942bed87d822291d/res" />
+=======
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/a5e333614703800ff92928a06a96d5e0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/a5e333614703800ff92928a06a96d5e0/res" />
+>>>>>>> Stashed changes
     </CLASSES>
     <JAVADOC />
     <SOURCES>
