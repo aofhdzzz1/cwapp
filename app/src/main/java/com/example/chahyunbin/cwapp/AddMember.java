@@ -11,13 +11,20 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class AddMember extends Activity {
+    DBHelper dbHelper;
+    final String DBName = "person.db";
+    final int dbVersion = 1;
+    String name, phonenumber;
+    EditText nameInput, phonenumberInput, ageInput, birthMonthInput, birthDayInput;
+    int age,month,day;
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.addmember);
 
         Button btnSaveInfo;
-        final EditText nameInput, phonenumberInput, ageInput, birthMonthInput, birthDayInput;
+
+
 
         btnSaveInfo = (Button)findViewById(R.id.btnSaveInfo);
         nameInput = (EditText)findViewById(R.id.nameInput);
@@ -25,19 +32,17 @@ public class AddMember extends Activity {
         ageInput = (EditText)findViewById(R.id.ageInput);
         birthMonthInput = (EditText)findViewById(R.id.birthMonthInput);
         birthDayInput = (EditText)findViewById(R.id.birthDayInput);
-        final DBHelper dbHelper;
-        final String DBName = "person.db";
-        final int dbVersion = 1;
+
         dbHelper = new DBHelper(this,DBName,null, dbVersion);
 
     btnSaveInfo.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            final String name = nameInput.getText().toString().trim();
-            final String phonenumber = phonenumberInput.getText().toString().trim();
-            final int age = Integer.parseInt(ageInput.getText().toString().trim());
-            final int month = Integer.parseInt(birthMonthInput.getText().toString().trim());
-            final int day = Integer.parseInt(birthDayInput.getText().toString().trim());
+            name = nameInput.getText().toString().trim();
+            phonenumber = phonenumberInput.getText().toString().trim();
+            age = Integer.parseInt(ageInput.getText().toString().trim());
+            month = Integer.parseInt(birthMonthInput.getText().toString().trim());
+            day = Integer.parseInt(birthDayInput.getText().toString().trim());
 
             AlertDialog.Builder builder =  new AlertDialog.Builder(AddMember.this);
             builder.setTitle("저장");
