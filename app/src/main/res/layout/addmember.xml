@@ -28,6 +28,7 @@
                 />
 
             <EditText
+                android:text="차현빈"
                 android:id="@+id/nameInput"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
@@ -38,6 +39,7 @@
                 android:gravity="center"
                 android:textColorHint="#BDBDBD"
                 android:textSize="20dp"
+
                 android:textStyle="bold"
                 android:inputType="text"/>
         </LinearLayout>
@@ -60,6 +62,7 @@
                 />
 
             <EditText
+                android:text="01075666734"
                 android:id="@+id/phonenumberInput"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
@@ -75,6 +78,7 @@
         </LinearLayout>
 
         <LinearLayout
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -91,6 +95,7 @@
                 android:textStyle="bold"
                 android:layout_gravity="center" />
             <EditText
+                android:text="21"
                 android:id="@+id/ageInput"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
@@ -121,6 +126,7 @@
                 android:textStyle="bold"
                 android:layout_gravity="center" />
             <EditText
+                android:text="9"
                 android:id="@+id/birthMonthInput"
                 android:layout_width="60dp"
                 android:layout_height="50dp"
@@ -141,6 +147,7 @@
                 android:textStyle="bold"
                 android:layout_gravity="center" />
             <EditText
+                android:text="9"
                 android:id="@+id/birthDayInput"
                 android:layout_width="60dp"
                 android:layout_height="50dp"

@@ -1,27 +1,8 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/chahyunbin/Desktop/cwapp/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+            "outputFile": "/Users/chahyunbin/Documents/GitHub/cwapp/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
             "map": [
-                {
-                    "source": "/Users/chahyunbin/Desktop/cwapp/app/src/main/res/values/styles.xml",
-                    "from": {
-                        "startLines": "3",
-                        "startColumns": "4",
-                        "startOffsets": "54",
-                        "endLines": "8",
-                        "endColumns": "12",
-                        "endOffsets": "360"
-                    },
-                    "to": {
-                        "startLines": "1848",
-                        "startColumns": "4",
-                        "startOffsets": "108720",
-                        "endLines": "1853",
-                        "endColumns": "12",
-                        "endOffsets": "109026"
-                    }
-                },
                 {
                     "source": "/Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0-rc02.aar/14bd1fbde9e92685734ff62b64c37248/res/values/values.xml",
                     "from": {
@@ -42,37 +23,22 @@
                     }
                 },
                 {
-                    "source": "/Users/chahyunbin/Desktop/cwapp/app/src/main/res/values/strings.xml",
+                    "source": "/Users/chahyunbin/Documents/GitHub/cwapp/app/src/main/res/values/styles.xml",
                     "from": {
-                        "startLines": "1",
+                        "startLines": "3",
                         "startColumns": "4",
-                        "startOffsets": "16",
-                        "endColumns": "42",
-                        "endOffsets": "54"
+                        "startOffsets": "54",
+                        "endLines": "8",
+                        "endColumns": "12",
+                        "endOffsets": "360"
                     },
                     "to": {
-                        "startLines": "1840",
+                        "startLines": "1848",
                         "startColumns": "4",
-                        "startOffsets": "108111",
-                        "endColumns": "42",
-                        "endOffsets": "108149"
-                    }
-                },
-                {
-                    "source": "/Users/chahyunbin/Desktop/cwapp/app/src/main/res/values/colors.xml",
-                    "from": {
-                        "startLines": "4,2,3",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "153,55,102",
-                        "endColumns": "45,46,50",
-                        "endOffsets": "194,97,148"
-                    },
-                    "to": {
-                        "startLines": "153,154,155",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "7704,7750,7797",
-                        "endColumns": "45,46,50",
-                        "endOffsets": "7745,7792,7843"
+                        "startOffsets": "108720",
+                        "endLines": "1853",
+                        "endColumns": "12",
+                        "endOffsets": "109026"
                     }
                 },
                 {
@@ -130,6 +96,40 @@
                         "endLines": "15,906,995,3314",
                         "endColumns": "60,24,24,12",
                         "endOffsets": "720,54671,59882,208018"
+                    }
+                },
+                {
+                    "source": "/Users/chahyunbin/Documents/GitHub/cwapp/app/src/main/res/values/strings.xml",
+                    "from": {
+                        "startLines": "1",
+                        "startColumns": "4",
+                        "startOffsets": "16",
+                        "endColumns": "42",
+                        "endOffsets": "54"
+                    },
+                    "to": {
+                        "startLines": "1840",
+                        "startColumns": "4",
+                        "startOffsets": "108111",
+                        "endColumns": "42",
+                        "endOffsets": "108149"
+                    }
+                },
+                {
+                    "source": "/Users/chahyunbin/Documents/GitHub/cwapp/app/src/main/res/values/colors.xml",
+                    "from": {
+                        "startLines": "4,2,3",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "153,55,102",
+                        "endColumns": "45,46,50",
+                        "endOffsets": "194,97,148"
+                    },
+                    "to": {
+                        "startLines": "153,154,155",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "7704,7750,7797",
+                        "endColumns": "45,46,50",
+                        "endOffsets": "7745,7792,7843"
                     }
                 }
             ]
