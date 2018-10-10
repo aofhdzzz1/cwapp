@@ -48,6 +48,8 @@ class MemberDatabase {
 
     public void insertRecord(String name, String author, String contents) {
         try{
+            int i;
+        }
             db.execSQL("insert into "+ TABLENAME +"(NAME, AUTHOR, CONTENTS) values ('" + name + "' , '" + author + "', '" + contents +"')");
 
         }catch(Exception ex){
