@@ -1,14 +1,10 @@
 {
     "logs": [
         {
-<<<<<<< Updated upstream
-            "outputFile": "/Users/chahyunbin/Documents/GitHub/cwapp/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v22/values-v22.xml",
-=======
-            "outputFile": "C:\\Users\\chb67\\Documents\\GitHub\\cwapp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v22\\values-v22.xml",
->>>>>>> Stashed changes
+            "outputFile": "/Users/chahyunbin/Desktop/cwapp/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v22/values-v22.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\chb67\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0-rc02.aar\\0405b8f9d0f5bd53009b73ff7fe59161\\res\\values-v22\\values-v22.xml",
+                    "source": "/Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0-rc02.aar/ddca329d3706a09dff6efb42bf29e501/res/values-v22/values-v22.xml",
                     "from": {
                         "startLines": "2,3,4,9",
                         "startColumns": "4,4,4,4",

@@ -3,22 +3,30 @@ package com.example.chahyunbin.cwapp;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class AddMember extends Activity {
-    DBHelper dbHelper;
+   MemberDatabase memberDatabase;
     final String DBName = "person.db";
     final int dbVersion = 1;
     String name, phonenumber;
     EditText nameInput, phonenumberInput, ageInput, birthMonthInput, birthDayInput;
     int age,month,day;
     String agei, monthi,dayi;
+    public TextView textView;
+
+    OnDataCallBack callBack;
+    final String TAG = "addmember";
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,8 +42,10 @@ public class AddMember extends Activity {
         ageInput = (EditText)findViewById(R.id.ageInput);
         birthMonthInput = (EditText)findViewById(R.id.birthMonthInput);
         birthDayInput = (EditText)findViewById(R.id.birthDayInput);
+        textView = (TextView)findViewById(R.id.textView);
 
-        dbHelper = new DBHelper(this,DBName,null, dbVersion);
+
+
 
     btnSaveInfo.setOnClickListener(new View.OnClickListener() {
         @Override
@@ -56,7 +66,7 @@ public class AddMember extends Activity {
             else day = 0;
 
             if(name != null && phonenumber != null && age !=0 && month !=0 && day != 0)
-                showDialog();
+                showDialog(name, phonenumber, age, month, day);
             else {
 
                 if (name == null)
@@ -78,7 +88,7 @@ public class AddMember extends Activity {
 
     }
 
-    private void showDialog()
+    private void showDialog(final String name, final String phonenumber, final int age, final int month, final int day)
 
     {
 
@@ -90,16 +100,25 @@ public class AddMember extends Activity {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
 
-                SQLiteDatabase db;
-                String sql;
+                if(memberDatabase != null) {
+                    memberDatabase.close();
+                    memberDatabase = null;
+                }
 
+                memberDatabase = MemberDatabase.getInstance(AddMember.this);
 
-                db = dbHelper.getWritableDatabase();
-                sql = String.format("INSERT INTO person VALUES (NULL, '%s', '%s', '%d', '%d', '%d');", name, phonenumber, age, month, day);
-                db.execSQL(sql);
+                boolean isOpen = memberDatabase.open();
+                if (isOpen) {
+                    Log.d(TAG, "Book database is open.");
+                } else {
+                    Log.d(TAG, "Book database is not open.");
+                }
+                insert(name, phonenumber, age, month, day);
 
-
+                Cursor cursor = memberDatabase.rawQuery("select NAME, PHONENUMBER, AGE, MONTH, DAY from " + "MEMBER_INFO", null);
+                println(cursor.getString(1));
             }
+
         });
         //  builder.setPositiveButton();
 
@@ -113,5 +132,13 @@ public class AddMember extends Activity {
         AlertDialog dialog = builder.create();
         dialog.show();
 
+    }
+
+    public void insert(String name, String phonenumber, int age, int month, int day){
+        memberDatabase.insertRecord(name, phonenumber, age, month, day);
+    }
+
+    public void println(String msg){
+        textView.append('\n'+msg);
     }
 }
