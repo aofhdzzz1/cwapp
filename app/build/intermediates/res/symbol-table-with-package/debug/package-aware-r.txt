@@ -673,14 +673,17 @@ id actions
 id activity_chooser_view_content
 id add
 id ageInput
+id ageView
 id alertTitle
 id all
 id always
 id async
+id backbutton
 id barrier
 id beginning
 id birthDayInput
 id birthMonthInput
+id birthView
 id blocking
 id bottom
 id btnSaveInfo
@@ -731,11 +734,13 @@ id left
 id line1
 id line3
 id listMode
+id listView
 id list_item
 id message
 id middle
 id multiply
 id nameInput
+id nameView
 id never
 id none
 id normal
@@ -747,6 +752,7 @@ id parent
 id parentPanel
 id percent
 id phonenumberInput
+id phonenumberView
 id progress_circular
 id progress_horizontal
 id radio
@@ -841,6 +847,7 @@ layout activity_main
 layout addmember
 layout adminmember
 layout bible
+layout member_item
 layout notification_action
 layout notification_action_tombstone
 layout notification_template_custom_big

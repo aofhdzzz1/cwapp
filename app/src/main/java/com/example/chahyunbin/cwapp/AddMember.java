@@ -113,10 +113,7 @@ public class AddMember extends Activity {
                 } else {
                     Log.d(TAG, "Book database is not open.");
                 }
-                insert(name, phonenumber, age, month, day);
 
-                Cursor cursor = memberDatabase.rawQuery("select NAME, PHONENUMBER, AGE, MONTH, DAY from " + "MEMBER_INFO", null);
-                println(cursor.getString(1));
             }
 
         });
