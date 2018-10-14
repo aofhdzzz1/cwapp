@@ -90,9 +90,9 @@ ADDED from C:\Users\chb67\Documents\GitHub\cwapp\app\src\main\AndroidManifest.xm
 	android:name
 		ADDED from C:\Users\chb67\Documents\GitHub\cwapp\app\src\main\AndroidManifest.xml:19:19-44
 activity#com.example.chahyunbin.cwapp.AdminMember
-ADDED from C:\Users\chb67\Documents\GitHub\cwapp\app\src\main\AndroidManifest.xml:21:9-22:73
+ADDED from C:\Users\chb67\Documents\GitHub\cwapp\app\src\main\AndroidManifest.xml:21:9-22:53
 	android:theme
-		ADDED from C:\Users\chb67\Documents\GitHub\cwapp\app\src\main\AndroidManifest.xml:22:13-71
+		ADDED from C:\Users\chb67\Documents\GitHub\cwapp\app\src\main\AndroidManifest.xml:22:13-51
 	android:name
 		ADDED from C:\Users\chb67\Documents\GitHub\cwapp\app\src\main\AndroidManifest.xml:21:19-46
 activity#com.example.chahyunbin.cwapp.Bible

@@ -7,6 +7,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class MemberDatabase {
     public static final String TAG = "BookDatabase";
     private static MemberDatabase database;
@@ -22,7 +24,7 @@ public class MemberDatabase {
 
 
 
-    private MemberDatabase(Context context) {
+    public MemberDatabase(Context context) {
         this.context = context;
     }
 
@@ -47,6 +49,13 @@ public class MemberDatabase {
             database = null;
         }
 
+
+        public void executeRawQuery(){
+        Cursor c1 = db.rawQuery("select count(*) as Total from " + TABLENAME,null);
+        c1.moveToNext();
+        c1.close();
+        }
+
     public Cursor rawQuery(String SQL, Object o) {
 
 
@@ -65,7 +74,7 @@ public class MemberDatabase {
         public void insertRecord (String name, String phonenumber, int age, int month, int day){
             try {
 
-            db.execSQL("insert into " + TABLENAME + "(NAME, PHONENUMBER, AGE, MONTH, DAY) values ('" + name + "' , '" + phonenumber + "', '" + age + "' , '" + month + " , " + day +"')");
+            db.execSQL("insert into " + TABLE_MEMBER_INFO + "(NAME, PHONENUMBER, AGE, MONTH, DAY) values ('" + name + "' , '" + phonenumber + "', '" + age + "' , '" + month + " , " + day +"')" );
 
         }catch(Exception ex){
             Log.d(TAG, "exception in insertRecord", ex);
@@ -111,6 +120,35 @@ public class MemberDatabase {
             db.execSQL("DROP TABLE IF EXISTS person");
             onCreate(db);
         }
+        private void insertRecord(SQLiteDatabase _db, String name, String phonenumber, int age, int month, int day) {
+            try {
+                _db.execSQL( "insert into " + TABLE_MEMBER_INFO + "(NAME, PHONENUMBER, AGE, MONTH, DAY) values ('" + name + "' , '" + phonenumber + "', '" + age + "' , '" + month + " , " + day +"')" );
+            } catch(Exception ex) {
+                Log.e(TAG, "Exception in executing insert SQL.", ex);
+            }
+        }
     }
+    public ArrayList<MemberItem> selectAll() {
+        ArrayList<MemberItem> result = new ArrayList<MemberItem>();
+
+        try {
+            Cursor cursor = db.rawQuery("select NAME, PHONENUMBER, AGE, MONTH, DAY from " + TABLE_MEMBER_INFO, null);
+            for (int i = 0; i < cursor.getCount(); i++) {
+                cursor.moveToNext();
+                String name = cursor.getString(0);
+                String phone = cursor.getString(1);
+                int age = cursor.getInt(2);
+                String birth = cursor.getString(3)+ "월 " +cursor.getString(4)+"일 ";
+                MemberItem info = new MemberItem(name, phone, age, birth);
+                result.add(info);
+            }
+
+        } catch(Exception ex) {
+            Log.e(TAG, "Exception in executing insert SQL.", ex);
+        }
+
+        return result;
+    }
+
 
 }

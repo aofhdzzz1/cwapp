@@ -22,7 +22,7 @@ public class MemberItemView extends LinearLayout {
 
     }
 
-    private void info(Context context) {
+    public void info(Context context) {
         LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.member_item,this,true);
 
@@ -31,5 +31,21 @@ public class MemberItemView extends LinearLayout {
         birthText = (TextView)findViewById(R.id.birthView);
         phoneText = (TextView)findViewById(R.id.phonenumberView);
 
+    }
+
+    public void setName(String name){
+        nameText.setText(name);
+
+    }
+    public void setAge(int age){
+        ageText.setText(String.valueOf(age));
+
+    }
+    public void setBirth(String birth){
+        birthText.setText(birth);
+
+    }
+    public void setPhone(String phone){
+        phoneText.setText(phone);
     }
 }

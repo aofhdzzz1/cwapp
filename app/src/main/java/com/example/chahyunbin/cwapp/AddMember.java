@@ -24,7 +24,7 @@ public class AddMember extends Activity {
     String agei, monthi,dayi;
     public TextView textView;
 
-    OnDataCallBack callBack;
+    OnDataCallBack callback;
     final String TAG = "addmember";
 
     @Override
@@ -34,7 +34,7 @@ public class AddMember extends Activity {
 
         Button btnSaveInfo;
 
-
+        memberDatabase = new MemberDatabase(this);
 
         btnSaveInfo = (Button)findViewById(R.id.btnSaveInfo);
         nameInput = (EditText)findViewById(R.id.nameInput);
@@ -88,9 +88,11 @@ public class AddMember extends Activity {
 
     }
 
-    private void showDialog(final String name, final String phonenumber, final int age, final int month, final int day)
+  public void showDialog(final String name, final String phonenumber, final int age, final int month, final int day)
 
     {
+
+        Log.d(TAG,"name + " +name );
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("저장");
@@ -100,19 +102,9 @@ public class AddMember extends Activity {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
 
-                if(memberDatabase != null) {
-                    memberDatabase.close();
-                    memberDatabase = null;
-                }
+                insert(name, phonenumber, age, month, day);
+                Toast.makeText(AddMember.this, "저장되었습니다.", Toast.LENGTH_SHORT).show();
 
-                memberDatabase = MemberDatabase.getInstance(AddMember.this);
-
-                boolean isOpen = memberDatabase.open();
-                if (isOpen) {
-                    Log.d(TAG, "Book database is open.");
-                } else {
-                    Log.d(TAG, "Book database is not open.");
-                }
 
             }
 
