@@ -1,6 +1,7 @@
 package com.example.chahyunbin.cwapp;
 
 import android.app.Activity;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -15,11 +17,15 @@ import com.example.chahyunbin.cwapp.R;
 
 import java.util.ArrayList;
 
-public class AdminMember extends AppCompatActivity {
+public class AdminMember extends Activity {
     ListView listView;
     SingleAdapter adapter;
     MemberDatabase db;
+    SQLiteDatabase sqlDb;
     OnDataCallBack callback;
+    Button button;
+
+    Activity activity;
 
 
 
@@ -29,12 +35,12 @@ public class AdminMember extends AppCompatActivity {
         setContentView(R.layout.adminmember);
         db = new MemberDatabase(this);
 
-
+        activity = this;
         listView = findViewById(R.id.listView);
 
         adapter = new SingleAdapter();
         //(adpater에 내용 추가)
-        ArrayList<MemberItem> result = callback.selectAll();
+        ArrayList<MemberItem> result = selectAll();
         adapter.setItems(result);
         adapter.notifyDataSetChanged();
 
@@ -48,6 +54,8 @@ public class AdminMember extends AppCompatActivity {
                 Toast.makeText(AdminMember.this, "선택" + item.getName(), Toast.LENGTH_SHORT).show();
             }
         });
+
+
 
     }
 
@@ -88,6 +96,15 @@ public class AdminMember extends AppCompatActivity {
 
             return view;
         }
+    }
+
+
+
+
+    public ArrayList<MemberItem> selectAll() {
+        ArrayList<MemberItem> result = db.selectAll();
+
+        return result;
     }
 }
 

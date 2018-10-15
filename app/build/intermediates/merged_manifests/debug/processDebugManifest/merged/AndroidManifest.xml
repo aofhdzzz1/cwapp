@@ -30,7 +30,7 @@
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
         <activity
             android:name="com.example.chahyunbin.cwapp.AdminMember"
-            android:theme="@style/Theme.AppCompat" />
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
         <activity
             android:name="com.example.chahyunbin.cwapp.Bible"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />

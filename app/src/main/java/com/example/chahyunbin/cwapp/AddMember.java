@@ -14,7 +14,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class AddMember extends Activity {
+import java.util.ArrayList;
+
+public class AddMember extends Activity{
    MemberDatabase memberDatabase;
     final String DBName = "person.db";
     final int dbVersion = 1;
@@ -25,7 +27,7 @@ public class AddMember extends Activity {
     public TextView textView;
 
     OnDataCallBack callback;
-    final String TAG = "addmember";
+    final String TAG = "BookDatabase";
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -35,6 +37,7 @@ public class AddMember extends Activity {
         Button btnSaveInfo;
 
         memberDatabase = new MemberDatabase(this);
+        memberDatabase.open();
 
         btnSaveInfo = (Button)findViewById(R.id.btnSaveInfo);
         nameInput = (EditText)findViewById(R.id.nameInput);
@@ -65,8 +68,12 @@ public class AddMember extends Activity {
             if(!"".equals(dayi)) day = Integer.parseInt(dayi);
             else day = 0;
 
-            if(name != null && phonenumber != null && age !=0 && month !=0 && day != 0)
+            if(name != null && phonenumber != null && age !=0 && month !=0 && day != 0){
+
+
                 showDialog(name, phonenumber, age, month, day);
+            }
+
             else {
 
                 if (name == null)
@@ -83,6 +90,7 @@ public class AddMember extends Activity {
 
 
 
+
         }
     });
 
@@ -92,7 +100,7 @@ public class AddMember extends Activity {
 
     {
 
-        Log.d(TAG,"name + " +name );
+
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("저장");
@@ -101,6 +109,7 @@ public class AddMember extends Activity {
         builder.setPositiveButton("네", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
+                Log.d(TAG,"3");
 
                 insert(name, phonenumber, age, month, day);
                 Toast.makeText(AddMember.this, "저장되었습니다.", Toast.LENGTH_SHORT).show();
@@ -123,11 +132,18 @@ public class AddMember extends Activity {
 
     }
 
-    public void insert(String name, String phonenumber, int age, int month, int day){
-        memberDatabase.insertRecord(name, phonenumber, age, month, day);
-    }
 
     public void println(String msg){
         textView.append('\n'+msg);
     }
+
+
+    public void insert(String name, String phonenumber, int age, int month, int day) {
+
+        memberDatabase.insertRecord(name, phonenumber, age, month, day);
+
+    }
+
+
+
 }

@@ -74,14 +74,17 @@ public class MemberDatabase {
         public void insertRecord (String name, String phonenumber, int age, int month, int day){
             try {
 
-            db.execSQL("insert into " + TABLE_MEMBER_INFO + "(NAME, PHONENUMBER, AGE, MONTH, DAY) values ('" + name + "' , '" + phonenumber + "', '" + age + "' , '" + month + " , " + day +"')" );
+
+                String query =
+                        "INSERT INTO "+TABLENAME+" VALUES (null, "+name+", "+phonenumber+", "+age+", "+month+", "+day+" );";
+            db.execSQL(query);
 
         }catch(Exception ex){
             Log.d(TAG, "exception in insertRecord", ex);
         }
     }
 
-    private class DBHelper extends SQLiteOpenHelper {
+    public class DBHelper extends SQLiteOpenHelper {
 
         public DBHelper(Context context) {
             super(context, DATABASENAME, null, DATABASEVERSION);
@@ -90,23 +93,16 @@ public class MemberDatabase {
 
         @Override
         public void onCreate(SQLiteDatabase _db) {
-            String DROP_SQL = "drop table if exists " + TABLE_MEMBER_INFO;
-            try {
-                _db.execSQL(DROP_SQL);
-            } catch(Exception ex) {
-                Log.e(TAG, "Exception in DROP_SQL", ex);
-            }
 
             // create table
-            String CREATE_SQL = "create table " + TABLE_MEMBER_INFO + "("
-                    + "  _id INTEGER  NOT NULL PRIMARY KEY AUTOINCREMENT, "
-                    + "  NAME TEXT, "
-                    + "  PHONENUMBER TEXT, "
-                    + "  AGE INTEGER, "
-                    + "  MONTH INTEGER, "
-                    + "  DAY INTEGER, "
-                    + "  CREATE_DATE TIMESTAMP DEFAULT CURRENT_TIMESTAMP "
-                    + ")";
+            String CREATE_SQL = "create table " + TABLE_MEMBER_INFO + " ("
+                    + "  ID_ INTEGER  PRIMARY KEY AUTOINCREMENT, "
+                    + "NAME TEXT, "
+                    + "PHONENUMBER TEXT, "
+                    + "AGE INTEGER, "
+                    + "MONTH INTEGER, "
+                    + "DAY INTEGER )";
+
             try {
                 _db.execSQL(CREATE_SQL);
             } catch(Exception ex) {
@@ -122,17 +118,23 @@ public class MemberDatabase {
         }
         private void insertRecord(SQLiteDatabase _db, String name, String phonenumber, int age, int month, int day) {
             try {
-                _db.execSQL( "insert into " + TABLE_MEMBER_INFO + "(NAME, PHONENUMBER, AGE, MONTH, DAY) values ('" + name + "' , '" + phonenumber + "', '" + age + "' , '" + month + " , " + day +"')" );
+                String query =
+                        "INSERT INTO "+TABLENAME+" VALUES (null, "+name+", "+phonenumber+", "+age+", "+month+", "+day+" );";
+                db.execSQL(query);
             } catch(Exception ex) {
                 Log.e(TAG, "Exception in executing insert SQL.", ex);
             }
         }
     }
+
+
     public ArrayList<MemberItem> selectAll() {
         ArrayList<MemberItem> result = new ArrayList<MemberItem>();
+        Log.d(TAG,"1");
 
         try {
-            Cursor cursor = db.rawQuery("select NAME, PHONENUMBER, AGE, MONTH, DAY from " + TABLE_MEMBER_INFO, null);
+            Cursor cursor = db.rawQuery("select * from " + TABLE_MEMBER_INFO, null);
+            Log.d(TAG,"2");
             for (int i = 0; i < cursor.getCount(); i++) {
                 cursor.moveToNext();
                 String name = cursor.getString(0);
@@ -141,6 +143,7 @@ public class MemberDatabase {
                 String birth = cursor.getString(3)+ "월 " +cursor.getString(4)+"일 ";
                 MemberItem info = new MemberItem(name, phone, age, birth);
                 result.add(info);
+                Log.d(TAG,"3");
             }
 
         } catch(Exception ex) {

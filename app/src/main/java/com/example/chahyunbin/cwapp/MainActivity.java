@@ -1,5 +1,6 @@
 package com.example.chahyunbin.cwapp;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,6 +14,8 @@ public class MainActivity extends AppCompatActivity {
 
     Button button1,button2,button3;
     ImageView imageView;
+    private MainBackButton mainBackButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +24,11 @@ public class MainActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
+
+        mainBackButton = new MainBackButton(this);
+
+
+        출처: http://yoo-hyeok.tistory.com/32 [유혁의 엉터리 개발]
 
 
         findViewById(R.id.button1).setOnClickListener(myClick);
@@ -44,6 +52,10 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         };
+    @Override
+    public void onBackPressed() {
+        mainBackButton.onBackPressed();
+    }
 
 
 }

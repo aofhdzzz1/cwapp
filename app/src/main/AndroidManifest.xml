@@ -19,7 +19,7 @@
         <activity android:name=".AddMember"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
         <activity android:name=".AdminMember"
-            android:theme="@style/Theme.AppCompat"/>
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
         <activity android:name=".Bible"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
     </application>
