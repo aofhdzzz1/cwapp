@@ -53,6 +53,17 @@ public class AddMember extends Activity{
     btnSaveInfo.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+
+            if (memberDatabase != null) {
+                memberDatabase.close();
+                memberDatabase = null;
+            }
+
+            memberDatabase = MemberDatabase.getInstance(AddMember.this);
+            boolean isOpen = memberDatabase.open();
+            if(isOpen)  Log.d(TAG,"MemberDatabase is open");
+
+
             name = nameInput.getText().toString().trim();
             phonenumber = phonenumberInput.getText().toString().trim();
 
@@ -110,6 +121,7 @@ public class AddMember extends Activity{
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 Log.d(TAG,"3");
+
 
                 insert(name, phonenumber, age, month, day);
                 Toast.makeText(AddMember.this, "저장되었습니다.", Toast.LENGTH_SHORT).show();

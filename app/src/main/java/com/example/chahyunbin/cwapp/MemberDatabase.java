@@ -13,11 +13,12 @@ public class MemberDatabase {
     public static final String TAG = "BookDatabase";
     private static MemberDatabase database;
     public static String DATABASENAME = "member.db";
-    private SQLiteDatabase db;
-    public static String TABLENAME = "MEMBER_INFO";
-    public static int DATABASEVERSION = 1;
-    public static String TABLE_MEMBER_INFO = "MEMBER_INFO";
 
+    public static String TABLENAME = "MEMBER";
+    public static int DATABASEVERSION = 1;
+    public static String TABLE_MEMBER_INFO = "MEMBER_INFO1";
+
+    private SQLiteDatabase db;
     private DBHelper dbHelper;
     private Context context;
 
@@ -29,10 +30,12 @@ public class MemberDatabase {
     }
 
 
+
     public static MemberDatabase getInstance(Context context) {
         if (database == null) {
             database = new MemberDatabase(context);
         }
+
         return database;
     }
 
@@ -50,33 +53,13 @@ public class MemberDatabase {
         }
 
 
-        public void executeRawQuery(){
-        Cursor c1 = db.rawQuery("select count(*) as Total from " + TABLENAME,null);
-        c1.moveToNext();
-        c1.close();
-        }
-
-    public Cursor rawQuery(String SQL, Object o) {
-
-
-        Cursor c1 = null;
-        try {
-            c1 = db.rawQuery(SQL, null);
-
-        } catch(Exception ex) {
-            Log.e(TAG, "Exception in executeQuery", ex);
-        }
-
-        return c1;
-    }
-
 
         public void insertRecord (String name, String phonenumber, int age, int month, int day){
             try {
 
 
                 String query =
-                        "INSERT INTO "+TABLENAME+" VALUES (null, "+name+", "+phonenumber+", "+age+", "+month+", "+day+" );";
+                        "INSERT INTO "+ TABLENAME +" VALUES (null, '"+name+"', '"+phonenumber+"', '"+age+"', '"+month+"', '"+day+"' );";
             db.execSQL(query);
 
         }catch(Exception ex){
@@ -92,11 +75,12 @@ public class MemberDatabase {
 
 
         @Override
-        public void onCreate(SQLiteDatabase _db) {
+        public void onCreate(SQLiteDatabase db) {
 
+//
             // create table
-            String CREATE_SQL = "create table " + TABLE_MEMBER_INFO + " ("
-                    + "  ID_ INTEGER  PRIMARY KEY AUTOINCREMENT, "
+            String CREATE_SQL = "CREATE TABLE IF NOT EXISTS " + TABLENAME + "("
+                    + "_ID INTEGER  NOT NULL PRIMARY KEY AUTOINCREMENT, "
                     + "NAME TEXT, "
                     + "PHONENUMBER TEXT, "
                     + "AGE INTEGER, "
@@ -104,28 +88,27 @@ public class MemberDatabase {
                     + "DAY INTEGER )";
 
             try {
-                _db.execSQL(CREATE_SQL);
+                db.execSQL(CREATE_SQL);
+
             } catch(Exception ex) {
                 Log.e(TAG, "Exception in CREATE_SQL", ex);
             }
+
         }
 
         @Override
         public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
-            db.execSQL("DROP TABLE IF EXISTS person");
+            db.execSQL("DROP TABLE IF EXISTS "+TABLENAME);
             onCreate(db);
         }
-        private void insertRecord(SQLiteDatabase _db, String name, String phonenumber, int age, int month, int day) {
-            try {
-                String query =
-                        "INSERT INTO "+TABLENAME+" VALUES (null, "+name+", "+phonenumber+", "+age+", "+month+", "+day+" );";
-                db.execSQL(query);
-            } catch(Exception ex) {
-                Log.e(TAG, "Exception in executing insert SQL.", ex);
-            }
-        }
+
     }
+
+
+
+
+
 
 
     public ArrayList<MemberItem> selectAll() {
