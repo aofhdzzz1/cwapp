@@ -2,15 +2,20 @@ package com.example.chahyunbin.cwapp;
 
 import android.app.Activity;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+
+import android.support.annotation.RequiresPermission;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.example.chahyunbin.cwapp.R;
@@ -24,8 +29,12 @@ public class AdminMember extends Activity {
     SQLiteDatabase sqlDb;
     OnDataCallBack callback;
     Button button;
+    MemberDatabase.DBHelper dbHelper;
 
     Activity activity;
+
+    private RelativeLayout layout;
+
 
 
 
@@ -35,14 +44,20 @@ public class AdminMember extends Activity {
         setContentView(R.layout.adminmember);
         db = new MemberDatabase(this);
 
+        layout =(RelativeLayout) findViewById(R.id.relativelayout);
+        layout.setBackgroundColor(Color.rgb(255,255,255));
+
         activity = this;
         listView = findViewById(R.id.listView);
 
         adapter = new SingleAdapter();
+        Log.d("list","1");
         //(adpater에 내용 추가)
+        boolean isRead = db.Read();
+        if(isRead)  Log.d("list","readable");
         ArrayList<MemberItem> result = selectAll();
         adapter.setItems(result);
-        adapter.notifyDataSetChanged();
+
 
         //
         listView.setAdapter(adapter);
@@ -102,6 +117,7 @@ public class AdminMember extends Activity {
 
 
     public ArrayList<MemberItem> selectAll() {
+        Log.d("list","2");
         ArrayList<MemberItem> result = db.selectAll();
 
         return result;

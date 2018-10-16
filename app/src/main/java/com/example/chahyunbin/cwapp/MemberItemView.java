@@ -37,8 +37,8 @@ public class MemberItemView extends LinearLayout {
         nameText.setText(name);
 
     }
-    public void setAge(int age){
-        ageText.setText(String.valueOf(age));
+    public void setAge(String age){
+        ageText.setText(age);
 
     }
     public void setBirth(String birth){

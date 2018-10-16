@@ -4,10 +4,10 @@ public class MemberItem {
 
     String name;
     String phone;
-    int age;
+    String age;
     String birth;
 
-    public MemberItem(String name, String phone, int age, String birth) {
+    public MemberItem(String name, String phone, String age, String birth) {
         this.name = name;
         this.age = age;
         this.birth = birth;
@@ -31,11 +31,11 @@ public class MemberItem {
         this.phone = phone;
     }
 
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
 
