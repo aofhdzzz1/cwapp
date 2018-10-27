@@ -1,17 +1,20 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:2:1-29:12
-INJECTED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:2:1-29:12
-INJECTED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:2:1-29:12
-INJECTED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:2:1-29:12
+ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:2:1-30:12
+INJECTED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:2:1-30:12
+INJECTED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:2:1-30:12
+INJECTED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:2:1-30:12
+MERGED from [com.baoyz.swipemenulistview:library:1.3.0] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/library-1.3.0.aar/5088126334be2c4307e71c2ee2c172bb/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:support-v4:27.1.1] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/aa39918b0fbd0003ad746fbdb83ff9e2/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:appcompat-v7:28.0.0-rc02] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0-rc02.aar/ddca329d3706a09dff6efb42bf29e501/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/f8fcdb88b87a92bccafd290db78f6420/AndroidManifest.xml:2:1-11:12
-MERGED from [com.android.support:support-fragment:28.0.0-rc02] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0-rc02.aar/52eca3a49e5f77f50de54fca7f0cb049/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:animated-vector-drawable:28.0.0-rc02] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0-rc02.aar/8da7b5b4e0fd32d5c20d858e2bef6e5f/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:28.0.0-rc02] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0-rc02.aar/4742508973984397eb596596a02a82cf/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:28.0.0-rc02] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0-rc02.aar/52eca3a49e5f77f50de54fca7f0cb049/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-core-ui:28.0.0-rc02] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0-rc02.aar/be2ad5cd3fbdca84de7d47b0a6dc4fcc/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-core-utils:28.0.0-rc02] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0-rc02.aar/0317861dc39b7d0d394e58ff024f7aae/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-vector-drawable:28.0.0-rc02] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0-rc02.aar/4742508973984397eb596596a02a82cf/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:loader:28.0.0-rc02] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/loader-28.0.0-rc02.aar/5b51c11a92ea2a8af5ea35aa21669593/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.1.1] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/dd7494c235aa734c90aad268120999aa/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:viewpager:28.0.0-rc02] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0-rc02.aar/1452247afc2b3aed84714614be7df7e2/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:coordinatorlayout:28.0.0-rc02] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0-rc02.aar/a8ac84e4c9b7a6ecfa1ed848dc2a44d0/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:drawerlayout:28.0.0-rc02] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0-rc02.aar/103fbf337db400db072a5bf54de3ca6a/AndroidManifest.xml:17:1-22:12
@@ -23,27 +26,27 @@ MERGED from [com.android.support:support-compat:28.0.0-rc02] /Users/chahyunbin/.
 MERGED from [com.android.support:versionedparcelable:28.0.0-rc02] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0-rc02.aar/3d329270472221fb7e53ded37abd9167/AndroidManifest.xml:17:1-25:12
 MERGED from [com.android.support:cursoradapter:28.0.0-rc02] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0-rc02.aar/03c354341eb6714babcbf9432cd8221f/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/222ce78f6658772d8fc2368fb9ab5515/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/841e6be15f5880706107343e76e721ec/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.1] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/b118f0a2246c36a1dc80a3d6dfef84a9/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:documentfile:28.0.0-rc02] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0-rc02.aar/c0de9ed94f4eac5784f4029d556afecf/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:localbroadcastmanager:28.0.0-rc02] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0-rc02.aar/5ba028ed67855963f173fe675bdd4ad8/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:print:28.0.0-rc02] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/print-28.0.0-rc02.aar/084bda7d18a6ca0eaf13fd253abe012a/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/3700a9b1aab2f401014ddbcad5ec988f/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/841e6be15f5880706107343e76e721ec/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.core:runtime:1.1.1] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/b118f0a2246c36a1dc80a3d6dfef84a9/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:interpolator:28.0.0-rc02] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0-rc02.aar/4018107d72a2fa3a7f4ac790ec460668/AndroidManifest.xml:17:1-22:12
-INJECTED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:2:1-29:12
-INJECTED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:2:1-29:12
-INJECTED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:2:1-29:12
+INJECTED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:2:1-30:12
+INJECTED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:2:1-30:12
+INJECTED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:2:1-30:12
 	package
 		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:3:5-43
 		INJECTED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml
-		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:2:1-29:12
+		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:2:1-30:12
 		INJECTED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml
-		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:2:1-29:12
+		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:2:1-30:12
 		INJECTED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:2:11-69
@@ -56,7 +59,7 @@ ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:6:5-
 	android:name
 		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:6:22-78
 application
-ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:8:5-27:19
+ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:8:5-28:19
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/f8fcdb88b87a92bccafd290db78f6420/AndroidManifest.xml:9:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/f8fcdb88b87a92bccafd290db78f6420/AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:support-compat:28.0.0-rc02] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0-rc02.aar/14bd1fbde9e92685734ff62b64c37248/AndroidManifest.xml:22:5-94
@@ -66,67 +69,75 @@ MERGED from [com.android.support:versionedparcelable:28.0.0-rc02] /Users/chahyun
 	android:appComponentFactory
 		ADDED from [com.android.support:support-compat:28.0.0-rc02] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0-rc02.aar/14bd1fbde9e92685734ff62b64c37248/AndroidManifest.xml:22:18-91
 	android:supportsRtl
-		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:12:9-35
+		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:13:9-35
+	android:label
+		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:10:9-41
 	android:roundIcon
-		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:11:9-54
+		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:12:9-44
 	android:icon
-		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:10:9-43
+		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:11:9-39
 	android:allowBackup
 		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:9:9-35
 	android:theme
-		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:13:9-40
+		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:14:9-40
 activity#com.example.chahyunbin.cwapp.MainActivity
-ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:14:9-20:20
+ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:15:9-21:20
 	android:name
-		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:14:19-47
+		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:15:19-47
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:15:13-19:29
+ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:16:13-20:29
 action#android.intent.action.MAIN
-ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:16:17-69
+ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:17:17-69
 	android:name
-		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:16:25-66
+		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:17:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:18:17-77
+ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:19:17-77
 	android:name
-		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:18:27-74
+		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:19:27-74
 activity#com.example.chahyunbin.cwapp.AddMember
-ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:21:9-22:62
+ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:22:9-23:62
 	android:theme
-		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:22:13-60
+		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:23:13-60
 	android:name
-		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:21:19-44
+		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:22:19-44
 activity#com.example.chahyunbin.cwapp.AdminMember
-ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:23:9-24:62
+ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:24:9-25:62
 	android:theme
-		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:24:13-60
+		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:25:13-60
 	android:name
-		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:23:19-46
+		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:24:19-46
 activity#com.example.chahyunbin.cwapp.Bible
-ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:25:9-26:62
+ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:26:9-27:62
 	android:theme
-		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:26:13-60
+		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:27:13-60
 	android:name
-		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:25:19-40
+		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:26:19-40
 uses-sdk
 INJECTED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml
 INJECTED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml
+MERGED from [com.baoyz.swipemenulistview:library:1.3.0] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/library-1.3.0.aar/5088126334be2c4307e71c2ee2c172bb/AndroidManifest.xml:7:5-9:41
+MERGED from [com.baoyz.swipemenulistview:library:1.3.0] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/library-1.3.0.aar/5088126334be2c4307e71c2ee2c172bb/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:support-v4:27.1.1] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/aa39918b0fbd0003ad746fbdb83ff9e2/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/aa39918b0fbd0003ad746fbdb83ff9e2/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:appcompat-v7:28.0.0-rc02] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0-rc02.aar/ddca329d3706a09dff6efb42bf29e501/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:appcompat-v7:28.0.0-rc02] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0-rc02.aar/ddca329d3706a09dff6efb42bf29e501/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/f8fcdb88b87a92bccafd290db78f6420/AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/f8fcdb88b87a92bccafd290db78f6420/AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support:support-fragment:28.0.0-rc02] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0-rc02.aar/52eca3a49e5f77f50de54fca7f0cb049/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:28.0.0-rc02] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0-rc02.aar/52eca3a49e5f77f50de54fca7f0cb049/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:animated-vector-drawable:28.0.0-rc02] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0-rc02.aar/8da7b5b4e0fd32d5c20d858e2bef6e5f/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:animated-vector-drawable:28.0.0-rc02] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0-rc02.aar/8da7b5b4e0fd32d5c20d858e2bef6e5f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0-rc02] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0-rc02.aar/4742508973984397eb596596a02a82cf/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0-rc02] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0-rc02.aar/4742508973984397eb596596a02a82cf/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0-rc02] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0-rc02.aar/52eca3a49e5f77f50de54fca7f0cb049/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0-rc02] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0-rc02.aar/52eca3a49e5f77f50de54fca7f0cb049/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-core-ui:28.0.0-rc02] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0-rc02.aar/be2ad5cd3fbdca84de7d47b0a6dc4fcc/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-core-ui:28.0.0-rc02] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0-rc02.aar/be2ad5cd3fbdca84de7d47b0a6dc4fcc/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-core-utils:28.0.0-rc02] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0-rc02.aar/0317861dc39b7d0d394e58ff024f7aae/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-core-utils:28.0.0-rc02] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0-rc02.aar/0317861dc39b7d0d394e58ff024f7aae/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:28.0.0-rc02] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0-rc02.aar/4742508973984397eb596596a02a82cf/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:28.0.0-rc02] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0-rc02.aar/4742508973984397eb596596a02a82cf/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:loader:28.0.0-rc02] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/loader-28.0.0-rc02.aar/5b51c11a92ea2a8af5ea35aa21669593/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:loader:28.0.0-rc02] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/loader-28.0.0-rc02.aar/5b51c11a92ea2a8af5ea35aa21669593/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/dd7494c235aa734c90aad268120999aa/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/dd7494c235aa734c90aad268120999aa/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:viewpager:28.0.0-rc02] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0-rc02.aar/1452247afc2b3aed84714614be7df7e2/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:viewpager:28.0.0-rc02] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0-rc02.aar/1452247afc2b3aed84714614be7df7e2/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:coordinatorlayout:28.0.0-rc02] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0-rc02.aar/a8ac84e4c9b7a6ecfa1ed848dc2a44d0/AndroidManifest.xml:20:5-44
@@ -149,6 +160,10 @@ MERGED from [com.android.support:cursoradapter:28.0.0-rc02] /Users/chahyunbin/.g
 MERGED from [com.android.support:cursoradapter:28.0.0-rc02] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0-rc02.aar/03c354341eb6714babcbf9432cd8221f/AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/222ce78f6658772d8fc2368fb9ab5515/AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/222ce78f6658772d8fc2368fb9ab5515/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/841e6be15f5880706107343e76e721ec/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/841e6be15f5880706107343e76e721ec/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/b118f0a2246c36a1dc80a3d6dfef84a9/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/b118f0a2246c36a1dc80a3d6dfef84a9/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:documentfile:28.0.0-rc02] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0-rc02.aar/c0de9ed94f4eac5784f4029d556afecf/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:documentfile:28.0.0-rc02] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0-rc02.aar/c0de9ed94f4eac5784f4029d556afecf/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:localbroadcastmanager:28.0.0-rc02] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0-rc02.aar/5ba028ed67855963f173fe675bdd4ad8/AndroidManifest.xml:20:5-44
@@ -157,10 +172,6 @@ MERGED from [com.android.support:print:28.0.0-rc02] /Users/chahyunbin/.gradle/ca
 MERGED from [com.android.support:print:28.0.0-rc02] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/print-28.0.0-rc02.aar/084bda7d18a6ca0eaf13fd253abe012a/AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/3700a9b1aab2f401014ddbcad5ec988f/AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/3700a9b1aab2f401014ddbcad5ec988f/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/841e6be15f5880706107343e76e721ec/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/841e6be15f5880706107343e76e721ec/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.1] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/b118f0a2246c36a1dc80a3d6dfef84a9/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.1] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/b118f0a2246c36a1dc80a3d6dfef84a9/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:interpolator:28.0.0-rc02] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0-rc02.aar/4018107d72a2fa3a7f4ac790ec460668/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:interpolator:28.0.0-rc02] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0-rc02.aar/4018107d72a2fa3a7f4ac790ec460668/AndroidManifest.xml:20:5-44
 INJECTED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml

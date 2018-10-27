@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">CWApp</string>
+    <string name="itemdeleted">Item deleted</string>
+    <string name="taptoundo">Tap to undo</string>
 </resources>

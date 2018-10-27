@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+    <TextView
+        android:id="@+id/paragraph"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:textSize="10dp"
+        android:text="1."
+        android:gravity="right"
+        android:layout_marginRight="10dp"/>
+    <TextView
+        android:layout_marginRight="30dp"
+        android:id="@+id/sentence"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="땅이 혼돈하고 공허하며 흑암이 깊음 위에 있고 하나님의 영은 수면 위에 운행하시니라"/>
+
+</LinearLayout>

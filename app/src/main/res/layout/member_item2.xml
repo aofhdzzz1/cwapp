@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:paddingLeft="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:id="@+id/image"
+            android:layout_gravity="center"
+
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="4dp">
+
+            <TextView
+
+                android:id="@+id/nameView"
+                android:layout_width="170dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="20dp"
+
+                android:gravity="left"
+                android:includeFontPadding="false"
+                android:text="name"
+                android:textColor="#000000"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:layout_marginBottom="2.5dp"/>
+
+            <TextView
+                android:id="@+id/phonenumberView"
+                android:layout_width="170dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="-2.5dp"
+                android:gravity="left|top"
+                android:includeFontPadding="false"
+                android:text="phonenumber"
+                android:textColor="#000000"
+                android:textSize="17dp" />
+
+        </LinearLayout>
+
+</LinearLayout>
+
+</LinearLayout>

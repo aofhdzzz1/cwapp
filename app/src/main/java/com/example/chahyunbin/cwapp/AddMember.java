@@ -3,8 +3,6 @@ package com.example.chahyunbin.cwapp;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -14,30 +12,34 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
+import com.example.chahyunbin.cwapp.AdminMember.SingleAdapter;
+import com.example.chahyunbin.cwapp.Database.PeopleTable;
+import com.example.chahyunbin.cwapp.model.Person;
 
-public class AddMember extends Activity{
-   MemberDatabase memberDatabase;
-    final String DBName = "person.db";
-    final int dbVersion = 1;
+
+
+public class AddMember extends Activity {
+
+
     String name, phonenumber;
     EditText nameInput, phonenumberInput, ageInput, birthMonthInput, birthDayInput;
     int age,month,day;
     String agei, monthi,dayi;
     public TextView textView;
+    PeopleTable peopleTable;
+    private SingleAdapter adapter;
 
-    OnDataCallBack callback;
+
     final String TAG = "BookDatabase";
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.addmember);
 
         Button btnSaveInfo;
 
-        memberDatabase = new MemberDatabase(this);
-        memberDatabase.open();
+
 
         btnSaveInfo = (Button)findViewById(R.id.btnSaveInfo);
         nameInput = (EditText)findViewById(R.id.nameInput);
@@ -47,6 +49,8 @@ public class AddMember extends Activity{
         birthDayInput = (EditText)findViewById(R.id.birthDayInput);
         textView = (TextView)findViewById(R.id.textView);
 
+        peopleTable = PeopleTable.instance(getApplicationContext());
+
 
 
 
@@ -54,14 +58,8 @@ public class AddMember extends Activity{
         @Override
         public void onClick(View v) {
 
-            if (memberDatabase != null) {
-                memberDatabase.close();
-                memberDatabase = null;
-            }
 
-            memberDatabase = MemberDatabase.getInstance(AddMember.this);
-            boolean isOpen = memberDatabase.open();
-            if(isOpen)  Log.d(TAG,"MemberDatabase is open");
+
 
 
             name = nameInput.getText().toString().trim();
@@ -120,12 +118,9 @@ public class AddMember extends Activity{
         builder.setPositiveButton("네", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                Log.d(TAG,"3");
-
-
-                insert(name, phonenumber, age, month, day);
+                Log.d(TAG, "1");
+               insertToDB();
                 Toast.makeText(AddMember.this, "저장되었습니다.", Toast.LENGTH_SHORT).show();
-
 
             }
 
@@ -145,15 +140,21 @@ public class AddMember extends Activity{
     }
 
 
-    public void println(String msg){
-        textView.append('\n'+msg);
-    }
 
+   private void insertToDB() {
+        Log.d(TAG, "2");
+        Log.d(TAG, "name : "+name+ "phonenumber : "+ phonenumber + " age : " + age + " month : " + month + " day " + day);
+        int newId = peopleTable.insert(name, phonenumber, agei, monthi, dayi);
+        Log.d(TAG, "3 ");
+       Log.d(TAG, "newId : " + newId);
+        Person bean = new Person(newId + "", name, phonenumber, agei, monthi, dayi);
+        Log.d(TAG, "4");
 
-    public void insert(String name, String phonenumber, int age, int month, int day) {
+        SingleAdapter.insert(bean);
+       Log.d(TAG, "5");
 
-        memberDatabase.insertRecord(name, phonenumber, age, month, day);
-
+        nameInput.setText("");
+       Log.d(TAG, "7");
     }
 
 

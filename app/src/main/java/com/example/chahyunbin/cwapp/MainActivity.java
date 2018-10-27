@@ -1,6 +1,5 @@
 package com.example.chahyunbin.cwapp;
 
-import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,6 +8,8 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
+
+import com.example.chahyunbin.cwapp.AdminMember.AdminMember;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -1,6 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+
+        <Spinner
+            android:id="@+id/bibleSpinner"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+
+            />
+        <Spinner
+            android:id="@+id/chepterSpinner"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            />
+        <Spinner
+            android:id="@+id/verseSpinner"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/book"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="창세기"
+        android:textSize="20dp"/>
+
+
+
+
+    <ListView
+        android:id="@+id/biblelist"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+ />
+
+</LinearLayout>
