@@ -14,7 +14,7 @@ import com.example.chahyunbin.cwapp.model.Person;
 import java.util.ArrayList;
 
 public class SingleAdapter extends BaseAdapter {
-    private static ArrayList<Person> items = new ArrayList<>();
+    private static ArrayList<Person> items = new ArrayList<Person>();
 
 
 
@@ -71,7 +71,7 @@ public class SingleAdapter extends BaseAdapter {
     @Override
     public long getItemId(int position) {
         Person bean = items.get(position);
-        return Long.parseLong(bean.id);
+        return Integer.parseInt(bean.id);
     }
     public String getItem_ID(int position){
         Person bean = items.get(position);

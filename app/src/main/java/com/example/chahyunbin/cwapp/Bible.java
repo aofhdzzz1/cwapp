@@ -19,30 +19,19 @@ import java.util.ArrayList;
 
 public class Bible extends Activity{
     Context mContext;
-    DatabaseAccess dbAccess;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bible);
 
-        String T = "log";
 
 
-        ArrayList<String> book,chapter, verse;
+
+        ArrayList<String> book, chapter, verse;
+        book = new ArrayList<String>();
         chapter = new ArrayList<String>();
         verse = new ArrayList<String>();
-
-        Log.d(T,"1");
-        dbAccess= DatabaseAccess.getInstance(getApplicationContext());
-        Log.d(T,"5");
-
-        Log.d(T, "7");
-        dbAccess.read();
-        Log.d(T, "9");
-
-
-        book = dbAccess.getBook();
-
 
 
 
@@ -65,7 +54,7 @@ public class Bible extends Activity{
         bibleSpinner.setAdapter(bibleadapter);
         chapterSpinner.setAdapter(chapteradapter);
         verseSpinner.setAdapter(verseadapter);
-dbAccess.close();
+
 
 
     }

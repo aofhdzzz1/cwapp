@@ -32,7 +32,7 @@
             android:name="com.example.chahyunbin.cwapp.AddMember"
             android:theme="@android:style/Theme.NoTitleBar" />
         <activity
-            android:name="com.example.chahyunbin.cwapp.AdminMember"
+            android:name="com.example.chahyunbin.cwapp.AdminMember.AdminMember"
             android:theme="@android:style/Theme.NoTitleBar" />
         <activity
             android:name="com.example.chahyunbin.cwapp.Bible"

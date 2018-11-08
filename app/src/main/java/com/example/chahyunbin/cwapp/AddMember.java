@@ -142,19 +142,19 @@ public class AddMember extends Activity {
 
 
    private void insertToDB() {
-        Log.d(TAG, "2");
-        Log.d(TAG, "name : "+name+ "phonenumber : "+ phonenumber + " age : " + age + " month : " + month + " day " + day);
+
+
         int newId = peopleTable.insert(name, phonenumber, agei, monthi, dayi);
-        Log.d(TAG, "3 ");
-       Log.d(TAG, "newId : " + newId);
+
+
         Person bean = new Person(newId + "", name, phonenumber, agei, monthi, dayi);
-        Log.d(TAG, "4");
+
 
         SingleAdapter.insert(bean);
-       Log.d(TAG, "5");
+
 
         nameInput.setText("");
-       Log.d(TAG, "7");
+
     }
 
 

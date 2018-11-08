@@ -39,6 +39,8 @@ public class AdminMember extends Activity {
     private PeopleTable peopleTable;
 
 
+
+
     @SuppressLint("WrongViewCast")
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -46,9 +48,7 @@ public class AdminMember extends Activity {
         setContentView(R.layout.adminmember);
 
 
-        Intent intent = new Intent(AdminMember.this, AdminMember.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        startActivity(intent);
+
 
 
         adapter = new SingleAdapter();
@@ -102,6 +102,7 @@ public class AdminMember extends Activity {
         listView.setOnMenuItemClickListener(new SwipeMenuListView.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(int position, SwipeMenu menu, int index) {
+                Log.d(TAG, "position = " + position);
                 switch (index) {
                     case 0:
                         // delete
@@ -109,14 +110,15 @@ public class AdminMember extends Activity {
 
                         Log.d("log", "position = " + position);
 
-                        String ad = adapter.getItem_ID(position);
-                        Log.d(TAG, "onMenuItemClick input position : " + position);
-                        PeopleTable.deleteById(Integer.parseInt(ad));
+                        int ad = (int)adapter.getItemId(position);
+                        Log.d(TAG, "-1");
+                        PeopleTable.deleteById(ad);
+                        Log.d(TAG, "-2");
 
-                        Log.d(TAG, "deletById in peopleTable clear");
                         adapter.delete(position);
-                        Log.d(TAG, "delete in adapter clear ");
-                        adapter.notifyDataSetChanged();
+                        Log.d(TAG, "-3");
+                        adapter.clear();
+                        loadAllFromDB();
                         break;
                     case 1:
                         // phone
@@ -135,6 +137,7 @@ public class AdminMember extends Activity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Person item = (Person) adapter.getItem(i);
                 Toast.makeText(AdminMember.this, "선택" + item.name, Toast.LENGTH_SHORT).show();
+
             }
         });
 

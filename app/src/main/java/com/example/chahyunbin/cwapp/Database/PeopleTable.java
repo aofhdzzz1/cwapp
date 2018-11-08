@@ -15,6 +15,7 @@ import java.util.Calendar;
 
 import static android.provider.BaseColumns._ID;
 
+
 public class PeopleTable extends BaseTable {
     protected static PeopleTable instance;
     final String TAG = "BookDatabase";
@@ -65,7 +66,7 @@ public class PeopleTable extends BaseTable {
         values.put(MONTH, month.trim());
         values.put(DAY, day.trim());
         db().insertOrThrow(TABLE_NAME, null, values);
-        Log.d(TAG, "4");
+        Log.d(TAG, "insert: "+super.insert());
         return super.insert();
     }
     private Person makeBean(Cursor cursor) {
@@ -97,14 +98,13 @@ public class PeopleTable extends BaseTable {
     }
 
     public static int deleteById(int id) {
-        String TAG = "BookDatabase";
-        Log.d(TAG, "deleteById input position : " + id);
+
         String[] whereArgs = {id + ""};
         return db().delete(TABLE_NAME, WHERE_BY_ID, whereArgs);
     }
 
     public String call(int position){
-        Cursor c = db().rawQuery("select * from "+WHERE_BY_ID, null);
+        Cursor c = db().rawQuery("select * from "+TABLE_NAME, null);
        c.moveToPosition(position);
         String phonenumber = "tel:"+ c.getString(c.getColumnIndex(PHONENUMBER));
 
