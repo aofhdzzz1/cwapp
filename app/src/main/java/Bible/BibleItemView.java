@@ -1,4 +1,4 @@
-package com.example.chahyunbin.cwapp;
+package Bible;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -6,9 +6,11 @@ import android.view.LayoutInflater;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.chahyunbin.cwapp.R;
+
 public class BibleItemView extends LinearLayout {
 
-    TextView paragraphText, sentenceText;
+    TextView verseText, contentText;
 
     public BibleItemView(Context context) {
         super(context);
@@ -24,17 +26,16 @@ public class BibleItemView extends LinearLayout {
         LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.bible_item,this,true);
 
-        paragraphText = (TextView)findViewById(R.id.paragraph);
-        sentenceText = (TextView)findViewById(R.id.sentence);
-
-
+        verseText = (TextView)findViewById(R.id.verse);
+        contentText = (TextView)findViewById(R.id.content);
     }
 
-    public void setParagraph(String paragraph){
-        paragraphText.setText(paragraph);
-    }
-    public void setSentence(String sentence){
-        sentenceText.setText(sentence);
+    public void setVerse(int verse) {
+        verseText.setText(verse);
     }
 
+    public void setContent(String content) {
+        contentText.setText(content);
+    }
 }
+

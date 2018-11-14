@@ -23,7 +23,7 @@
             android:theme="@android:style/Theme.NoTitleBar"/>
         <activity android:name=".AdminMember.AdminMember"
             android:theme="@android:style/Theme.NoTitleBar"/>
-        <activity android:name=".Bible"
+        <activity android:name="Bible.Bible"
             android:theme="@android:style/Theme.NoTitleBar"/>
     </application>
 

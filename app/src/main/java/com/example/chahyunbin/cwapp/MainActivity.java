@@ -11,6 +11,8 @@ import android.widget.ImageView;
 
 import com.example.chahyunbin.cwapp.AdminMember.AdminMember;
 
+import Bible.Bible;
+
 public class MainActivity extends AppCompatActivity {
 
     Button button1,button2,button3;
@@ -48,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(new Intent(MainActivity.this,AdminMember.class));
                         break;
                     case R.id.button3:
-                        startActivity(new Intent(MainActivity.this,Bible.class));
+                        startActivity(new Intent(MainActivity.this, Bible.class));
                         break;
                 }
             }

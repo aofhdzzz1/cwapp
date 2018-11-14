@@ -3,6 +3,7 @@ package com.example.chahyunbin.cwapp;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -23,6 +24,7 @@ public class AddMember extends Activity {
 
     String name, phonenumber;
     EditText nameInput, phonenumberInput, ageInput, birthMonthInput, birthDayInput;
+    Button backbutton;
     int age,month,day;
     String agei, monthi,dayi;
     public TextView textView;
@@ -47,7 +49,18 @@ public class AddMember extends Activity {
         ageInput = (EditText)findViewById(R.id.ageInput);
         birthMonthInput = (EditText)findViewById(R.id.birthMonthInput);
         birthDayInput = (EditText)findViewById(R.id.birthDayInput);
-        textView = (TextView)findViewById(R.id.textView);
+
+        backbutton = (Button)findViewById(R.id.btnBackInAdd);
+
+
+        backbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         peopleTable = PeopleTable.instance(getApplicationContext());
 

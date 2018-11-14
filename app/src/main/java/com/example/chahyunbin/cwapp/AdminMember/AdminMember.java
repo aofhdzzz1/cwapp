@@ -20,6 +20,7 @@ import com.baoyz.swipemenulistview.SwipeMenuCreator;
 import com.baoyz.swipemenulistview.SwipeMenuItem;
 import com.baoyz.swipemenulistview.SwipeMenuListView;
 import com.example.chahyunbin.cwapp.Database.PeopleTable;
+import com.example.chahyunbin.cwapp.MainActivity;
 import com.example.chahyunbin.cwapp.R;
 import com.example.chahyunbin.cwapp.model.Person;
 
@@ -47,13 +48,26 @@ public class AdminMember extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.adminmember);
 
+        Button backbutton = (Button)findViewById(R.id.backbutton);
 
+        backbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
 
 
         adapter = new SingleAdapter();
         listView = (SwipeMenuListView) findViewById(R.id.listView);
         listView.setAdapter(adapter);
+
+
+
+
 
 
         peopleTable = PeopleTable.instance(getApplicationContext());
