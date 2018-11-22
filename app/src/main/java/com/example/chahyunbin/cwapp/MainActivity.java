@@ -1,6 +1,8 @@
 package com.example.chahyunbin.cwapp;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,16 +10,24 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.chahyunbin.cwapp.AdminMember.AdminMember;
+import com.example.chahyunbin.cwapp.Bible.Bible;
+import com.example.chahyunbin.cwapp.Login.Loginmenu;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 
-import Bible.Bible;
-
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     Button button1,button2,button3;
     ImageView imageView;
     private MainBackButton mainBackButton;
+    Loginmenu loginmenu;
+    FirebaseAuth mAuth = loginmenu.mAuth;
+    GoogleSignInClient mGoogleSignInClient = loginmenu.mGoogleSignInClient;
 
 
     @Override
@@ -28,10 +38,21 @@ public class MainActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
 
+
+
+        String username = loginmenu.userName;
         mainBackButton = new MainBackButton(this);
 
+        Button logoutBtn = (Button)findViewById(R.id.logoutbtn);
+        logoutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                signOut();
 
-        출처: http://yoo-hyeok.tistory.com/32 [유혁의 엉터리 개발]
+            }
+        });
+        TextView textView = (TextView)findViewById(R.id.loginName);
+        textView.setText(username +"님");
 
 
         findViewById(R.id.button1).setOnClickListener(myClick);
@@ -58,6 +79,20 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         mainBackButton.onBackPressed();
+    }
+    private void signOut() {
+        // Firebase sign out
+        mAuth.signOut();
+
+        // Google sign out
+        mGoogleSignInClient.signOut().addOnCompleteListener(this,
+                new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        startActivity(new Intent(MainActivity.this,Loginmenu.class));
+                        finish();
+                    }
+                });
     }
 
 

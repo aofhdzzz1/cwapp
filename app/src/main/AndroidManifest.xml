@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.chahyunbin.cwapp">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
@@ -11,8 +12,9 @@
         android:icon="@mipmap/ic_icon"
         android:roundIcon="@mipmap/ic_icon"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        android:theme="@android:style/Theme.NoTitleBar"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".Login.Loginmenu">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,7 +25,9 @@
             android:theme="@android:style/Theme.NoTitleBar"/>
         <activity android:name=".AdminMember.AdminMember"
             android:theme="@android:style/Theme.NoTitleBar"/>
-        <activity android:name="Bible.Bible"
+        <activity android:name="com.example.chahyunbin.cwapp.Bible.Bible"
+            android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".MainActivity"
             android:theme="@android:style/Theme.NoTitleBar"/>
     </application>
 

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
 
@@ -36,14 +37,40 @@
         android:gravity="center"
         android:text="창세기"
         android:textSize="20dp"/>
-
-
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
 
     <ListView
+        android:layout_above="@id/seekBar"
         android:id="@+id/biblelist"
         android:layout_width="match_parent"
-        android:layout_height="700dp"
- />
+        android:layout_height="match_parent" />
+
+    <SeekBar
+        android:layout_above="@id/fontchangebtn"
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone"
+
+        />
+        <Button
+            android:id="@+id/fontchangebtn"
+            android:layout_alignParentBottom="true"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:text="size change"
+            android:textSize="20dp"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="20dp"/>
+    </RelativeLayout>
+
+
 
 </LinearLayout>

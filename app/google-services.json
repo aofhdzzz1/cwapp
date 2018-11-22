@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "835371528097",
+    "firebase_url": "https://cwapp-2565c.firebaseio.com",
+    "project_id": "cwapp-2565c",
+    "storage_bucket": "cwapp-2565c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:835371528097:android:f88b4205be3bad38",
+        "android_client_info": {
+          "package_name": "com.example.chahyunbin.cwapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "835371528097-84gg0bsp0fqc025ht2f6lt0qkn35otiq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.chahyunbin.cwapp",
+            "certificate_hash": "b6a19eaceb098d0de97ae3007b8e39f0aacc20b9"
+          }
+        },
+        {
+          "client_id": "835371528097-sakt8un7emmfrll9trnovem43a74nllk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXKB6m9egGhegLF9Q_QQ3Li4ABZtC_GYU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "835371528097-sakt8un7emmfrll9trnovem43a74nllk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
