@@ -58,6 +58,9 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:visibility="gone"
+        android:min="50"
+        android:max="200"
+        android:progress="10"
 
         />
         <Button
@@ -69,6 +72,16 @@
             android:textSize="20dp"
             android:layout_centerInParent="true"
             android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/fontchangebtn"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="14dp"
+            android:text="123"
+            android:textSize="30dp"
+            android:id="@+id/number"/>
     </RelativeLayout>
 
 

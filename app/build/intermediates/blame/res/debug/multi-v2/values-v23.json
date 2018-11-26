@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "/Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8c4d256c5048400b0ea5c177b6c7a267/res/values-v23/values-v23.xml",
+                    "source": "/Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/11d1cc165a6fa616e60af1ccfb84089b/res/values-v23/values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,19,32,33,34,35,36",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4",

@@ -33,9 +33,9 @@ public class Bible extends Activity{
     int chaptertext;
     TextView textView;
     ListView listView;
-    static public int globProg =20;
+    static public int globProg = 50 ;
     BibleAdapter.ViewHolderItem holderItem;
-
+    TextView number;
     SeekBar bar;
     boolean visable = false;
     @Override
@@ -49,10 +49,14 @@ public class Bible extends Activity{
         MakeBook();
         textView = (TextView)findViewById(R.id.book);
 
+        number = (TextView)findViewById(R.id.number);
+
+
 
 
 
         bar = (SeekBar)findViewById(R.id.seekBar);
+        number.setText(""+globProg);
 
         Button fontSizeChange = (Button)findViewById(R.id.fontchangebtn);
         fontSizeChange.setOnClickListener(new View.OnClickListener() {
@@ -71,18 +75,23 @@ public class Bible extends Activity{
                             Blast = progress;
                             listView.setAdapter(adapter);
                             adapter.notifyDataSetChanged();
+                            number.setText(""+globProg);
+
 
                         }
 
                         @Override
                         public void onStartTrackingTouch(SeekBar seekBar) {
                             globProg= seekBar.getProgress();
+
+
                             adapter.notifyDataSetChanged();
                         }
 
                         @Override
                         public void onStopTrackingTouch(SeekBar seekBar) {
                             globProg= seekBar.getProgress();
+
                             adapter.notifyDataSetChanged();
 
 

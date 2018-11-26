@@ -11,4 +11,8 @@
     <string name="loading">Loading…</string>
     <string name="logout">LOGOUT</string>
     <string name="login">LOGIN</string>
+
+    <string name="facebook_app_id">327366524746531</string> <string name="fb_login_protocol_scheme">fb327366524746531</string>
+
+
 </resources>
