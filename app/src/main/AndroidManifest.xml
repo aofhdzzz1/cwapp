@@ -3,44 +3,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.chahyunbin.cwapp">
 
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-
-    <uses-permission android:name="android.permission.INTERNET"/>
-
-
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
-        android:label="@string/app_name"
         android:icon="@drawable/icon_2"
+        android:label="@string/app_name"
         android:roundIcon="@drawable/icon_2"
         android:supportsRtl="true"
         android:theme="@android:style/Theme.NoTitleBar"
         tools:ignore="GoogleAppIndexingWarning">
-
-
-
-
-        <activity android:name=".Login.Loginmenu">
-
+        <activity android:name=".Login.GoogleSignInLogin">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AddMember"
-            android:theme="@android:style/Theme.NoTitleBar"/>
-        <activity android:name=".AdminMember.AdminMember"
-            android:theme="@android:style/Theme.NoTitleBar"/>
-        <activity android:name="com.example.chahyunbin.cwapp.Bible.Bible"
-            android:theme="@android:style/Theme.NoTitleBar"/>
-        <activity android:name=".MainActivity"
-            android:theme="@android:style/Theme.NoTitleBar"/>
-
-
-
+        <activity
+            android:name=".AddMember"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name=".AdminMember.AdminMember"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name=".Bible.Bible"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name=".MainActivity"
+            android:theme="@android:style/Theme.NoTitleBar" />
 
     </application>
 

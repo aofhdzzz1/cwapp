@@ -10,10 +10,14 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.chahyunbin.cwapp.AdminMember.AdminMember;
 import com.example.chahyunbin.cwapp.Bible.Bible;
-import com.example.chahyunbin.cwapp.Login.Loginmenu;
+import com.example.chahyunbin.cwapp.Login.FirebaseUI;
+import com.example.chahyunbin.cwapp.Login.GoogleSignInLogin;
+
+import com.firebase.ui.auth.AuthUI;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -24,11 +28,16 @@ public class MainActivity extends Activity {
 
     Button button1,button2,button3;
     ImageView imageView;
-
-    Loginmenu loginmenu;
-
     String username;
     String phonenumber;
+ GoogleSignInLogin googlelogin;
+   // FirebaseUI firebaseUI;
+
+    private final long FINISH_INTERVAL_TIME = 2000;
+    private long backPressedTime = 0;
+    public static boolean outboolean =false;
+
+
 
 
     @Override
@@ -41,36 +50,15 @@ public class MainActivity extends Activity {
 
 
 
-        String email = loginmenu.userName;
-        int idx = email.indexOf("@");
-        if(email != null)
-           username = email.substring(0,idx);
-        else
-        phonenumber = loginmenu.phoneNumber.substring(5,9);
 
-
-
-        Button logoutBtn = (Button)findViewById(R.id.logoutbtn);
-        logoutBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            FirebaseAuth.getInstance().signOut();
-            finish();
-            startActivity(new Intent(MainActivity.this,Loginmenu.class));
-
-
-
-            }
-        });
         TextView textView = (TextView)findViewById(R.id.loginName);
-            if(username != null)
-            textView.setText(username +"님");
-            else
-                textView.setText(phonenumber+"님");
+        textView.setText(googlelogin.googleName);
 
 
 
+        //textView.setText(firebaseUI.userName);
+
+        findViewById(R.id.logoutbtn).setOnClickListener(myClick);
         findViewById(R.id.button1).setOnClickListener(myClick);
         findViewById(R.id.button2).setOnClickListener(myClick);
         findViewById(R.id.button3).setOnClickListener(myClick);
@@ -89,11 +77,32 @@ public class MainActivity extends Activity {
                     case R.id.button3:
                         startActivity(new Intent(MainActivity.this, Bible.class));
                         break;
+                    case R.id.logoutbtn:
+                        googlelogin.signOut();
+                        //AuthUI.getInstance().signOut(getApplicationContext());
+                        finish();
+                        startActivity(new Intent(MainActivity.this,GoogleSignInLogin.class));
+
                 }
             }
         };
 
+    @Override
+    public void onBackPressed() {
+        long tempTime = System.currentTimeMillis();
+        long intervalTime = tempTime - backPressedTime;
+
+        if (0 <= intervalTime && FINISH_INTERVAL_TIME >= intervalTime)
+        {
+            super.onBackPressed();
+        }
+        else
+        {
+            backPressedTime = tempTime;
+            Toast.makeText(getApplicationContext(), "한번 더 누르면 종료됩니다.", Toast.LENGTH_SHORT).show();
+            outboolean = true;
+        }
 
 
-
+    }
 }

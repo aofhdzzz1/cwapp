@@ -1,5 +1,6 @@
 package com.example.chahyunbin.cwapp.Login;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
@@ -7,9 +8,11 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
 import com.example.chahyunbin.cwapp.R;
+import com.google.android.gms.common.util.VisibleForTesting;
 
-public class BaseActivity extends AppCompatActivity {
+public class BaseActivity extends Activity {
 
+    @VisibleForTesting
     public ProgressDialog mProgressDialog;
 
     public void showProgressDialog() {
@@ -40,4 +43,5 @@ public class BaseActivity extends AppCompatActivity {
         super.onStop();
         hideProgressDialog();
     }
+
 }

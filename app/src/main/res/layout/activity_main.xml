@@ -15,12 +15,44 @@
         android:src="@drawable/cwmainpic"
         android:layout_marginTop="15dp"/>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/loginName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="5dp"
+            android:text="이름이다"
+            android:textSize="30dp" />
+
+        <Button
+            android:id="@+id/logoutbtn"
+            android:layout_width="125dp"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="130dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="129dp"
+            android:text="LOGOUT"
+            android:textSize="20dp" />
+
+    </RelativeLayout>
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:orientation="vertical"
-        android:layout_marginTop="125dp">
+        android:layout_marginTop="20dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -61,39 +93,5 @@
 
     </LinearLayout>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <TextView
-            android:id="@+id/loginName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginTop="9dp"
-            android:layout_marginRight="0dp"
-            android:layout_marginBottom="13dp"
-            android:gravity="center"
-            android:text="이름"
-            android:textSize="30dp" />
-
-        <Button
-            android:id="@+id/logoutbtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/loginName"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="123dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="125dp"
-            android:layout_marginBottom="6dp"
-
-            android:textSize="20dp" />
-
-    </RelativeLayout>
 
 </LinearLayout>

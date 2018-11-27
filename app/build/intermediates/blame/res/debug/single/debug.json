@@ -1832,6 +1832,10 @@
         "source": "/Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/facebook-common-4.38.1.aar/8a9de13c5e64b08e81da1317ab844506/res/drawable-mdpi-v4/com_facebook_button_icon_blue.png"
     },
     {
+        "merged": "/Users/chahyunbin/Desktop/cwapp/app/build/intermediates/res/merged/debug/layout_activity_email_sign_in.xml.flat",
+        "source": "/Users/chahyunbin/Desktop/cwapp/app/src/main/res/layout/activity_email_sign_in.xml"
+    },
+    {
         "merged": "/Users/chahyunbin/Desktop/cwapp/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
         "source": "/Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/11d1cc165a6fa616e60af1ccfb84089b/res/drawable-hdpi-v4/abc_btn_switch_to_on_mtrl_00012.9.png"
     },
@@ -1870,6 +1874,10 @@
     {
         "merged": "/Users/chahyunbin/Desktop/cwapp/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_textfield_search_activated_mtrl_alpha.9.png.flat",
         "source": "/Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/11d1cc165a6fa616e60af1ccfb84089b/res/drawable-xhdpi-v4/abc_textfield_search_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/chahyunbin/Desktop/cwapp/app/build/intermediates/res/merged/debug/drawable_firebase_lockup_400.png.flat",
+        "source": "/Users/chahyunbin/Desktop/cwapp/app/src/main/res/drawable/firebase_lockup_400.png"
     },
     {
         "merged": "/Users/chahyunbin/Desktop/cwapp/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_list_selector_disabled_holo_dark.9.png.flat",
