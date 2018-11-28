@@ -14,15 +14,7 @@ import android.widget.Toast;
 
 import com.example.chahyunbin.cwapp.AdminMember.AdminMember;
 import com.example.chahyunbin.cwapp.Bible.Bible;
-import com.example.chahyunbin.cwapp.Login.FirebaseUI;
-import com.example.chahyunbin.cwapp.Login.GoogleSignInLogin;
-
-import com.firebase.ui.auth.AuthUI;
-import com.google.android.gms.auth.api.signin.GoogleSignInClient;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+import com.example.chahyunbin.cwapp.Login.LoginHome;
 
 public class MainActivity extends Activity {
 
@@ -30,7 +22,7 @@ public class MainActivity extends Activity {
     ImageView imageView;
     String username;
     String phonenumber;
- GoogleSignInLogin googlelogin;
+ LoginHome googlelogin;
    // FirebaseUI firebaseUI;
 
     private final long FINISH_INTERVAL_TIME = 2000;
@@ -81,7 +73,7 @@ public class MainActivity extends Activity {
                         googlelogin.signOut();
                         //AuthUI.getInstance().signOut(getApplicationContext());
                         finish();
-                        startActivity(new Intent(MainActivity.this,GoogleSignInLogin.class));
+                        startActivity(new Intent(MainActivity.this,LoginHome.class));
 
                 }
             }

@@ -1131,10 +1131,10 @@ id dynamic
 id edit_phone_number
 id edit_query
 id email
-id emailCreateAccountButton
 id emailPasswordButtons
 id emailPasswordFields
 id emailSignInButton
+id emailSignUpButton
 id email_button
 id email_footer_tos_and_pp_text
 id email_layout
@@ -1147,7 +1147,10 @@ id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
 id fieldEmail
+id fieldEmailSignUp
 id fieldPassword
+id fieldPasswordSignUp
+id fieldUserNameSignUp
 id fill
 id fill_horizontal
 id fill_vertical
@@ -1157,6 +1160,7 @@ id forever
 id fragment_phone
 id fragment_register_email
 id ghost_view
+id gohome
 id gone
 id googleIcon
 id googleSignInButton
@@ -1230,6 +1234,8 @@ id pin
 id progress_bar
 id progress_circular
 id progress_horizontal
+id progressbar
+id progressbarSignin
 id radio
 id relativelayout
 id resend_barrier
@@ -1265,8 +1271,6 @@ id shortcut
 id showCustom
 id showHome
 id showTitle
-id signOutButton
-id signedInButtons
 id small
 id smallLabel
 id snackbar_action
@@ -1295,6 +1299,8 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textView
 id textView2
+id textViewSignIn
+id textViewSignUp
 id text_input_password_toggle
 id textinput_counter
 id textinput_error
@@ -1319,7 +1325,6 @@ id uniform
 id unknown
 id up
 id useLogo
-id verifyEmailButton
 id verse
 id verseSpinner
 id view_offset_helper
@@ -1371,6 +1376,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_email_sign_in
+layout activity_email_sign_up
 layout activity_main
 layout addmember
 layout adminmember
@@ -1635,6 +1641,7 @@ string hint_email
 string hint_password
 string hint_phone_number
 string hint_user_id
+string hint_user_name
 string hint_verification_code
 string id_fmt
 string instant_validation

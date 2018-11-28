@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@android:style/Theme.NoTitleBar"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".Login.GoogleSignInLogin">
+        <activity android:name=".Login.LoginHome">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -34,7 +34,11 @@
         <activity
             android:name=".MainActivity"
             android:theme="@android:style/Theme.NoTitleBar" />
-
+        <activity
+            android:name=".Login.EmailSignUp"
+            android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".Login.EmailSignIn"
+            android:theme="@android:style/Theme.NoTitleBar"/>
     </application>
 
 </manifest>

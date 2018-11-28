@@ -1988,6 +1988,10 @@
         "source": "/Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/11d1cc165a6fa616e60af1ccfb84089b/res/drawable-hdpi-v4/abc_ic_star_half_black_48dp.png"
     },
     {
+        "merged": "/Users/chahyunbin/Desktop/cwapp/app/build/intermediates/res/merged/debug/layout_activity_email_sign_up.xml.flat",
+        "source": "/Users/chahyunbin/Desktop/cwapp/app/src/main/res/layout/activity_email_sign_up.xml"
+    },
+    {
         "merged": "/Users/chahyunbin/Desktop/cwapp/app/build/intermediates/res/merged/debug/layout_abc_search_dropdown_item_icons_2line.xml.flat",
         "source": "/Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/11d1cc165a6fa616e60af1ccfb84089b/res/layout/abc_search_dropdown_item_icons_2line.xml"
     },
