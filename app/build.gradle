@@ -5,7 +5,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.example.chahyunbin.cwapp"
-        minSdkVersion 27
+        minSdkVersion 24
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -45,6 +45,9 @@ dependencies {
 
     // login facebook
     'com.facebook.android:facebook-android-sdk:[4,5)'
+
+    // firebase realtime database
+    implementation 'com.google.firebase:firebase-database:16.0.4'
 
 
 }

@@ -2,21 +2,17 @@ package com.example.chahyunbin.cwapp.Database;
 
 import android.content.ContentValues;
 import android.content.Context;
-import android.content.Intent;
 import android.database.Cursor;
-import android.net.Uri;
 import android.util.Log;
 
 import com.example.chahyunbin.cwapp.model.Person;
 
-import java.text.DateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 
 import static android.provider.BaseColumns._ID;
 
 
-public class PeopleTable extends BaseTable {
+public class PeopleTable extends DatabaseHelper.BaseTable {
     protected static PeopleTable instance;
     final String TAG = "BookDatabase";
 

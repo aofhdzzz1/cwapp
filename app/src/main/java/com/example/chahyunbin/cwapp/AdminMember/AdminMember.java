@@ -2,17 +2,25 @@ package com.example.chahyunbin.cwapp.AdminMember;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.baoyz.swipemenulistview.SwipeMenu;
@@ -23,12 +31,19 @@ import com.example.chahyunbin.cwapp.Database.PeopleTable;
 import com.example.chahyunbin.cwapp.MainActivity;
 import com.example.chahyunbin.cwapp.R;
 import com.example.chahyunbin.cwapp.model.Person;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
+import javax.security.auth.callback.Callback;
+
 public class AdminMember extends Activity {
     SwipeMenuListView listView;
-    SingleAdapter adapter;
 
 
     Button button;
@@ -36,11 +51,14 @@ public class AdminMember extends Activity {
 
     Activity activity;
 
-
-    private PeopleTable peopleTable;
-
+    String name, phone, age, month, day;
 
 
+    FirebaseDatabase database;
+    DatabaseReference ref;
+    ArrayList<Person> list;
+    SingleAdapter adapter;
+    Person person;
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -48,7 +66,9 @@ public class AdminMember extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.adminmember);
 
-        Button backbutton = (Button)findViewById(R.id.backbutton);
+        listView = (SwipeMenuListView)findViewById(R.id.listView);
+
+        Button backbutton = (Button) findViewById(R.id.backbutton);
 
         backbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,25 +78,35 @@ public class AdminMember extends Activity {
                 finish();
             }
         });
-
-
-
+        database = FirebaseDatabase.getInstance();
+        ref = database.getReference();
+        list = new ArrayList<>();
         adapter = new SingleAdapter();
-        listView = (SwipeMenuListView) findViewById(R.id.listView);
-        listView.setAdapter(adapter);
+
+        ref.child("User/"+MainActivity.email+"/Members").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                adapter.clear();
+               
+                for(DataSnapshot snapshot : dataSnapshot.getChildren()){
+                    Person person = snapshot.getValue(Person.class);
+                    adapter.add(person);
+                }
+                if(adapter.getCount() == 0){
+                    Toast.makeText(getApplicationContext(), "셀원을 입력해주세요", Toast.LENGTH_SHORT).show();
+                }
+                listView.setAdapter(adapter);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
 
 
-
-
-
-        peopleTable = PeopleTable.instance(getApplicationContext());
-        if (adapter.getCount() == 0)
-            loadAllFromDB();
-        //
-
-
-        SwipeMenuCreator creator = new SwipeMenuCreator() {
+        SwipeMenuCreator creator  = new SwipeMenuCreator() {
 
             @Override
             public void create(SwipeMenu menu) {
@@ -122,23 +152,18 @@ public class AdminMember extends Activity {
                         // delete
 
 
-                        Log.d("log", "position = " + position);
-
-                        int ad = (int)adapter.getItemId(position);
-                        Log.d(TAG, "-1");
-                        PeopleTable.deleteById(ad);
-                        Log.d(TAG, "-2");
-
-                        adapter.delete(position);
-                        Log.d(TAG, "-3");
-                        adapter.clear();
-                        loadAllFromDB();
                         break;
                     case 1:
                         // phone
-                        String phonenumber = peopleTable.call(position);
-                        Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse(phonenumber));
-                        startActivity(intent);
+                        String phonenumber = adapter.getItemPhone(position);
+                        String tel = "tel:"+phonenumber;
+                        Intent intent = new Intent(Intent.ACTION_CALL);
+                        intent.setData(Uri.parse(tel));
+                        try {
+                            startActivity(intent);
+                        }catch (Exception e){
+                            e.printStackTrace();
+                        }
                         break;
                 }
                 // false : close the menu; true : not close the menu
@@ -149,8 +174,8 @@ public class AdminMember extends Activity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Person item = (Person) adapter.getItem(i);
-                Toast.makeText(AdminMember.this, "선택" + item.name, Toast.LENGTH_SHORT).show();
+               String name = adapter.getItem_Name(i);
+               Toast.makeText(AdminMember.this, "선택" + name, Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -158,14 +183,14 @@ public class AdminMember extends Activity {
 
     }
 
-    private void loadAllFromDB() {
-        ArrayList<Person> people = peopleTable.loadByDate(true);
-        for (Person person : people) {
-
-            adapter.add(person);
-        }
-        adapter.notifyDataSetChanged();
-    }
+//    private void loadAllFromDB() {
+//        ArrayList<Person> people = peopleTable.loadByDate(true);
+//        for (Person person : people) {
+//
+//            adapter.add(person);
+//        }
+//        adapter.notifyDataSetChanged();
+//    }
 
 
 }

@@ -107,7 +107,8 @@ public class EmailSignUp extends BaseActivity implements View.OnClickListener {
 
             case R.id.textViewSignIn:
                 Intent intent =  new Intent(EmailSignUp.this, EmailSignIn.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
                 break;
 

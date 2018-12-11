@@ -12,6 +12,7 @@ import android.view.WindowManager;
 import android.widget.TextView;
 
 import com.example.chahyunbin.cwapp.MainActivity;
+import com.example.chahyunbin.cwapp.Personal_Info;
 import com.example.chahyunbin.cwapp.R;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -39,6 +40,7 @@ public class LoginHome extends BaseActivity implements View.OnClickListener {
     private TextView mStatusTextView;
     private TextView mDetailTextView;
     public static String googleName;
+    MainActivity mainActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,6 +84,8 @@ public class LoginHome extends BaseActivity implements View.OnClickListener {
             }else
             startActivity(new Intent(LoginHome.this, MainActivity.class));
         }
+        if(mainActivity.email == null)
+            signIn();
 
     }
     // [END on_start_check_user]
@@ -125,9 +129,10 @@ public class LoginHome extends BaseActivity implements View.OnClickListener {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            googleName = user.getDisplayName();
-                            Intent intent = new Intent(LoginHome.this, MainActivity.class);
-                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            googleName = user.getEmail();
+                            Intent intent = new Intent(LoginHome.this, Personal_Info.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                             startActivity(intent);
                         } else {
                             // If sign in fails, display a message to the user.

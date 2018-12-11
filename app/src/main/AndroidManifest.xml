@@ -6,6 +6,8 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.DIAL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -23,7 +25,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AddMember"
+            android:name=".FirebaseDatabase_Input"
             android:theme="@android:style/Theme.NoTitleBar" />
         <activity
             android:name=".AdminMember.AdminMember"
@@ -36,8 +38,11 @@
             android:theme="@android:style/Theme.NoTitleBar" />
         <activity
             android:name=".Login.EmailSignUp"
-            android:theme="@android:style/Theme.NoTitleBar"/>
-        <activity android:name=".Login.EmailSignIn"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name=".Login.EmailSignIn"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity android:name=".Personal_Info"
             android:theme="@android:style/Theme.NoTitleBar"/>
     </application>
 

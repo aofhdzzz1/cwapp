@@ -1,5 +1,6 @@
 package com.example.chahyunbin.cwapp.Bible;
 
+import android.content.Context;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
@@ -12,15 +13,20 @@ import com.example.chahyunbin.cwapp.R;
 import com.example.chahyunbin.cwapp.model.BibleVerse;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class BibleAdapter extends BaseAdapter {
 
-    private  ArrayList<BibleVerse> items = new ArrayList<>();
-
-
+   // private  ArrayList<BibleVerse> items = new ArrayList<>();
+    private List<BibleItem> items = new ArrayList<>();
+    private Context mContext;
 
     public BibleAdapter() {
-        super();
+    }
+
+    public BibleAdapter(Context mcontext, List<BibleItem> mBibleItem) {
+        this.mContext = mcontext;
+        this.items = mBibleItem;
 
     }
     public void clear() {
@@ -28,8 +34,8 @@ public class BibleAdapter extends BaseAdapter {
         notifyDataSetChanged();
     }
 
-    public void add (BibleVerse bibleVerse){
-        items.add(bibleVerse);
+    public void add (BibleItem bibleItem){
+        items.add(bibleItem);
     }
 
     @Override
@@ -44,33 +50,44 @@ public class BibleAdapter extends BaseAdapter {
 
     @Override
     public long getItemId(int position) {
-        BibleVerse bean = items.get(position+1);
-        return bean.verse;
+        BibleItem bean = items.get(position);
+        return bean.getChapter();
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-       BibleVerse bean = items.get(position);
-
+       BibleItem bean = items.get(position);
 
        ViewHolderItem holder;
-       if(convertView == null){
+
            convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.bible_item,null);
            holder = new ViewHolderItem();
 
+
+
            holder.verseText = (TextView)convertView.findViewById(R.id.verse);
            holder.contentsText = (TextView)convertView.findViewById(R.id.content);
-           Log.d("bible", "getView: ");
-           Log.d("bible", "glodbProg : "+ Bible.globProg);
+
+
+           //글씨크기변경
            holder.verseText.setTextSize(TypedValue.COMPLEX_UNIT_PX, Bible.globProg);
            holder.contentsText.setTextSize(TypedValue.COMPLEX_UNIT_PX, Bible.globProg );
 
            convertView.setTag(holder);
-       }else
+
            holder = (ViewHolderItem) convertView.getTag();
 
-       holder.verseText.setText(String.valueOf(bean.verse));
-       holder.contentsText.setText(bean.content);
+           holder.verseText.setText("");
+
+           holder.contentsText.setText("");
+
+           holder.verseText.setText(String.valueOf(bean.getVerse()));
+
+           holder.contentsText.setText(String.valueOf(bean.getContent()));
+
+
+        holder.verseText.setText(String.valueOf(bean.getVerse()));
+        holder.contentsText.setText(String.valueOf(bean.getContent()));
 
        return convertView;
     }

@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.chahyunbin.cwapp.MainActivity;
+import com.example.chahyunbin.cwapp.Personal_Info;
 import com.example.chahyunbin.cwapp.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -27,7 +28,7 @@ public class EmailSignIn extends BaseActivity implements View.OnClickListener {
     protected String TAG = "EmailSignIn";
 
     EditText userEmail, userPassword;
-
+    public static String useremail;
     FirebaseAuth mAuth;
     private ProgressBar progressBar;
 
@@ -71,7 +72,7 @@ public class EmailSignIn extends BaseActivity implements View.OnClickListener {
 
     private void userLogin() {
 
-        String useremail = userEmail.getText().toString().trim();
+        useremail = userEmail.getText().toString().trim();
         String userpassword = userPassword.getText().toString().trim();
 
         if(useremail.isEmpty()){
@@ -99,8 +100,9 @@ public class EmailSignIn extends BaseActivity implements View.OnClickListener {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 progressBar.setVisibility(View.GONE);
                 if(task.isSuccessful()){
-                    Intent intent = new Intent(EmailSignIn.this, MainActivity.class);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    Intent intent = new Intent(EmailSignIn.this, Personal_Info.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
                 }else{
                     Toast.makeText(EmailSignIn.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();

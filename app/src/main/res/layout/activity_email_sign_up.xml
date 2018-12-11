@@ -61,7 +61,7 @@
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:text="Sign Up"
-                android:theme="@style/ThemeOverlay.MyDarkButton" />
+                />
 
             <TextView
                 android:id="@+id/textViewSignIn"

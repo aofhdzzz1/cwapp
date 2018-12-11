@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Intent;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -14,22 +16,35 @@ import android.widget.Toast;
 
 import com.example.chahyunbin.cwapp.AdminMember.AdminMember;
 import com.example.chahyunbin.cwapp.Bible.Bible;
+import com.example.chahyunbin.cwapp.Login.EmailSignIn;
 import com.example.chahyunbin.cwapp.Login.LoginHome;
+import com.example.chahyunbin.cwapp.model.User;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends Activity {
 
     Button button1,button2,button3;
     ImageView imageView;
-    String username;
+    public static String username = null;
     String phonenumber;
- LoginHome googlelogin;
+    String emaildata;
+    LoginHome googlelogin;
+    EmailSignIn signIn;
    // FirebaseUI firebaseUI;
+   TextView textView;
 
     private final long FINISH_INTERVAL_TIME = 2000;
     private long backPressedTime = 0;
     public static boolean outboolean =false;
 
-
+    public static String email;
+    FirebaseUser user;
 
 
     @Override
@@ -40,11 +55,34 @@ public class MainActivity extends Activity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
 
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        textView = (TextView)findViewById(R.id.loginName);
+
+
+        //get email
+        emaildata = user.getEmail();
+        if (emaildata != null) {
+            email = emaildata.substring(0, emaildata.indexOf("@"));
+
+        }
+
+        if(email == null){
+            Intent intent = new Intent(MainActivity.this, LoginHome.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            FirebaseAuth.getInstance().signOut();
+            startActivity(intent);
+
+        }
+        // find username in firebase UserInfo
+        //if username is null go back to personal_Info.class
+
+        GetUserName();
 
 
 
-        TextView textView = (TextView)findViewById(R.id.loginName);
-        textView.setText(googlelogin.googleName);
+
+
 
 
 
@@ -56,12 +94,46 @@ public class MainActivity extends Activity {
         findViewById(R.id.button3).setOnClickListener(myClick);
     }
 
-        Button.OnClickListener myClick = new Button.OnClickListener(){
+    private void GetUserName() {
+        Query query =  FirebaseDatabase.getInstance().getReference("User/"+email).orderByChild("UserInfo");
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    User user = snapshot.getValue(User.class);
+
+                    username = user.getName();
+                    Log.d("Firebase", "username1 : "+username);
+                    textView.setText(username+"님");
+
+                }
+            }
+
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        if (username == null) {
+            Intent intent = new Intent(MainActivity.this, Personal_Info.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+        }
+    }
+
+    Button.OnClickListener myClick = new Button.OnClickListener(){
             @Override
             public void onClick(View v) {
                 switch(v.getId()){
                     case R.id.button1:
-                        startActivity(new Intent(MainActivity.this,AddMember.class));
+                        startActivity(new Intent(MainActivity.this,FirebaseDatabase_Input.class));
                         break;
                     case R.id.button2:
                         startActivity(new Intent(MainActivity.this,AdminMember.class));
@@ -71,6 +143,7 @@ public class MainActivity extends Activity {
                         break;
                     case R.id.logoutbtn:
                         googlelogin.signOut();
+                        email = null;
                         //AuthUI.getInstance().signOut(getApplicationContext());
                         finish();
                         startActivity(new Intent(MainActivity.this,LoginHome.class));
@@ -78,6 +151,7 @@ public class MainActivity extends Activity {
                 }
             }
         };
+
 
     @Override
     public void onBackPressed() {

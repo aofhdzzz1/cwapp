@@ -62,6 +62,10 @@ public class SingleAdapter extends BaseAdapter {
     public int getCount() {
         return items.size();
     }
+    public String getItemPhone(int position){
+        Person bean = items.get(position);
+        return bean.getPhonenumber().trim();
+    }
 
     @Override
     public Object getItem(int position) {
@@ -70,8 +74,7 @@ public class SingleAdapter extends BaseAdapter {
 
     @Override
     public long getItemId(int position) {
-        Person bean = items.get(position);
-        return Integer.parseInt(bean.id);
+        return 0;
     }
     public String getItem_ID(int position){
         Person bean = items.get(position);
@@ -93,16 +96,18 @@ public class SingleAdapter extends BaseAdapter {
         } else
             holder = (ViewHolderItem) convertview.getTag();
 
-        holder.textname.setText(bean.name);
-        holder.textphonenumber.setText(bean.phonenumber);
+        holder.textname.setText(bean.getName());
+        holder.textphonenumber.setText(bean.getPhonenumber());
         holder.imageView.setImageResource(R.mipmap.ic_adminicon_round);
 
         return convertview;
     }
 
 
-
-
+    public String getItem_Name(int position) {
+       Person bean = items.get(position);
+        return bean.getName();
+    }
 }
 
  class ViewHolderItem {

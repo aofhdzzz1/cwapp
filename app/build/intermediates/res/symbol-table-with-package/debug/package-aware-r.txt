@@ -1045,6 +1045,7 @@ id activity_chooser_view_content
 id add
 id adjust_height
 id adjust_width
+id affiliation
 id ageInput
 id ageView
 id alertTitle
@@ -1081,8 +1082,10 @@ id buttonPanel
 id button_create
 id button_done
 id button_next
+id buttonlayout
 id cancel_action
 id cancel_button
+id cellMamberCheck
 id center
 id center_horizontal
 id center_vertical
@@ -1183,6 +1186,7 @@ id italic
 id item_touch_helper_previous_elevation
 id large
 id largeLabel
+id leaderCheck
 id left
 id light
 id line1
@@ -1301,6 +1305,7 @@ id textView
 id textView2
 id textViewSignIn
 id textViewSignUp
+id textView_Personal_info
 id text_input_password_toggle
 id textinput_counter
 id textinput_error
@@ -1325,6 +1330,12 @@ id uniform
 id unknown
 id up
 id useLogo
+id userAgeInput
+id userDayInput
+id userMonthInput
+id userNameInput
+id userPhonenumberInput
+id userbtnSaveInfo
 id verse
 id verseSpinner
 id view_offset_helper
@@ -1378,6 +1389,7 @@ layout abc_tooltip
 layout activity_email_sign_in
 layout activity_email_sign_up
 layout activity_main
+layout activity_personal_info
 layout addmember
 layout adminmember
 layout bible
