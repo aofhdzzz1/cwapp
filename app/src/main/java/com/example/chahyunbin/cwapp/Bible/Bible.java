@@ -2,6 +2,7 @@ package com.example.chahyunbin.cwapp.Bible;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.drawable.PaintDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -61,7 +62,9 @@ public class Bible extends Activity{
             //Copy db
             if (copyDatabase(this)) {
                 Toast.makeText(this, "Copy database succes", Toast.LENGTH_SHORT).show();
+                Log.d("bible", "bible copy success");
             } else {
+                Log.d("bible", "bible copy fail");
                 Toast.makeText(this, "Copy data error", Toast.LENGTH_SHORT).show();
                 return;
             }
@@ -79,13 +82,14 @@ public class Bible extends Activity{
         bar = (SeekBar) findViewById(R.id.seekBar);
         number.setText("" + globProg);
 
-        Button fontSizeChange = (Button) findViewById(R.id.fontchangebtn);
+        final Button fontSizeChange = (Button) findViewById(R.id.fontchangebtn);
         fontSizeChange.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (visable == false) {
                     bar.setVisibility(View.VISIBLE);
                     visable = true;
+                    fontSizeChange.setText("Close Seekbar");
                     bar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
                         int Blast;
@@ -120,6 +124,7 @@ public class Bible extends Activity{
                 } else {
                     bar.setVisibility(View.INVISIBLE);
                     visable = false;
+                    fontSizeChange.setText("Size Change");
                 }
 
             }
@@ -132,6 +137,7 @@ public class Bible extends Activity{
         final ArrayList<String> book;
         book = mDBHelper.getListBook();
         final ArrayAdapter<String> bibleadapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,book);
+        bibleadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         bibleSpinner.setAdapter(bibleadapter);
         bibleSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -202,8 +208,8 @@ public class Bible extends Activity{
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 listView.setSelection(position);
-            }
 
+            }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
 

@@ -43,7 +43,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         mDatabase = SQLiteDatabase.openDatabase(dbPath, null, SQLiteDatabase.OPEN_READWRITE);
     }
 
-    public void closeDatabase() {
+    public static void closeDatabase() {
         if(mDatabase!=null) {
             mDatabase.close();
         }
@@ -96,6 +96,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             }
             c.moveToNext();
         }
+
         return chapter;
     }
 

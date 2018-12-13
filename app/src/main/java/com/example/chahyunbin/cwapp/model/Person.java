@@ -1,5 +1,7 @@
 package com.example.chahyunbin.cwapp.model;
 
+import com.google.firebase.database.Exclude;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,6 +13,7 @@ public class Person {
     private  String Month;
     private  String Day;
     private Map<String, String> mp;
+     public String Key;
 
     public Person(String id, String name, String phonenumber,String age, String month, String day) {
         super();
@@ -78,6 +81,14 @@ public class Person {
 
     public String getDay() {
         return Day;
+    }
+    @Exclude
+    public String getmKey() {
+        return Key;
+    }
+    @Exclude
+    public void setmKey(String mKey) {
+        this.Key = mKey;
     }
 
     public void setDay(String day) {

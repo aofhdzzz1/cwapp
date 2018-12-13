@@ -992,6 +992,7 @@ drawable ic_phone
 drawable ic_undo
 drawable icon_1
 drawable icon_2
+drawable list_focus
 drawable messenger_bubble_large_blue
 drawable messenger_bubble_large_white
 drawable messenger_bubble_small_blue

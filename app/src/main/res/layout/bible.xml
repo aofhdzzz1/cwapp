@@ -46,7 +46,10 @@
         android:layout_above="@id/seekBar"
         android:id="@+id/biblelist"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:listSelector="@drawable/list_focus"
+
+        />
 
     <SeekBar
         android:layout_above="@id/fontchangebtn"

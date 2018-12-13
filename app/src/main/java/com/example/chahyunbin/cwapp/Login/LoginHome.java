@@ -1,16 +1,24 @@
 package com.example.chahyunbin.cwapp.Login;
 
+import android.Manifest;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.chahyunbin.cwapp.AdminMember.AdminMember;
 import com.example.chahyunbin.cwapp.MainActivity;
 import com.example.chahyunbin.cwapp.Personal_Info;
 import com.example.chahyunbin.cwapp.R;
@@ -44,6 +52,8 @@ public class LoginHome extends BaseActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
@@ -170,20 +180,6 @@ public class LoginHome extends BaseActivity implements View.OnClickListener {
                 });
     }
 
-    private void revokeAccess() {
-        // Firebase sign out
-        mAuth.signOut();
-
-        // Google revoke access
-        mGoogleSignInClient.revokeAccess().addOnCompleteListener(this,
-                new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-
-                    }
-                });
-    }
-
 
 
     @Override
@@ -201,6 +197,7 @@ public class LoginHome extends BaseActivity implements View.OnClickListener {
     public void onBackPressed() {
         super.onBackPressed();
     }
+
 }
 
 

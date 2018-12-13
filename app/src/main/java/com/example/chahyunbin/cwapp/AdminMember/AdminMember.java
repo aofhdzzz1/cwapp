@@ -1,9 +1,13 @@
 package com.example.chahyunbin.cwapp.AdminMember;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
@@ -11,6 +15,8 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -36,6 +42,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -43,6 +50,10 @@ import java.util.ArrayList;
 import javax.security.auth.callback.Callback;
 
 public class AdminMember extends Activity {
+
+
+
+
     SwipeMenuListView listView;
 
 
@@ -52,7 +63,7 @@ public class AdminMember extends Activity {
     Activity activity;
 
     String name, phone, age, month, day;
-
+    public String key;
 
     FirebaseDatabase database;
     DatabaseReference ref;
@@ -65,6 +76,10 @@ public class AdminMember extends Activity {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.adminmember);
+
+
+
+
 
         listView = (SwipeMenuListView)findViewById(R.id.listView);
 
@@ -87,9 +102,11 @@ public class AdminMember extends Activity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 adapter.clear();
-               
+
                 for(DataSnapshot snapshot : dataSnapshot.getChildren()){
                     Person person = snapshot.getValue(Person.class);
+                    person.Key = snapshot.getKey();
+                    list.add(person);
                     adapter.add(person);
                 }
                 if(adapter.getCount() == 0){
@@ -151,20 +168,22 @@ public class AdminMember extends Activity {
                     case 0:
                         // delete
 
-
+                        Person person = list.get(position);
+                        list.remove(position);
+                        ref.child("User/"+MainActivity.email+"/Members").child(person.Key).removeValue();
                         break;
                     case 1:
                         // phone
                         String phonenumber = adapter.getItemPhone(position);
+                        Log.d("Firebase", "phone : "+ phonenumber);
                         String tel = "tel:"+phonenumber;
                         Intent intent = new Intent(Intent.ACTION_CALL);
                         intent.setData(Uri.parse(tel));
                         try {
                             startActivity(intent);
                         }catch (Exception e){
-                            e.printStackTrace();
+                            Toast.makeText(getApplicationContext(), "설정에서 전화 걸기 권한을 부여해주세요.", Toast.LENGTH_SHORT).show();
                         }
-                        break;
                 }
                 // false : close the menu; true : not close the menu
                 return true;
@@ -182,6 +201,9 @@ public class AdminMember extends Activity {
 
 
     }
+
+
+
 
 //    private void loadAllFromDB() {
 //        ArrayList<Person> people = peopleTable.loadByDate(true);
