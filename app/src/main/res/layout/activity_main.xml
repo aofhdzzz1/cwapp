@@ -4,8 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context="chahyunbin.cwapp1.MainActivity"
     android:orientation="vertical"
+    android:background="#000000"
+
     >
 
     <ImageView
@@ -26,8 +28,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="10dp"
             android:text="이름이다"
             android:textSize="20dp" />
 
@@ -42,7 +44,10 @@
             android:layout_marginTop="0dp"
             android:layout_marginEnd="129dp"
             android:text="LOGOUT"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/rounded_button"
+            android:textStyle="bold"/>
 
     </RelativeLayout>
 
@@ -68,7 +73,9 @@
                 android:layout_height="50dp"
                 android:text="셀원 등록"
                 android:textSize="22dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/rounded_button"/>
 
             <Button
                 android:id="@+id/button2"
@@ -77,7 +84,9 @@
                 android:layout_marginLeft="20dp"
                 android:text="셀원 관리"
                 android:textSize="22dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/rounded_button"/>
 
         </LinearLayout>
 
@@ -89,7 +98,9 @@
             android:text="성경"
             android:textSize="22dp"
             android:textStyle="bold"
-            android:layout_marginBottom="15dp"/>
+            android:layout_marginBottom="15dp"
+            android:textColor="#FFFFFF"
+        android:background="@drawable/rounded_button"/>
 
     </LinearLayout>
 

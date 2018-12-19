@@ -2,9 +2,18 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="pink">#FF4081</color>
 
     <color name="grey_100">#F5F5F5</color>
     <color name="grey_300">#E0E0E0</color>
     <color name="grey_500">#9E9E9E</color>
+
+    <color name="black">#000000</color>
+    <color name="white">#ffff</color>
+
+    <color name="darkbluegreen">#112F41</color>
+    <color name="bluegreen">#068587</color>
+    <color name="lightbluegreen">#4FB99F</color>
+    <color name="yellow">#F2B134</color>
+    <color name="redyellow">#ED553B</color>
 </resources>

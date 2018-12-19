@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <tabs>
+        <!--<tab-->
+            <!--android:id="@+id/Net Member"-->
+            <!--android:icon="@drawable/baseline_group_black_18"-->
+            <!--android:title="Net Member" />-->
+        <!--<tab-->
+            <!--android:id="@+id/Cell Member"-->
+            <!--android:icon="@drawable/baseline_group_black_18"-->
+            <!--android:title="Cell Member" />-->
+        <!--<tab-->
+            <!--android:id="@+id/Monitering"-->
+            <!--android:icon="@drawable/baseline_view)comfy_black_18"-->
+            <!--android:title="Monitering" />-->
+    </tabs>
+
+</LinearLayout>

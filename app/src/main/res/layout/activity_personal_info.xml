@@ -89,7 +89,6 @@
                     android:inputType="text"
                     android:selectAllOnFocus="false"
                     android:singleLine="false"
-                    android:text="차현빈"
                     android:textColorHint="#BDBDBD"
 
                     android:textSize="20dp"
@@ -123,7 +122,6 @@
                     android:inputType="number"
                     android:selectAllOnFocus="false"
                     android:singleLine="false"
-                    android:text="01075666734"
                     android:textColorHint="#BDBDBD"
                     android:textSize="20dp"
                     android:textStyle="bold" />
@@ -156,7 +154,6 @@
                     android:gravity="center"
                     android:hint="나이"
                     android:inputType="number"
-                    android:text="21"
                     android:textColorHint="#BDBDBD"
                     android:textSize="20dp"
                     android:textStyle="bold" />
@@ -189,7 +186,6 @@
                     android:hint="00"
                     android:inputType="number"
                     android:maxLength="2"
-                    android:text="9"
                     android:textColorHint="#BDBDBD"
                     android:textSize="25dp" />
 
@@ -211,7 +207,6 @@
                     android:hint="00"
                     android:inputType="number"
                     android:maxLength="2"
-                    android:text="9"
                     android:textColorHint="#BDBDBD"
                     android:textSize="25dp" />
 

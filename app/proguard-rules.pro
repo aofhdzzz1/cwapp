@@ -19,3 +19,17 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+# Don't note duplicate definition (Legacy Apche Http Client)
+
+
+# Firebase Authentication
+ -keepattributes Signature
+    -keepattributes *Annotation*
+# Firebase Realtime database
+-keepattributes Signature
+ -keepclassmembers class com.yourcompany.models.** {
+      *;
+    }
+-dontwarn com.nhaarman.**
+-dontwarn com.roughike.**

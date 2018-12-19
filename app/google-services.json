@@ -8,17 +8,17 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:835371528097:android:f88b4205be3bad38",
+        "mobilesdk_app_id": "1:835371528097:android:d687843bdb34576a",
         "android_client_info": {
-          "package_name": "com.example.chahyunbin.cwapp"
+          "package_name": "chahyunbin.cwapp1"
         }
       },
       "oauth_client": [
         {
-          "client_id": "835371528097-84gg0bsp0fqc025ht2f6lt0qkn35otiq.apps.googleusercontent.com",
+          "client_id": "835371528097-tmg6mmaukj6uhm5462oog2n4ag1ncr72.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.chahyunbin.cwapp",
+            "package_name": "chahyunbin.cwapp1",
             "certificate_hash": "b6a19eaceb098d0de97ae3007b8e39f0aacc20b9"
           }
         },
