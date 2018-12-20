@@ -3,18 +3,23 @@
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
     <tabs>
-        <!--<tab-->
-            <!--android:id="@+id/Net Member"-->
-            <!--android:icon="@drawable/baseline_group_black_18"-->
-            <!--android:title="Net Member" />-->
-        <!--<tab-->
-            <!--android:id="@+id/Cell Member"-->
-            <!--android:icon="@drawable/baseline_group_black_18"-->
-            <!--android:title="Cell Member" />-->
-        <!--<tab-->
-            <!--android:id="@+id/Monitering"-->
-            <!--android:icon="@drawable/baseline_view)comfy_black_18"-->
-            <!--android:title="Monitering" />-->
+        <tab
+            id="@+id/netMember"
+            icon="@drawable/baseline_group_black_18"
+            title="Net Member"
+            barColorWhenSelected="#F44336"/>
+        <tab
+            id="@+id/cellMember"
+            icon="@drawable/baseline_group_black_18"
+            title="Cell Member"
+
+            barColorWhenSelected="#03A9F4"/>
+        <tab
+            id="@+id/monitoring"
+            icon="@drawable/baseline_group_black_18"
+            title="Monitoring"
+            barColorWhenSelected="#9C27B0"
+           />
     </tabs>
 
 </LinearLayout>

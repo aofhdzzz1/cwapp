@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.chahyunbin.cwapp.chahyunbin.example.chahyunbin.cwapp.AdminMember.MemberInfo"
     android:background="#FFFFFF">
 
     <LinearLayout
@@ -17,7 +16,7 @@
             android:layout_height="wrap_content"
             android:text="책가져와서 다시하기...."
             android:textSize="20dp"
-            android:textColor="#000000"/>
+            android:textColor="#000000 "/>
 
 
 

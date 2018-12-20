@@ -432,6 +432,10 @@
         "source": "/Users/chahyunbin/Desktop/cwapp/app/src/main/res/drawable-hdpi/baseline_group_black_48.png"
     },
     {
+        "merged": "/Users/chahyunbin/Desktop/cwapp/app/build/intermediates/res/merged/debug/mipmap-anydpi-v26_orange_people_round.xml.flat",
+        "source": "/Users/chahyunbin/Desktop/cwapp/app/src/main/res/mipmap-anydpi-v26/orange_people_round.xml"
+    },
+    {
         "merged": "/Users/chahyunbin/Desktop/cwapp/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
         "source": "/Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.0.aar/d942d5719b28c60fa77e2410aa2d3ea1/res/drawable-mdpi-v4/abc_ic_menu_selectall_mtrl_alpha.png"
     },
@@ -664,6 +668,10 @@
         "source": "/Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/bottom-bar-2.3.1.aar/8d0ae73ab71622d18250ea21f12e3948/res/layout/bb_bottom_bar_item_fixed.xml"
     },
     {
+        "merged": "/Users/chahyunbin/Desktop/cwapp/app/build/intermediates/res/merged/debug/layout_tabbar_cellmemberlayout.xml.flat",
+        "source": "/Users/chahyunbin/Desktop/cwapp/app/src/main/res/layout/tabbar_cellmemberlayout.xml"
+    },
+    {
         "merged": "/Users/chahyunbin/Desktop/cwapp/app/build/intermediates/res/merged/debug/drawable_com_facebook_auth_dialog_background.xml.flat",
         "source": "/Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/facebook-common-4.38.1.aar/14fe2bf2bd2b5c52fda891cc0e917356/res/drawable/com_facebook_auth_dialog_background.xml"
     },
@@ -714,6 +722,10 @@
     {
         "merged": "/Users/chahyunbin/Desktop/cwapp/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_common_google_signin_btn_icon_light_normal_background.9.png.flat",
         "source": "/Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/e297b126ec1eb43c37c1bf232146a857/res/drawable-mdpi-v4/common_google_signin_btn_icon_light_normal_background.9.png"
+    },
+    {
+        "merged": "/Users/chahyunbin/Desktop/cwapp/app/build/intermediates/res/merged/debug/mipmap-anydpi-v26_orange_people.xml.flat",
+        "source": "/Users/chahyunbin/Desktop/cwapp/app/src/main/res/mipmap-anydpi-v26/orange_people.xml"
     },
     {
         "merged": "/Users/chahyunbin/Desktop/cwapp/app/build/intermediates/res/merged/debug/layout_addmember.xml.flat",
@@ -1056,6 +1068,10 @@
         "source": "/Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/e297b126ec1eb43c37c1bf232146a857/res/drawable/common_google_signin_btn_icon_dark_focused.xml"
     },
     {
+        "merged": "/Users/chahyunbin/Desktop/cwapp/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_orange_people.png.flat",
+        "source": "/Users/chahyunbin/Desktop/cwapp/app/src/main/res/mipmap-xxhdpi/orange_people.png"
+    },
+    {
         "merged": "/Users/chahyunbin/Desktop/cwapp/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
         "source": "/Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.0.aar/d942d5719b28c60fa77e2410aa2d3ea1/res/drawable-mdpi-v4/abc_btn_switch_to_on_mtrl_00012.9.png"
     },
@@ -1078,6 +1094,10 @@
     {
         "merged": "/Users/chahyunbin/Desktop/cwapp/app/build/intermediates/res/merged/debug/layout_undo.xml.flat",
         "source": "/Users/chahyunbin/Desktop/cwapp/app/src/main/res/layout/undo.xml"
+    },
+    {
+        "merged": "/Users/chahyunbin/Desktop/cwapp/app/build/intermediates/res/merged/debug/layout_tabbar_netmemberlayout.xml.flat",
+        "source": "/Users/chahyunbin/Desktop/cwapp/app/src/main/res/layout/tabbar_netmemberlayout.xml"
     },
     {
         "merged": "/Users/chahyunbin/Desktop/cwapp/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_text_select_handle_middle_mtrl_dark.png.flat",
@@ -1134,6 +1154,10 @@
     {
         "merged": "/Users/chahyunbin/Desktop/cwapp/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_common_google_signin_btn_icon_light_normal_background.9.png.flat",
         "source": "/Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/e297b126ec1eb43c37c1bf232146a857/res/drawable-xxhdpi-v4/common_google_signin_btn_icon_light_normal_background.9.png"
+    },
+    {
+        "merged": "/Users/chahyunbin/Desktop/cwapp/app/build/intermediates/res/merged/debug/mipmap-xhdpi_orange_people.png.flat",
+        "source": "/Users/chahyunbin/Desktop/cwapp/app/src/main/res/mipmap-xhdpi/orange_people.png"
     },
     {
         "merged": "/Users/chahyunbin/Desktop/cwapp/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher_round.png.flat",
@@ -1520,6 +1544,10 @@
         "source": "/Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.0.aar/d942d5719b28c60fa77e2410aa2d3ea1/res/drawable/abc_item_background_holo_dark.xml"
     },
     {
+        "merged": "/Users/chahyunbin/Desktop/cwapp/app/build/intermediates/res/merged/debug/mipmap-hdpi_orange_people.png.flat",
+        "source": "/Users/chahyunbin/Desktop/cwapp/app/src/main/res/mipmap-hdpi/orange_people.png"
+    },
+    {
         "merged": "/Users/chahyunbin/Desktop/cwapp/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_list_focused_holo.9.png.flat",
         "source": "/Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.0.aar/d942d5719b28c60fa77e2410aa2d3ea1/res/drawable-xhdpi-v4/abc_list_focused_holo.9.png"
     },
@@ -1674,6 +1702,10 @@
     {
         "merged": "/Users/chahyunbin/Desktop/cwapp/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
         "source": "/Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.0.aar/d942d5719b28c60fa77e2410aa2d3ea1/res/drawable-hdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png"
+    },
+    {
+        "merged": "/Users/chahyunbin/Desktop/cwapp/app/build/intermediates/res/merged/debug/mipmap-mdpi_orange_people.png.flat",
+        "source": "/Users/chahyunbin/Desktop/cwapp/app/src/main/res/mipmap-mdpi/orange_people.png"
     },
     {
         "merged": "/Users/chahyunbin/Desktop/cwapp/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_com_facebook_button_like_icon_selected.png.flat",
@@ -2456,6 +2488,10 @@
         "source": "/Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.0.aar/d942d5719b28c60fa77e2410aa2d3ea1/res/drawable-xxhdpi-v4/abc_spinner_mtrl_am_alpha.9.png"
     },
     {
+        "merged": "/Users/chahyunbin/Desktop/cwapp/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_orange_people.png.flat",
+        "source": "/Users/chahyunbin/Desktop/cwapp/app/src/main/res/mipmap-xxxhdpi/orange_people.png"
+    },
+    {
         "merged": "/Users/chahyunbin/Desktop/cwapp/app/build/intermediates/res/merged/debug/drawable_abc_text_cursor_material.xml.flat",
         "source": "/Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.0.aar/d942d5719b28c60fa77e2410aa2d3ea1/res/drawable/abc_text_cursor_material.xml"
     },
@@ -2582,6 +2618,10 @@
     {
         "merged": "/Users/chahyunbin/Desktop/cwapp/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_com_facebook_profile_picture_blank_square.png.flat",
         "source": "/Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/facebook-login-4.38.1.aar/e33802552708e4f1a6585875476b0ba9/res/drawable-mdpi-v4/com_facebook_profile_picture_blank_square.png"
+    },
+    {
+        "merged": "/Users/chahyunbin/Desktop/cwapp/app/build/intermediates/res/merged/debug/layout_tabbar_monitoringlayout.xml.flat",
+        "source": "/Users/chahyunbin/Desktop/cwapp/app/src/main/res/layout/tabbar_monitoringlayout.xml"
     },
     {
         "merged": "/Users/chahyunbin/Desktop/cwapp/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_ic_star_black_16dp.png.flat",

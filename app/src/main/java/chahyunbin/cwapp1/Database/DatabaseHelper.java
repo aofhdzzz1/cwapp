@@ -20,7 +20,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String CONTENT ="content";
     private static final String ORDER_BY_DEFAULT = VERSE + " asc";
     public static final String DBNAME = "bible.db";
-    public static final String DBLOCATION = "/data/data/chahyunbin.cwapp/databases/";
+    public static final String DBLOCATION = "/data/data/chahyunbin.cwapp1/databases/";
     private static Context mContext;
     public static SQLiteDatabase mDatabase;
 

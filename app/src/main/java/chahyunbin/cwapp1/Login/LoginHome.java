@@ -1,5 +1,6 @@
 package chahyunbin.cwapp1.Login;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -9,8 +10,10 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
+import chahyunbin.cwapp1.MainActivity;
 import chahyunbin.cwapp1.Personal_Info;
 import chahyunbin.cwapp1.R;
+import chahyunbin.cwapp1.model.User;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -24,6 +27,11 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 public class LoginHome extends BaseActivity implements View.OnClickListener {
 
@@ -33,7 +41,7 @@ public class LoginHome extends BaseActivity implements View.OnClickListener {
 
     public static GoogleSignInClient mGoogleSignInClient;
     public static FirebaseAuth mAuth;
-
+    String username;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,6 +71,9 @@ public class LoginHome extends BaseActivity implements View.OnClickListener {
         super.onStart();
 // the GoogleSignInAccount will be non-null.
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+
+
+
     }
 
 
@@ -108,7 +119,6 @@ public class LoginHome extends BaseActivity implements View.OnClickListener {
 
     private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
         Log.d(TAG, "firebaseAuthWithGoogle:" + acct.getId());
-
         AuthCredential credential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
         mAuth.signInWithCredential(credential)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -117,11 +127,55 @@ public class LoginHome extends BaseActivity implements View.OnClickListener {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithCredential:success");
+
                             FirebaseUser user = mAuth.getCurrentUser();
-                            Intent intent = new Intent(LoginHome.this,Personal_Info.class);
-                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                            startActivity(intent);
+                            String email =user.getEmail();
+                            String emailId = email.substring(0,email.indexOf("@"));
+                            Query query =  FirebaseDatabase.getInstance().getReference("User/"+emailId).orderByChild("UserInfo");
+                            query.addValueEventListener(new ValueEventListener() {
+
+                                @Override
+
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                                        User user = snapshot.getValue(User.class);
+
+                                        username = user.getName();
+
+
+                                        Log.d("Firebase", "LoginHome username: "+username);
+
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                }
+                            });
+                            showProgressDialog();
+                            try {
+                                Thread.sleep(900);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                            if(username==null) {
+                                hideProgressDialog();
+                                Intent intent = new Intent(LoginHome.this, Personal_Info.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                startActivity(intent);
+                            }else{
+                                hideProgressDialog();
+                                Intent intent = new Intent(LoginHome.this, MainActivity.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                startActivity(intent);
+                            }
+
+
+
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithCredential:failure", task.getException());
@@ -245,6 +299,10 @@ public class LoginHome extends BaseActivity implements View.OnClickListener {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+    }
+
+    protected void Loding(){
+
     }
 
 }

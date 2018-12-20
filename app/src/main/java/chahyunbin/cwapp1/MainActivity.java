@@ -14,8 +14,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import chahyunbin.cwapp1.AdminMember.AdminMember;
 import chahyunbin.cwapp1.Bible.Bible;
+import chahyunbin.cwapp1.BottomBar.Tabbar_activity;
 import chahyunbin.cwapp1.Login.EmailSignIn;
 import chahyunbin.cwapp1.Login.LoginHome;
 
@@ -126,11 +126,11 @@ public class MainActivity extends Activity {
             e.printStackTrace();
         }
 
-        if (username == null) {
-            Intent intent = new Intent(MainActivity.this, Personal_Info.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(intent);
-        }
+//        if (username == null) {
+//            Intent intent = new Intent(MainActivity.this, Personal_Info.class);
+//            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//            startActivity(intent);
+//        }
     }
 
     Button.OnClickListener myClick = new Button.OnClickListener(){
@@ -139,9 +139,10 @@ public class MainActivity extends Activity {
                 switch(v.getId()){
                     case R.id.button1:
                         startActivity(new Intent(MainActivity.this,FirebaseDatabase_Input.class));
+
                         break;
                     case R.id.button2:
-                        startActivity(new Intent(MainActivity.this,AdminMember.class));
+                        startActivity(new Intent(MainActivity.this,Tabbar_activity.class));
                         break;
                     case R.id.button3:
                         startActivity(new Intent(MainActivity.this, Bible.class));

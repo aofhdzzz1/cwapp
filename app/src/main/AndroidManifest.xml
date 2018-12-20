@@ -24,11 +24,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".BottomBar.Tabbar_activity"
+            android:theme="@style/AppTheme.TransNav"/>
         <activity
             android:name="chahyunbin.cwapp1.FirebaseDatabase_Input"
             android:theme="@android:style/Theme.NoTitleBar" />
         <activity
-            android:name="chahyunbin.cwapp1.AdminMember.AdminMember"
+            android:name="chahyunbin.cwapp1.BottomBar.CellMemberFregment"
             android:theme="@android:style/Theme.NoTitleBar" />
         <activity
             android:name="chahyunbin.cwapp1.Bible.Bible"

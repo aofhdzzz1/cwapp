@@ -1,8 +1,9 @@
 package chahyunbin.cwapp1.model;
 
 public class User {
+    public String id;
     private  String Name;
-    private  String Phonenumber;
+    private  String Phone;
     private  String Age;
     private  String Month;
     private  String Day;
@@ -15,7 +16,7 @@ public class User {
 
     public User(String name, String phonenumber, String age, String month, String day, String leader) {
         Name = name;
-        Phonenumber = phonenumber;
+        Phone = phonenumber;
         Age = age;
         Month = month;
         Day = day;
@@ -30,12 +31,12 @@ public class User {
         Name = name;
     }
 
-    public String getPhonenumber() {
-        return Phonenumber;
+    public String getPhone() {
+        return Phone;
     }
 
-    public void setPhonenumber(String phonenumber) {
-        Phonenumber = phonenumber;
+    public void setPhone(String phonenumber) {
+        Phone = phonenumber;
     }
 
     public String getAge() {

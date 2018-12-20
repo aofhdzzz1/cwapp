@@ -1,12 +1,7 @@
-package chahyunbin.cwapp1.AdminMember;
+package chahyunbin.cwapp1.BottomBar;
 
-import android.Manifest;
-import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
@@ -14,10 +9,11 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
+import android.support.v4.app.Fragment;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.Toast;
@@ -27,6 +23,7 @@ import com.baoyz.swipemenulistview.SwipeMenuCreator;
 import com.baoyz.swipemenulistview.SwipeMenuItem;
 import com.baoyz.swipemenulistview.SwipeMenuListView;
 
+import chahyunbin.cwapp1.AdminMember.SingleAdapter;
 import chahyunbin.cwapp1.MainActivity;
 
 import chahyunbin.cwapp1.R;
@@ -40,7 +37,9 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class AdminMember extends Activity {
+import static com.facebook.FacebookSdk.getApplicationContext;
+
+public class CellMemberFregment extends Fragment {
 
 
 
@@ -62,32 +61,19 @@ public class AdminMember extends Activity {
     SingleAdapter adapter;
     Person person;
 
-    @SuppressLint("WrongViewCast")
+
+    @Nullable
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.adminmember);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        if(ContextCompat.checkSelfPermission(AdminMember.this, Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED){
-
-        }else{
-            requestCallPermission();
-        }
+        View view = inflater.inflate(R.layout.adminmember,container,false);
 
 
 
-        listView = (SwipeMenuListView)findViewById(R.id.listView);
 
-        Button backbutton = (Button) findViewById(R.id.backbutton);
+        listView = (SwipeMenuListView)view.findViewById(R.id.listView);
 
-        backbutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
+
         database = FirebaseDatabase.getInstance();
         ref = database.getReference();
         list = new ArrayList<>();
@@ -105,7 +91,7 @@ public class AdminMember extends Activity {
                     adapter.add(person);
                 }
                 if(adapter.getCount() == 0){
-                    Toast.makeText(getApplicationContext(), "셀원을 입력해주세요", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "셀원을 입력해주세요", Toast.LENGTH_SHORT).show();
                 }
                 listView.setAdapter(adapter);
             }
@@ -124,7 +110,7 @@ public class AdminMember extends Activity {
             public void create(SwipeMenu menu) {
                 // create "open" item
                 SwipeMenuItem deleteItem = new SwipeMenuItem(
-                        getApplicationContext());
+                        getActivity());
                 // set item background
                 deleteItem.setBackground(new ColorDrawable(Color.rgb(0xdf, 0x01,
                         0x3a)));
@@ -139,7 +125,7 @@ public class AdminMember extends Activity {
 
                 // create "delete" item
                 SwipeMenuItem callItem = new SwipeMenuItem(
-                        getApplicationContext());
+                        getActivity());
                 // set item background
                 callItem.setBackground(new ColorDrawable(Color.rgb(0x04,
                         0xb4, 0x04)));
@@ -166,6 +152,7 @@ public class AdminMember extends Activity {
                         Person person = list.get(position);
                         list.remove(position);
                         ref.child("User/"+MainActivity.email+"/Members").child(person.Key).removeValue();
+                        Toast.makeText(getActivity(), "성공적으로 삭제되었습니다", Toast.LENGTH_SHORT).show();
                         break;
                     case 1:
                         // phone
@@ -177,7 +164,7 @@ public class AdminMember extends Activity {
                         try {
                             startActivity(intent);
                         }catch (Exception e){
-                            Toast.makeText(getApplicationContext(), "설정에서 전화 걸기 권한을 부여해주세요.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity(), "설정에서 전화 걸기 권한을 부여해주세요.", Toast.LENGTH_SHORT).show();
                         }
                 }
                 // false : close the menu; true : not close the menu
@@ -189,48 +176,14 @@ public class AdminMember extends Activity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                String name = adapter.getItem_Name(i);
-               Toast.makeText(AdminMember.this, "선택" + name, Toast.LENGTH_SHORT).show();
+               Toast.makeText(getActivity(), "선택" + name, Toast.LENGTH_SHORT).show();
 
             }
         });
 
-
+            return view;
     }
-    private void requestCallPermission() {
-        if (ActivityCompat.shouldShowRequestPermissionRationale(this,
-                Manifest.permission.CALL_PHONE)) {
 
-            new AlertDialog.Builder(this)
-                    .setTitle("Permission needed")
-                    .setMessage("This permission is needed because of this and that")
-                    .setPositiveButton("ok", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            ActivityCompat.requestPermissions(AdminMember.this,
-                                    new String[] {Manifest.permission.CALL_PHONE}, CALL_PERMISSION_CODE);
-                        }
-                    })
-                    .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.dismiss();
-                        }
-                    })
-                    .create().show();
-
-        } else {
-            ActivityCompat.requestPermissions(this,
-                    new String[] {Manifest.permission.CALL_PHONE}, CALL_PERMISSION_CODE);
-        }
-    }
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        if (requestCode == CALL_PERMISSION_CODE)  {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-
-            } else {
-            }
-        }
-    }
 
 
 

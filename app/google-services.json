@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "835371528097-top6spfg6misk9grbv80kt0m8h9o7chh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "chahyunbin.cwapp1",
+            "certificate_hash": "077a7b915cded51c64276d0d22e48703d4d0c67c"
+          }
+        },
+        {
           "client_id": "835371528097-sakt8un7emmfrll9trnovem43a74nllk.apps.googleusercontent.com",
           "client_type": 3
         }

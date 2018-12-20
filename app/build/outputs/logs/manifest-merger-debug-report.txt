@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:2:1-51:12
-INJECTED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:2:1-51:12
-INJECTED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:2:1-51:12
-INJECTED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:2:1-51:12
+ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:2:1-53:12
+INJECTED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:2:1-53:12
+INJECTED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:2:1-53:12
+INJECTED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:2:1-53:12
 MERGED from [com.google.firebase:firebase-core:16.0.6] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/firebase-core-16.0.6.aar/d6f0df2a0e230163ef40b996702edb23/AndroidManifest.xml:2:1-9:12
 MERGED from [com.baoyz.swipemenulistview:library:1.3.0] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/library-1.3.0.aar/4d6d542cbb790da43e6fddecc426061c/AndroidManifest.xml:2:1-11:12
 MERGED from [com.facebook.android:facebook-android-sdk:4.38.1] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-4.38.1.aar/31faf4b90691e0802f3e2a3affacbc36/AndroidManifest.xml:21:1-31:12
@@ -72,22 +72,22 @@ MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/chahyunbin/.
 MERGED from [com.android.support:interpolator:28.0.0] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/1fa4d42ff3c2cf49f2e851bfcb8fcd23/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:cursoradapter:28.0.0] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/0e8f32e676b920567c3949a599850371/AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:firebase-database-collection:16.0.1] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/firebase-database-collection-16.0.1.aar/32dce34c4d34fa8b86c82f95b2756aa3/AndroidManifest.xml:2:1-7:12
-INJECTED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:2:1-51:12
-INJECTED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:2:1-51:12
-INJECTED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:2:1-51:12
+INJECTED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:2:1-53:12
+INJECTED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:2:1-53:12
+INJECTED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:2:1-53:12
 	package
 		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:4:5-32
 		INJECTED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml
-		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:2:1-51:12
+		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:2:1-53:12
 		INJECTED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml
 	xmlns:tools
 		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml
-		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:2:1-51:12
+		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:2:1-53:12
 		INJECTED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:2:11-69
@@ -122,7 +122,7 @@ ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:10:5
 	android:name
 		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:10:22-66
 application
-ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:12:5-49:19
+ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:12:5-51:19
 MERGED from [com.google.firebase:firebase-core:16.0.6] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/firebase-core-16.0.6.aar/d6f0df2a0e230163ef40b996702edb23/AndroidManifest.xml:7:5-20
 MERGED from [com.google.firebase:firebase-core:16.0.6] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/firebase-core-16.0.6.aar/d6f0df2a0e230163ef40b996702edb23/AndroidManifest.xml:7:5-20
 MERGED from [com.facebook.android:facebook-android-sdk:4.38.1] /Users/chahyunbin/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-4.38.1.aar/31faf4b90691e0802f3e2a3affacbc36/AndroidManifest.xml:28:5-29:19
@@ -213,52 +213,58 @@ category#android.intent.category.LAUNCHER
 ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:24:17-77
 	android:name
 		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:24:27-74
+activity#chahyunbin.cwapp1.BottomBar.Tabbar_activity
+ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:27:9-28:55
+	android:theme
+		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:28:13-53
+	android:name
+		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:27:19-60
 activity#chahyunbin.cwapp1.FirebaseDatabase_Input
-ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:27:9-29:63
+ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:29:9-31:63
 	android:theme
-		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:29:13-60
+		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:31:13-60
 	android:name
-		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:28:13-68
-activity#chahyunbin.cwapp1.AdminMember.AdminMember
-ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:30:9-32:63
+		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:30:13-68
+activity#chahyunbin.cwapp1.BottomBar.CellMemberFregment
+ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:32:9-34:63
 	android:theme
-		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:32:13-60
+		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:34:13-60
 	android:name
-		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:31:13-69
+		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:33:13-74
 activity#chahyunbin.cwapp1.Bible.Bible
-ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:33:9-35:63
+ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:35:9-37:63
 	android:theme
-		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:35:13-60
+		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:37:13-60
 	android:name
-		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:34:13-57
+		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:36:13-57
 activity#chahyunbin.cwapp1.MainActivity
-ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:36:9-38:63
+ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:38:9-40:63
 	android:theme
-		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:38:13-60
+		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:40:13-60
 	android:name
-		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:37:13-58
+		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:39:13-58
 activity#chahyunbin.cwapp1.Login.EmailSignUp
-ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:39:9-41:63
+ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:41:9-43:63
 	android:theme
-		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:41:13-60
+		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:43:13-60
 	android:name
-		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:40:13-63
+		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:42:13-63
 activity#chahyunbin.cwapp1.Login.EmailSignIn
-ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:42:9-44:63
+ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:44:9-46:63
 	android:theme
-		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:44:13-60
+		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:46:13-60
 	android:name
-		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:43:13-63
+		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:45:13-63
 activity#chahyunbin.cwapp1.Personal_Info
-ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:45:9-47:63
+ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:47:9-49:63
 	android:theme
-		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:47:13-60
+		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:49:13-60
 	android:name
-		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:46:13-59
+		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:48:13-59
 activity#chahyunbin.cwapp1.AdminMember.MemberInfo
-ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:48:9-86
+ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:50:9-86
 	android:name
-		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:48:19-74
+		ADDED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml:50:19-74
 uses-sdk
 INJECTED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/chahyunbin/Desktop/cwapp/app/src/main/AndroidManifest.xml
