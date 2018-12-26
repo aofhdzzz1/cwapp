@@ -14,7 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import chahyunbin.cwapp1.AdminMember.SingleAdapter;
-import chahyunbin.cwapp1.MainActivity;
+import chahyunbin.cwapp1.MainActivity.LeaderMainActivity;
 
 import chahyunbin.cwapp1.R;
 import chahyunbin.cwapp1.model.Person;
@@ -57,7 +57,7 @@ public class AddMember extends Activity {
         backbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                Intent intent = new Intent(getApplicationContext(), LeaderMainActivity.class);
                 startActivity(intent);
                 finish();
             }

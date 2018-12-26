@@ -15,6 +15,9 @@ anim design_bottom_sheet_slide_in
 anim design_bottom_sheet_slide_out
 anim design_snackbar_in
 anim design_snackbar_out
+anim to_down_translate
+anim to_left_translate
+anim to_right_translate
 animator design_appbar_state_list_animator
 attr actionBarDivider
 attr actionBarItemBackground
@@ -1148,6 +1151,9 @@ id icon_only
 id iconsOnly
 id ifRoom
 id image
+id image1
+id image2
+id image3
 id info
 id inline
 id invisible
@@ -1340,6 +1346,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_email_sign_in
 layout activity_email_sign_up
+layout activity_loding
 layout activity_main
 layout activity_member_info
 layout activity_personal_info
@@ -1377,6 +1384,7 @@ layout design_text_input_password_icon
 layout login_menu
 layout member_item
 layout member_item2
+layout member_main_activity
 layout messenger_button_send_blue_large
 layout messenger_button_send_blue_round
 layout messenger_button_send_blue_small

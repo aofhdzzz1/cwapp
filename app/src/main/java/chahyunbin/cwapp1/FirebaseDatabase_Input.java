@@ -17,13 +17,15 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
 
+import chahyunbin.cwapp1.MainActivity.LeaderMainActivity;
+
 public class FirebaseDatabase_Input extends Activity {
     EditText nameInput, phonenumberInput, ageInput, dayInput, monthInput;
     String name, phonenumber, age, day, month;
     Boolean btn;
     Button savebtn, backbtn;
     private DatabaseReference mDatabase;
-    MainActivity mainActivity;
+    LeaderMainActivity leaderMainActivity;
     HashMap<String, String> personData;
 
     @Override
@@ -45,7 +47,7 @@ public class FirebaseDatabase_Input extends Activity {
 
 
 
-        mDatabase = FirebaseDatabase.getInstance().getReference().child("User/" +mainActivity.email+"/Members");
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("User/" + leaderMainActivity.email+"/Members");
 
         savebtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,7 +60,7 @@ public class FirebaseDatabase_Input extends Activity {
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                Intent intent = new Intent(getApplicationContext(), LeaderMainActivity.class);
                 startActivity(intent);
                 finish();
             }

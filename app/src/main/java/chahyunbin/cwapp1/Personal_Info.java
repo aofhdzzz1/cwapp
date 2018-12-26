@@ -15,6 +15,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 
+import chahyunbin.cwapp1.MainActivity.LeaderMainActivity;
 import chahyunbin.cwapp1.model.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -69,7 +70,7 @@ public class Personal_Info extends Activity implements View.OnClickListener {
         if (emaildata != null)
             email = emaildata.substring(0, emaildata.indexOf("@"));
 
-        CheckUserInfo();
+        //CheckUserInfo();
 
 
 
@@ -88,7 +89,7 @@ public class Personal_Info extends Activity implements View.OnClickListener {
         // Get firebase Login Email
 
 
-//        if(MainActivity.username == null) {
+//        if(LeaderMainActivity.username == null) {
 //            if (signIn.useremail != null)
 //                email = signIn.useremail.substring(0, signIn.useremail.indexOf("@"));
 //            else if (googlelogin.googleName != null)
@@ -156,7 +157,7 @@ public class Personal_Info extends Activity implements View.OnClickListener {
                     username = user.getName();
                     Log.d("Firebase", "Personal_info CheckUser : "+username);
                     if(username!= null) {
-                        Intent intent = new Intent(Personal_Info.this, MainActivity.class);
+                        Intent intent = new Intent(Personal_Info.this, LeaderMainActivity.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(intent);
@@ -266,7 +267,7 @@ public class Personal_Info extends Activity implements View.OnClickListener {
                public void onComplete(@NonNull Task<Void> task) {
                    if(task.isSuccessful()){
                        Toast.makeText(getApplicationContext(), userName+"님 저장되었습니다", Toast.LENGTH_SHORT).show();
-                       Intent intent = new Intent(Personal_Info.this,MainActivity.class);
+                       Intent intent = new Intent(Personal_Info.this,LeaderMainActivity.class);
                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                        startActivity(intent);
                    }

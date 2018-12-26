@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="chahyunbin.cwapp1"
-    android:versionCode="3"
-    android:versionName="1.2" >
+    android:versionCode="4"
+    android:versionName="2" >
 
     <uses-sdk
         android:minSdkVersion="24"
@@ -42,13 +42,10 @@
             android:name="chahyunbin.cwapp1.FirebaseDatabase_Input"
             android:theme="@android:style/Theme.NoTitleBar" />
         <activity
-            android:name="chahyunbin.cwapp1.BottomBar.CellMemberFregment"
-            android:theme="@android:style/Theme.NoTitleBar" />
-        <activity
             android:name="chahyunbin.cwapp1.Bible.Bible"
             android:theme="@android:style/Theme.NoTitleBar" />
         <activity
-            android:name="chahyunbin.cwapp1.MainActivity"
+            android:name="chahyunbin.cwapp1.MainActivity.LeaderMainActivity"
             android:theme="@android:style/Theme.NoTitleBar" />
         <activity
             android:name="chahyunbin.cwapp1.Login.EmailSignUp"
@@ -60,6 +57,8 @@
             android:name="chahyunbin.cwapp1.Personal_Info"
             android:theme="@android:style/Theme.NoTitleBar" />
         <activity android:name="chahyunbin.cwapp1.AdminMember.MemberInfo" />
+        <activity android:name="chahyunbin.cwapp1.MainActivity.MemberMainActivity" />
+        <activity android:name="chahyunbin.cwapp1.LodingActivity" />
         <activity
             android:name="com.facebook.FacebookActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"

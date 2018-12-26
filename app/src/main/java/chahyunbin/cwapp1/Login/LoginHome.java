@@ -1,6 +1,5 @@
 package chahyunbin.cwapp1.Login;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -10,8 +9,8 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
-import chahyunbin.cwapp1.MainActivity;
-import chahyunbin.cwapp1.Personal_Info;
+import chahyunbin.cwapp1.LodingActivity;
+import chahyunbin.cwapp1.MainActivity.LeaderMainActivity;
 import chahyunbin.cwapp1.R;
 import chahyunbin.cwapp1.model.User;
 
@@ -36,12 +35,14 @@ import com.google.firebase.database.ValueEventListener;
 public class LoginHome extends BaseActivity implements View.OnClickListener {
 
 
+
     private static final int RC_SIGN_IN =1 ;
     private static final String TAG = "Firebase";
-
+    public static Thread thread1;
     public static GoogleSignInClient mGoogleSignInClient;
     public static FirebaseAuth mAuth;
-    String username;
+    public static String username;
+    public static String imLeader;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +54,7 @@ public class LoginHome extends BaseActivity implements View.OnClickListener {
         findViewById(R.id.googleSignInButton).setOnClickListener(this);
         findViewById(R.id.emailSignInButton).setOnClickListener(this);
 
+
         mAuth = FirebaseAuth.getInstance();
 
 
@@ -61,6 +63,10 @@ public class LoginHome extends BaseActivity implements View.OnClickListener {
                 .requestEmail()
                 .build();
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+
+        signIn();
+
+
 
     }
 
@@ -74,12 +80,15 @@ public class LoginHome extends BaseActivity implements View.OnClickListener {
 
 
 
+
+
     }
 
 
     private void signIn() {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
+
     }
 
 
@@ -96,6 +105,7 @@ public class LoginHome extends BaseActivity implements View.OnClickListener {
                 // Google Sign In was successful, authenticate with Firebase
                 GoogleSignInAccount account = task.getResult(ApiException.class);
                 firebaseAuthWithGoogle(account);
+
             } catch (ApiException e) {
                 // Google Sign In failed, update UI appropriately
                 Log.w(TAG, "Google sign in failed", e);
@@ -125,56 +135,11 @@ public class LoginHome extends BaseActivity implements View.OnClickListener {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.d(TAG, "signInWithCredential:success");
 
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            String email =user.getEmail();
-                            String emailId = email.substring(0,email.indexOf("@"));
-                            Query query =  FirebaseDatabase.getInstance().getReference("User/"+emailId).orderByChild("UserInfo");
-                            query.addValueEventListener(new ValueEventListener() {
-
-                                @Override
-
-                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                                        User user = snapshot.getValue(User.class);
-
-                                        username = user.getName();
-
-
-                                        Log.d("Firebase", "LoginHome username: "+username);
-
-                                    }
-                                }
-
-                                @Override
-                                public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                                }
-                            });
-                            showProgressDialog();
-                            try {
-                                Thread.sleep(900);
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
-                            if(username==null) {
-                                hideProgressDialog();
-                                Intent intent = new Intent(LoginHome.this, Personal_Info.class);
-                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                                startActivity(intent);
-                            }else{
-                                hideProgressDialog();
-                                Intent intent = new Intent(LoginHome.this, MainActivity.class);
-                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                                startActivity(intent);
-                            }
-
-
+                        Intent intent = new Intent(LoginHome.this,LodingActivity.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(intent);
 
                         } else {
                             // If sign in fails, display a message to the user.
@@ -186,86 +151,6 @@ public class LoginHome extends BaseActivity implements View.OnClickListener {
                 });
     }
 
-//
-    // [END on_start_check_user]
-
-    // [START onactivityresult]
-//    @Override
-//    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-//        super.onActivityResult(requestCode, resultCode, data);
-//
-//        // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
-//        if (requestCode == RC_SIGN_IN) {
-//            Task<GoogleSignInAccount> task;
-//            task = GoogleSignIn.getSignedInAccountFromIntent(data);
-//            try {
-//                // Google Sign In was successful, authenticate with Firebase
-//                GoogleSignInAccount account = task.getResult(ApiException.class);
-//                firebaseAuthWithGoogle(account);
-//            } catch (ApiException e) {
-//                // Google Sign In failed, update UI appropriately
-//                Log.w(TAG, "Google sign in failed", e);
-//                // [START_EXCLUDE]
-//                // [END_EXCLUDE]
-//            }
-//        }
-//    }
-//    // [END onactivityresult]
-//
-//    // [START auth_with_google]
-//    private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
-//        Log.d(TAG, "firebaseAuthWithGoogle:" + acct.getId());
-//        // [START_EXCLUDE silent]
-//        showProgressDialog();
-//        // [END_EXCLUDE]
-//
-//        AuthCredential credential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
-//        mAuth.signInWithCredential(credential)
-//                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-//                    @Override
-//                    public void onComplete(@NonNull Task<AuthResult> task) {
-//                        if (task.isSuccessful()) {
-//                            // Sign in success, update UI with the signed-in user's information
-//                            Log.d(TAG, "signInWithCredential:success");
-//                            FirebaseUser user = mAuth.getCurrentUser();
-//                            googleName = user.getEmail();
-//                            Intent intent = new Intent(LoginHome.this, Personal_Info.class);
-//                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-//                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//                            startActivity(intent);
-//                        } else {
-//                            // If sign in fails, display a message to the user.
-//                            Log.w(TAG, "signInWithCredential:failure", task.getException());
-//
-//                        }
-//
-//                        // [START_EXCLUDE]
-//                        hideProgressDialog();
-//                        // [END_EXCLUDE]
-//                    }
-//                });
-//    }
-//    // [END auth_with_google]
-//
-//    // [START signin]
-//    private void signIn() {
-//        // [START config_signin]
-//        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-//                .requestIdToken(getString(R.string.default_web_client_id))
-//                .requestEmail()
-//                .build();
-//        // [END config_signin]
-//        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
-//
-//
-//        // [START initialize_auth]
-//        mAuth = FirebaseAuth.getInstance();
-//        // [END initialize_auth]
-//        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
-//        startActivityForResult(signInIntent, RC_SIGN_IN);
-//    }
-//    // [END signin]
-//
    public static void signOut() {
         // Firebase sign out
         mAuth.signOut();
@@ -287,10 +172,7 @@ public class LoginHome extends BaseActivity implements View.OnClickListener {
         int i = v.getId();
         if (i == R.id.googleSignInButton) {
             // Configure Google Sign In
-
-
             signIn();
-
         }else if(i == R.id.emailSignInButton){
             startActivity(new Intent(LoginHome.this,EmailSignIn.class));
         }
@@ -301,10 +183,12 @@ public class LoginHome extends BaseActivity implements View.OnClickListener {
         super.onBackPressed();
     }
 
-    protected void Loding(){
 
-    }
+
 
 }
+
+
+
 
 

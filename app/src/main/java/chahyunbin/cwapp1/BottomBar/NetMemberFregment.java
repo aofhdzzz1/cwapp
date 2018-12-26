@@ -30,9 +30,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-import chahyunbin.cwapp1.MainActivity;
+import chahyunbin.cwapp1.MainActivity.LeaderMainActivity;
 import chahyunbin.cwapp1.R;
-import chahyunbin.cwapp1.model.Person;
 import chahyunbin.cwapp1.model.User;
 
 import static com.facebook.FacebookSdk.getApplicationContext;
@@ -73,7 +72,7 @@ public class NetMemberFregment extends Fragment {
         list = new ArrayList<>();
         adapter = new UserAdapter();
 
-        ref.child("User/" + MainActivity.email +"/UserInfo").addValueEventListener(new ValueEventListener() {
+        ref.child("User/" + LeaderMainActivity.email +"/UserInfo").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 User user = dataSnapshot.getValue(User.class);
@@ -97,7 +96,7 @@ public class NetMemberFregment extends Fragment {
                     User user = snapshot.child("UserInfo").getValue(User.class);
                     if(user.getLeader().equals(myCell));
                     {
-                        if(!user.getName().equals(MainActivity.username)) {
+                        if(!user.getName().equals(LeaderMainActivity.username)) {
                             list.add(user);
                             adapter.add(user);
                         }

@@ -6,7 +6,7 @@
 //import android.support.v7.app.AppCompatActivity;
 //import android.os.Bundle;
 //
-//import MainActivity;
+//import LeaderMainActivity;
 //import com.example.chahyunbin.cwapp.R;
 //import com.firebase.ui.auth.AuthUI;
 //import com.firebase.ui.auth.IdpResponse;
@@ -56,7 +56,7 @@
 //        FirebaseUser user = mAuth.getCurrentUser();
 //        if(user != null) {
 //            finish();
-//            startActivity(new Intent(FirebaseUI.this, MainActivity.class));
+//            startActivity(new Intent(FirebaseUI.this, LeaderMainActivity.class));
 //        }
 //    }
 //
@@ -72,7 +72,7 @@
 //                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 //                userName = user.getDisplayName();
 //                finish();
-//                startActivity(new Intent(FirebaseUI.this,MainActivity.class));
+//                startActivity(new Intent(FirebaseUI.this,LeaderMainActivity.class));
 //            } else {
 //                // Sign in failed. If response is null the user canceled the
 //                // sign-in flow using the back button. Otherwise check

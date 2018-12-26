@@ -24,7 +24,7 @@ import com.baoyz.swipemenulistview.SwipeMenuItem;
 import com.baoyz.swipemenulistview.SwipeMenuListView;
 
 import chahyunbin.cwapp1.AdminMember.SingleAdapter;
-import chahyunbin.cwapp1.MainActivity;
+import chahyunbin.cwapp1.MainActivity.LeaderMainActivity;
 
 import chahyunbin.cwapp1.R;
 import chahyunbin.cwapp1.model.Person;
@@ -36,8 +36,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-
-import static com.facebook.FacebookSdk.getApplicationContext;
 
 public class CellMemberFregment extends Fragment {
 
@@ -79,7 +77,7 @@ public class CellMemberFregment extends Fragment {
         list = new ArrayList<>();
         adapter = new SingleAdapter();
 
-        ref.child("User/"+MainActivity.email+"/Members").addValueEventListener(new ValueEventListener() {
+        ref.child("User/"+LeaderMainActivity.email+"/Members").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 adapter.clear();
@@ -151,7 +149,7 @@ public class CellMemberFregment extends Fragment {
 
                         Person person = list.get(position);
                         list.remove(position);
-                        ref.child("User/"+MainActivity.email+"/Members").child(person.Key).removeValue();
+                        ref.child("User/"+LeaderMainActivity.email+"/Members").child(person.Key).removeValue();
                         Toast.makeText(getActivity(), "성공적으로 삭제되었습니다", Toast.LENGTH_SHORT).show();
                         break;
                     case 1:

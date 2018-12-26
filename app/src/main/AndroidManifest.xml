@@ -17,37 +17,37 @@
         android:supportsRtl="true"
         android:theme="@android:style/Theme.NoTitleBar"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name="chahyunbin.cwapp1.Login.LoginHome">
+        <activity android:name=".Login.LoginHome">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".BottomBar.Tabbar_activity"
-            android:theme="@style/AppTheme.TransNav"/>
         <activity
-            android:name="chahyunbin.cwapp1.FirebaseDatabase_Input"
+            android:name=".BottomBar.Tabbar_activity"
+            android:theme="@style/AppTheme.TransNav" />
+        <activity
+            android:name=".FirebaseDatabase_Input"
             android:theme="@android:style/Theme.NoTitleBar" />
         <activity
-            android:name="chahyunbin.cwapp1.BottomBar.CellMemberFregment"
+            android:name=".Bible.Bible"
             android:theme="@android:style/Theme.NoTitleBar" />
         <activity
-            android:name="chahyunbin.cwapp1.Bible.Bible"
+            android:name=".MainActivity.LeaderMainActivity"
             android:theme="@android:style/Theme.NoTitleBar" />
         <activity
-            android:name="chahyunbin.cwapp1.MainActivity"
+            android:name=".Login.EmailSignUp"
             android:theme="@android:style/Theme.NoTitleBar" />
         <activity
-            android:name="chahyunbin.cwapp1.Login.EmailSignUp"
+            android:name=".Login.EmailSignIn"
             android:theme="@android:style/Theme.NoTitleBar" />
         <activity
-            android:name="chahyunbin.cwapp1.Login.EmailSignIn"
+            android:name=".Personal_Info"
             android:theme="@android:style/Theme.NoTitleBar" />
-        <activity
-            android:name="chahyunbin.cwapp1.Personal_Info"
-            android:theme="@android:style/Theme.NoTitleBar" />
-        <activity android:name="chahyunbin.cwapp1.AdminMember.MemberInfo"></activity>
+        <activity android:name=".AdminMember.MemberInfo" />
+        <activity android:name=".MainActivity.MemberMainActivity" />
+        <activity android:name=".LodingActivity"></activity>
     </application>
 
 </manifest>

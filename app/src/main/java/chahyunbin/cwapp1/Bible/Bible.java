@@ -235,7 +235,7 @@ public class Bible extends Activity{
     }
     private boolean copyDatabase(Context context) {
         try {
-            Log.w("MainActivity","1");
+            Log.w("LeaderMainActivity","1");
             InputStream inputStream = context.getAssets().open(DatabaseHelper.DBNAME);
             String outFileName = DatabaseHelper.DBLOCATION + DatabaseHelper.DBNAME;
             OutputStream outputStream = new FileOutputStream(outFileName);
@@ -246,7 +246,7 @@ public class Bible extends Activity{
             }
             outputStream.flush();
             outputStream.close();
-            Log.w("MainActivity","DB copied");
+            Log.w("LeaderMainActivity","DB copied");
             return true;
         }catch (Exception e) {
             e.printStackTrace();

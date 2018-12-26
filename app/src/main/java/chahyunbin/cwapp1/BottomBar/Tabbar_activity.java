@@ -18,13 +18,11 @@ import android.view.Window;
 import android.view.WindowManager;
 
 
-import com.google.firebase.auth.FirebaseAuth;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabSelectListener;
 
 
-import chahyunbin.cwapp1.Login.LoginHome;
-import chahyunbin.cwapp1.MainActivity;
+import chahyunbin.cwapp1.MainActivity.LeaderMainActivity;
 import chahyunbin.cwapp1.R;
 
 public class Tabbar_activity extends FragmentActivity {
@@ -149,11 +147,5 @@ public class Tabbar_activity extends FragmentActivity {
         }
     }
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        Intent intent = new Intent(Tabbar_activity.this, MainActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(intent);
-    }
+
 }
