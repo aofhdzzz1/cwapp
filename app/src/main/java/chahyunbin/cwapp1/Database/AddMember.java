@@ -13,25 +13,33 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.github.florent37.singledateandtimepicker.SingleDateAndTimePicker;
+import com.github.florent37.singledateandtimepicker.dialog.SingleDateAndTimePickerDialog;
+
+import java.util.Date;
+
 import chahyunbin.cwapp1.AdminMember.SingleAdapter;
 import chahyunbin.cwapp1.MainActivity.LeaderMainActivity;
 
+import chahyunbin.cwapp1.Personal_Info;
 import chahyunbin.cwapp1.R;
 import chahyunbin.cwapp1.model.Person;
+import chahyunbin.cwapp1.model.User;
 
 
 public class AddMember extends Activity {
 
 
     String name, phonenumber;
-    EditText nameInput, phonenumberInput, ageInput, birthMonthInput, birthDayInput;
+    EditText nameInput, phonenumberInput, ageInput;
+    TextView birthdayInput;
     Button backbutton;
     int age,month,day;
     String agei, monthi,dayi;
     public TextView textView;
     PeopleTable peopleTable;
     private SingleAdapter adapter;
-
+    String datedata;
 
     final String TAG = "BookDatabase";
 
@@ -48,8 +56,7 @@ public class AddMember extends Activity {
         nameInput = (EditText)findViewById(R.id.nameInput);
         phonenumberInput = (EditText)findViewById(R.id.phonenumberInput);
         ageInput = (EditText)findViewById(R.id.ageInput);
-        birthMonthInput = (EditText)findViewById(R.id.birthMonthInput);
-        birthDayInput = (EditText)findViewById(R.id.birthDayInput);
+        birthdayInput = (TextView)findViewById(R.id.birthDayInput);
 
         backbutton = (Button)findViewById(R.id.btnBackInAdd);
 
@@ -64,6 +71,13 @@ public class AddMember extends Activity {
         });
 
         peopleTable = PeopleTable.instance(getApplicationContext());
+
+        birthdayInput.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDatePicker();
+            }
+        });
 
 
 
@@ -83,13 +97,7 @@ public class AddMember extends Activity {
             if(!"".equals(agei)) age = Integer.parseInt(agei);
             else age = 0;
 
-            monthi = birthMonthInput.getText().toString().trim();
-            if(!"".equals(monthi))  month = Integer.parseInt(monthi);
-            else month = 0;
 
-            dayi = birthDayInput.getText().toString().trim();
-            if(!"".equals(dayi)) day = Integer.parseInt(dayi);
-            else day = 0;
 
             if(name.isEmpty()){
                 nameInput.setError("Name is required");
@@ -103,14 +111,11 @@ public class AddMember extends Activity {
                 ageInput.setError("Name is required");
                 ageInput.requestFocus();
             }
-            if(monthi.isEmpty()){
-                birthMonthInput.setError("Phonenumber is required");
-                birthMonthInput.requestFocus();
+            if(birthdayInput.equals("00월 00일")){
+                birthdayInput.setError("Phonenumber is required");
+                birthdayInput.requestFocus();
             }
-            if(dayi.isEmpty()){
-                birthDayInput.setError("Phonenumber is required");
-                birthDayInput.requestFocus();
-            }
+
             if(name != null && phonenumber != null && age !=0 && month !=0 && day != 0){
 
 
@@ -159,15 +164,43 @@ public class AddMember extends Activity {
 
     }
 
+    private void showDatePicker() {
+        new SingleDateAndTimePickerDialog.Builder(AddMember.this)
+                .bottomSheet()
+                .curved()
+                .displayMinutes(false)
+                .displayHours(false)
+                .displayDays(false)
+                .displayYears(false)
+                .displayDaysOfMonth(true)
+                .displayMonth(true)
+                .displayListener(new SingleDateAndTimePickerDialog.DisplayListener() {
+                    @Override
+                    public void onDisplayed(SingleDateAndTimePicker picker) {
+                        //retrieve the SingleDateAndTimePicker
+                        Log.d("Date", "onDisplayed : "+String.valueOf(picker));
+                    }
+                })
 
+                .title("생일")
+                .listener(new SingleDateAndTimePickerDialog.Listener() {
+                    @Override
+                    public void onDateSelected(Date date) {
+                        Log.d("Date", "onDateSelected : "+String.valueOf(date));
+                        datedata = date.getMonth()+1+"월 "+date.getDate()+"일";
+                        birthdayInput.setText(String.valueOf(datedata));
+                    }
+                }).display();
+
+    }
 
    private void insertToDB() {
 
 
-        int newId = peopleTable.insert(name, phonenumber, agei, monthi, dayi);
+        int newId = peopleTable.insert(name, phonenumber, agei, datedata);
 
 
-        Person bean = new Person(newId + "", name, phonenumber, agei, monthi, dayi);
+        User bean = new User(newId + "", name, phonenumber, agei, datedata);
 
 
         SingleAdapter.insert(bean);

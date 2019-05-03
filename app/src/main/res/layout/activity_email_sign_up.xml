@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_layout"
     android:layout_width="match_parent"
@@ -16,6 +17,7 @@
         android:background="@color/grey_300"
         android:gravity="center_vertical">
 
+
         <LinearLayout
             android:id="@+id/emailPasswordFields"
             android:layout_width="match_parent"
@@ -23,25 +25,43 @@
             android:orientation="vertical"
             android:paddingLeft="16dp"
             android:paddingRight="16dp">
-            <EditText
-                android:id="@+id/fieldUserNameSignUp"
+
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/hint_user_name"
-                android:inputType="text" />
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/nanumgothicextrabold"
+                android:text="회원가입"
+                android:textColor="@color/bb_darkBackgroundColor"
+                android:textSize="40dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                android:text="쉽고 간단하게 계정을 만들어보세요"
+                android:textColor="@color/com_facebook_button_background_color_focused_disabled"
+                android:textSize="20dp" />
 
             <EditText
                 android:id="@+id/fieldEmailSignUp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/hint_email"
-                android:inputType="textEmailAddress" />
+                android:inputType="text" />
 
             <EditText
                 android:id="@+id/fieldPasswordSignUp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/hint_password"
+                android:inputType="textEmailAddress" />
+
+            <EditText
+                android:id="@+id/fieldConfirmPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_confirm_password"
                 android:inputType="textPassword" />
         </LinearLayout>
 
@@ -58,23 +78,24 @@
                 android:id="@+id/emailSignUpButton"
                 style="@style/Widget.AppCompat.Button.Colored"
 
-                android:layout_height="wrap_content"
                 android:layout_width="match_parent"
-                android:text="Sign Up"
-                />
+                android:layout_height="wrap_content"
+                android:text="Create Account"
+                android:textSize="18dp" />
 
             <TextView
                 android:id="@+id/textViewSignIn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="이미 회원이신가요? 로그인 화면으로 돌아가기"
-                android:textSize="16dp"
-                android:textColor="@color/grey_500"
-                android:gravity="center"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:text="이미 회원이신가요? 로그인 화면으로 돌아가기"
+                android:textColor="@color/com_facebook_button_background_color_focused_disabled"
+                android:textSize="16dp" />
 
         </LinearLayout>
+
         <ProgressBar
             android:id="@+id/progressbar"
             android:layout_width="wrap_content"
@@ -82,9 +103,6 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:visibility="gone" />
-
-
-
 
 
     </RelativeLayout>

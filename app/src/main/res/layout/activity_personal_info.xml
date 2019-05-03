@@ -1,325 +1,271 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center"
     android:background="#FFFFFF"
     android:orientation="vertical">
-<TextView
-    android:id="@+id/textView_Personal_info"
-    android:layout_alignParentTop="true"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="사용자정보"
-    android:textSize="50dp"
-    android:textStyle="bold"
-    android:textColor="#111"
-    android:layout_marginTop="10dp"
-    android:layout_marginBottom="20dp"
-    android:gravity="center"/>
 
-    <LinearLayout
-            android:id="@+id/buttonlayout"
-            android:layout_marginBottom="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_alignParentBottom="true">
-
-            <Button
-                android:layout_width="140dp"
-                android:layout_height="60dp"
-                android:id="@+id/userbtnSaveInfo"
-                android:text="저장"
-                android:layout_gravity="center"
-                android:gravity="center_horizontal"
-                android:textSize="30dp"
-                android:textStyle="bold"
-                android:textColor="@color/grey_100"
-                android:layout_marginTop="10dp"
-                style="@style/Widget.AppCompat.Button.Colored"
-                />
-
-
-
-        </LinearLayout>
-
-
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="445dp"
-        android:layout_above="@+id/buttonlayout"
-        android:layout_below="@+id/textView_Personal_info"
-        >
-
+        android:layout_height="match_parent"
+        android:gravity="center_vertical">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
             android:orientation="vertical">
 
-
-            <LinearLayout
+            <TextView
+                android:id="@+id/textView_Personal_info"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="80dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="15dp"
-                    android:text="이름 :"
-                    android:textColor="#000000"
-                    android:textSize="25dp"
-                    android:textStyle="bold" />
-
-                <EditText
-                    android:id="@+id/userNameInput"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:hint="이름을 입력해주세요"
-                    android:inputType="text"
-                    android:selectAllOnFocus="false"
-                    android:singleLine="false"
-                    android:textColorHint="#BDBDBD"
-
-                    android:textSize="20dp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="140dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="15dp"
-                    android:text="전화번호 :"
-                    android:textColor="#000000"
-                    android:textSize="25dp"
-                    android:textStyle="bold" />
-
-                <EditText
-                    android:id="@+id/userPhonenumberInput"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:hint="번호을 입력해주세요"
-                    android:inputType="number"
-                    android:selectAllOnFocus="false"
-                    android:singleLine="false"
-                    android:textColorHint="#BDBDBD"
-                    android:textSize="20dp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <LinearLayout
-
+                android:layout_marginBottom="5dp"
+                android:gravity="center"
+                android:text="사용자정보"
+                android:textColor="#111"
+                android:textSize="50dp"
+                android:textStyle="bold" />
+            <TextView
+                android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="80dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="15dp"
-                    android:text="나이 :"
-                    android:textColor="#000000"
-                    android:textSize="25dp"
-                    android:textStyle="bold" />
-
-                <EditText
-                    android:id="@+id/userAgeInput"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:hint="나이"
-                    android:inputType="number"
-                    android:textColorHint="#BDBDBD"
-                    android:textSize="20dp"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
+                android:layout_marginBottom="30dp"
+                android:text="사용자 정보를 입력하세요"
+                android:textColor="@color/com_facebook_button_background_color_focused_disabled"
+                android:textSize="20dp" />
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:orientation="horizontal">
+                android:layout_above="@+id/buttonlayout"
+                android:layout_below="@+id/textView_Personal_info"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="19dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="14dp"
+                android:layout_marginBottom="0dp"
+                android:gravity="center">
 
-                <TextView
-                    android:layout_width="80dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="15dp"
-                    android:text="생일 :"
-                    android:textColor="#000000"
-                    android:textSize="25dp"
-                    android:textStyle="bold" />
-
-                <EditText
-                    android:id="@+id/userMonthInput"
-                    android:layout_width="60dp"
-                    android:layout_height="50dp"
-                    android:gravity="center"
-                    android:hint="00"
-                    android:inputType="number"
-                    android:maxLength="2"
-                    android:textColorHint="#BDBDBD"
-                    android:textSize="25dp" />
-
-                <TextView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:text="월"
-                    android:textColor="#000000"
-                    android:textSize="25dp"
-                    android:textStyle="bold" />
-
-                <EditText
-                    android:id="@+id/userDayInput"
-                    android:layout_width="60dp"
-                    android:layout_height="50dp"
-                    android:gravity="center"
-                    android:hint="00"
-                    android:inputType="number"
-                    android:maxLength="2"
-                    android:textColorHint="#BDBDBD"
-                    android:textSize="25dp" />
-
-                <TextView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:text="일"
-                    android:textColor="#000000"
-                    android:textSize="25dp"
-                    android:textStyle="bold" />
-
-
-            </LinearLayout>
-
-            <LinearLayout
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="10dp"
-
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="80dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="15dp"
-                    android:text="직분"
-                    android:textColor="#000000"
-                    android:textSize="25dp"
-                    android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="horizontal">
+                    android:layout_gravity="center_vertical"
+                    android:orientation="vertical">
 
-                    <CheckBox
-                        android:id="@+id/leaderCheck"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:button="@null"
-                        android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
-                        android:paddingLeft="10dp"
-                        android:text="리더"
-                        android:textColor="#000000"
-                        android:textSize="20dp"
-                        android:textStyle="bold" />
 
-                    <CheckBox
-                        android:id="@+id/cellMamberCheck"
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:button="@null"
-                        android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
-                        android:paddingLeft="10dp"
-                        android:text="셀원"
-                        android:textColor="#000000"
-                        android:textSize="20dp"
-                        android:textStyle="bold" />
+                        android:layout_marginBottom="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="80dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="15dp"
+                            android:text="이름 :"
+                            android:textColor="#000000"
+                            android:textSize="25dp"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/userNameInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:hint="이름을 입력해주세요"
+                            android:inputType="text"
+                            android:selectAllOnFocus="false"
+                            android:singleLine="false"
+                            android:textColorHint="#BDBDBD"
+
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="140dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="15dp"
+                            android:text="전화번호 :"
+                            android:textColor="#000000"
+                            android:textSize="25dp"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/userPhonenumberInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:hint="번호을 입력해주세요"
+                            android:inputType="number"
+                            android:selectAllOnFocus="false"
+                            android:singleLine="false"
+                            android:textColorHint="#BDBDBD"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="80dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="15dp"
+                            android:text="생일 :"
+                            android:textColor="#000000"
+                            android:textSize="25dp"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/birthDayInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="0000년 00월 00일"
+                            android:textColor="#000000"
+                            android:textSize="25dp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="10dp"
+
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="80dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="15dp"
+                            android:text="직분 :"
+                            android:textColor="#000000"
+                            android:textSize="25dp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:id="@+id/leaderCheck"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:button="@null"
+                                android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
+                                android:paddingLeft="10dp"
+                                android:text="리더"
+                                android:textColor="#000000"
+                                android:textSize="20dp"
+                                android:textStyle="bold" />
+
+                            <CheckBox
+                                android:id="@+id/cellMamberCheck"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:button="@null"
+                                android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
+                                android:paddingLeft="10dp"
+                                android:text="셀원"
+                                android:textColor="#000000"
+                                android:textSize="20dp"
+                                android:textStyle="bold" />
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="90dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="15dp"
+                            android:text="소속셀 :"
+                            android:textColor="#000000"
+                            android:textSize="25dp"
+                            android:textStyle="bold" />
+
+                        <Spinner
+                            android:id="@+id/affiliation"
+                            android:layout_width="273dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
+                            android:background="@color/grey_100"
+                            android:gravity="center"
+                            android:hint="셀"
+                            android:inputType="number"
+                            android:text="21"
+                            android:textColor="#000000"
+                            android:textColorHint="#000000"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
 
 
                 </LinearLayout>
 
-
             </LinearLayout>
 
-            <LinearLayout
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+            <Button
+                android:id="@+id/userbtnSaveInfo"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="140dp"
+                android:layout_height="60dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="90dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="15dp"
-                    android:text="소속셀 :"
-                    android:textColor="#000000"
-                    android:textSize="25dp"
-                    android:textStyle="bold" />
-
-                <Spinner
-                    android:id="@+id/affiliation"
-                    android:layout_width="273dp"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:hint="셀"
-                    android:inputType="number"
-                    android:text="21"
-                    android:textColorHint="#000000"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
-                    android:textColor="#000000"
-                    android:background="@color/grey_100"
-                    />
-
-            </LinearLayout>
-
-
+                android:gravity="center_horizontal"
+                android:text="저장"
+                android:textColor="@color/grey_100"
+                android:textSize="30dp"
+                android:textStyle="bold" />
         </LinearLayout>
-    </LinearLayout>
+    </RelativeLayout>
 
-
-
-
-</RelativeLayout>
+</LinearLayout>

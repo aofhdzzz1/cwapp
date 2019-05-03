@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "835371528097-6oek5snjcjp3tg9o7o1eufdk0drbqrfa.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "chahyunbin.cwapp1",
+            "certificate_hash": "26fbd6258a2f6a299f37f2d618263ea0f9286b3f"
+          }
+        },
+        {
           "client_id": "835371528097-tmg6mmaukj6uhm5462oog2n4ag1ncr72.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
@@ -41,20 +49,50 @@
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 2,
           "other_platform_oauth_client": [
             {
               "client_id": "835371528097-sakt8un7emmfrll9trnovem43a74nllk.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:835371528097:android:7d0d629b6f522b24",
+        "android_client_info": {
+          "package_name": "com.example.uploadvideoapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "835371528097-vmj5ls3t0bh0jasckvvhhg0td8hue6k3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.uploadvideoapp",
+            "certificate_hash": "b6a19eaceb098d0de97ae3007b8e39f0aacc20b9"
+          }
         },
-        "ads_service": {
-          "status": 2
+        {
+          "client_id": "835371528097-sakt8un7emmfrll9trnovem43a74nllk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXKB6m9egGhegLF9Q_QQ3Li4ABZtC_GYU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "835371528097-sakt8un7emmfrll9trnovem43a74nllk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

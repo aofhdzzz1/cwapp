@@ -6,19 +6,19 @@
         <tab
             id="@+id/netMember"
             icon="@drawable/baseline_group_black_18"
-            title="Net Member"
-            barColorWhenSelected="#F44336"/>
+            title="네트원"
+            barColorWhenSelected="#FDDEE9"/>
         <tab
             id="@+id/cellMember"
             icon="@drawable/baseline_group_black_18"
-            title="Cell Member"
+            title="셀원"
 
-            barColorWhenSelected="#03A9F4"/>
+            barColorWhenSelected="#D4C9AF"/>
         <tab
             id="@+id/monitoring"
             icon="@drawable/baseline_group_black_18"
-            title="Monitoring"
-            barColorWhenSelected="#9C27B0"
+            title="모니터링"
+            barColorWhenSelected="#E0EBF2"
            />
     </tabs>
 

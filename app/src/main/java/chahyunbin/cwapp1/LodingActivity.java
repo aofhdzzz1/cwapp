@@ -75,26 +75,36 @@ public class LodingActivity extends Activity {
 
 
                 }
-                username = user.getName();
-                imLeader = user.getLeader();
-                Log.d("login", "LoginHome username: "+username);
-                if (username == null) {
+                if(user!=null) {
+                    username = user.getName();
+                    imLeader = user.getLeader();
+
+
+                    if (username == null) {
+                        Intent intent = new Intent(LodingActivity.this, Personal_Info.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(intent);
+                    } else {
+
+                        if (imLeader.equals("Leader")) {
+                            Intent intent = new Intent(LodingActivity.this, LeaderMainActivity.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            startActivity(intent);
+                        } else if (imLeader.equals("CellMember")) {
+                            Intent intent = new Intent(LodingActivity.this, MemberMainActivity.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            startActivity(intent);
+                        }
+                    }
+                }
+                if(user == null) {
                     Intent intent = new Intent(LodingActivity.this, Personal_Info.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
-                } else {
-                    if (imLeader.equals("Leader")) {
-                        Intent intent = new Intent(LodingActivity.this, LeaderMainActivity.class);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        startActivity(intent);
-                    } else if (imLeader.equals("CellMember")) {
-                        Intent intent = new Intent(LodingActivity.this, MemberMainActivity.class);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        startActivity(intent);
-                    }
                 }
             }
             @Override

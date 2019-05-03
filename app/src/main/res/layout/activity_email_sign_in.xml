@@ -24,6 +24,23 @@
             android:paddingLeft="16dp"
             android:paddingRight="16dp">
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="로그인"
+                android:textColor="@color/bb_darkBackgroundColor"
+                android:textSize="40dp"
+                android:fontFamily="@font/nanumgothicextrabold"
+                android:layout_marginBottom="5dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="충원교회에 오신걸 환영합니다~"
+                android:textSize="20dp"
+                android:textColor="@color/com_facebook_button_background_color_focused_disabled"
+                android:layout_marginBottom="25dp"/>
+
             <EditText
                 android:id="@+id/fieldEmail"
                 android:layout_width="match_parent"
@@ -63,7 +80,7 @@
             android:layout_height="wrap_content"
             android:text="아직 회원이 아니신가요? 회원가입하세요!"
             android:textSize="16dp"
-            android:textColor="@color/grey_500"
+            android:textColor="@color/com_facebook_button_background_color_focused_disabled"
             android:gravity="center"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"/>
@@ -73,7 +90,7 @@
                 android:layout_height="wrap_content"
                 android:text="구글 아이디로 로그인할래요!"
                 android:textSize="16dp"
-                android:textColor="@color/grey_500"
+                android:textColor="@color/com_facebook_button_background_color_focused_disabled"
                 android:gravity="center"
                 android:layout_marginBottom="10dp"/>
 

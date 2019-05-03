@@ -11,11 +11,12 @@ import android.widget.TextView;
 
 import chahyunbin.cwapp1.R;
 import chahyunbin.cwapp1.model.Person;
+import chahyunbin.cwapp1.model.User;
 
 import java.util.ArrayList;
 
 public class SingleAdapter extends BaseAdapter {
-    private static ArrayList<Person> items = new ArrayList<Person>();
+    private static ArrayList<User> items = new ArrayList<User>();
 
 
 
@@ -24,22 +25,22 @@ public class SingleAdapter extends BaseAdapter {
         notifyDataSetChanged();
     }
 
-    public void add(Person person) {
+    public void add(User user) {
 
-        items.add(person);
+        items.add(user);
     }
 
-    public static void insert(Person person) {
+    public static void insert(User user) {
 
-        items.add(0, person);
+        items.add(0, user);
     }
 
-    public void update(Person person) {
+    public void update(User user) {
         for (int i = 0; i < getCount(); i++) {
-            Person bean = items.get(i);
-            if(bean.id.equals(person.id)) {
+            User bean = items.get(i);
+            if(bean.id.equals(user.id)) {
                 items.remove(i);
-                items.add(i, person);
+                items.add(i, user);
                 notifyDataSetChanged();
                 break;
             }
@@ -50,7 +51,7 @@ public class SingleAdapter extends BaseAdapter {
         String TAG ="BookDatabase";
         Log.d(TAG, "delete: ");
         for (int i = 0; i < getCount(); i++) {
-            Person bean = items.get(i);
+            User bean = items.get(i);
             if(bean.id.equals(id + "")) {
                 items.remove(i);
                 notifyDataSetChanged();
@@ -64,8 +65,8 @@ public class SingleAdapter extends BaseAdapter {
         return items.size();
     }
     public String getItemPhone(int position){
-        Person bean = items.get(position);
-        return bean.getPhonenumber().trim();
+        User bean = items.get(position);
+        return bean.getPhone().trim();
     }
 
     @Override
@@ -78,13 +79,13 @@ public class SingleAdapter extends BaseAdapter {
         return 0;
     }
     public String getItem_ID(int position){
-        Person bean = items.get(position);
+        User bean = items.get(position);
         return bean.id;
     }
 
     @Override
     public View getView(int position, View convertview, ViewGroup parent) {
-        Person bean = items.get(position);
+        User bean = items.get(position);
         ViewHolderItem holder;
         if (convertview == null) {
             int resId = R.layout.member_item2;
@@ -98,7 +99,7 @@ public class SingleAdapter extends BaseAdapter {
             holder = (ViewHolderItem) convertview.getTag();
 
         holder.textname.setText(bean.getName());
-        holder.textphonenumber.setText(bean.getPhonenumber());
+        holder.textphonenumber.setText(bean.getPhone());
         holder.imageView.setImageResource(R.mipmap.ic_adminicon_round);
 
         return convertview;
@@ -106,7 +107,7 @@ public class SingleAdapter extends BaseAdapter {
 
 
     public String getItem_Name(int position) {
-       Person bean = items.get(position);
+       User bean = items.get(position);
         return bean.getName();
     }
 }

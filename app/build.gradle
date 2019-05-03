@@ -7,8 +7,8 @@ android {
         applicationId 'chahyunbin.cwapp1'
         minSdkVersion 24
         targetSdkVersion 28
-        versionCode 4
-        versionName "2"
+        versionCode 9
+        versionName "3.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -30,6 +30,7 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:27.1.0'
     implementation 'com.android.support:design:27.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.google.firebase:firebase-storage:16.0.1'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
@@ -49,5 +50,9 @@ dependencies {
 
     //bottombar action
     implementation 'com.roughike:bottom-bar:2.3.1'
+    //datepicker
+    implementation 'com.github.florent37:singledateandtimepicker:2.1.2'
+    implementation files('libs/picasso-2.5.2.jar')
+
 }
 apply plugin: 'com.google.gms.google-services'

@@ -24,18 +24,17 @@ public class PeopleTable extends DatabaseHelper.BaseTable {
     public static final String NAME = "name";
     public static final String PHONENUMBER = "phonenumber";
     public static final String AGE ="age";
-    public static final String DAY = "day";
-    public static final String MONTH = "month";
+    public static final String BIRTHDAY = "birthday";
+
 
     private static final String ORDER_BY_DEFAULT = _ID + " asc";
     private static final String ORDER_BY_DEFAULT_DESC = _ID + " desc";
 
-    private static final String[] COLUMNS = { _ID,NAME, PHONENUMBER, AGE, DAY, MONTH};
+    private static final String[] COLUMNS = { _ID,NAME, PHONENUMBER, AGE, BIRTHDAY};
 
     private static final String WHERE_BY_ID = _ID + "=?";
 
-    public static final String createSql = "CREATE TABLE if not exists " + TABLE_NAME + "(" + _ID + " integer primary key autoincrement, " + NAME + " text," + PHONENUMBER+ " text, " + AGE+" text, "+ MONTH
-            + " text," + DAY + " text);";
+    public static final String createSql = "CREATE TABLE if not exists " + TABLE_NAME + "(" + _ID + " integer primary key autoincrement, " + NAME + " text," + PHONENUMBER+ " text, " + AGE+" text, "+  BIRTHDAY + " text);";
 
     public synchronized static PeopleTable instance(Context context) {
         if (instance == null) {
@@ -51,7 +50,7 @@ public class PeopleTable extends DatabaseHelper.BaseTable {
         super(context);
     }
 
-    public int insert(String name, String phonenumber, String age, String month, String day) {
+    public int insert(String name, String phonenumber, String age, String birthday) {
         Log.d(TAG, "3");
 
         ContentValues values = new ContentValues();
@@ -59,8 +58,8 @@ public class PeopleTable extends DatabaseHelper.BaseTable {
         values.put(NAME, name.trim());
         values.put(PHONENUMBER, phonenumber.trim());
         values.put(AGE, age.trim());
-        values.put(MONTH, month.trim());
-        values.put(DAY, day.trim());
+        values.put(BIRTHDAY, birthday.trim());
+
         db().insertOrThrow(TABLE_NAME, null, values);
         Log.d(TAG, "insert: "+super.insert());
         return super.insert();
@@ -70,9 +69,8 @@ public class PeopleTable extends DatabaseHelper.BaseTable {
         String name = cursor.getString(cursor.getColumnIndex(NAME));
         String phonenumber = cursor.getString(cursor.getColumnIndex(PHONENUMBER));
         String age = cursor.getString(cursor.getColumnIndex(AGE));
-        String day = cursor.getString(cursor.getColumnIndex(DAY));
-        String month = cursor.getString(cursor.getColumnIndex(MONTH));
-        return new Person(id, name, phonenumber,age, day, month);
+        String birthDay = cursor.getString(cursor.getColumnIndex(BIRTHDAY));
+        return new Person(id, name, phonenumber,age, birthDay);
     }
 
     public ArrayList<Person> loadByDate(boolean isDesc) {

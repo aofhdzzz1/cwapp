@@ -16,6 +16,7 @@ import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Toast;
 
 
 import com.roughike.bottombar.BottomBar;
@@ -31,6 +32,7 @@ public class Tabbar_activity extends FragmentActivity {
 
     BottomBar bottomBar;
     private int CALL_PERMISSION_CODE=1;
+
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -145,6 +147,11 @@ public class Tabbar_activity extends FragmentActivity {
             } else {
             }
         }
+    }
+    @Override
+    public void onBackPressed() {
+    super.onBackPressed();
+
     }
 
 

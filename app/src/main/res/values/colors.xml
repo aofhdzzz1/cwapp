@@ -3,6 +3,7 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="pink">#FF4081</color>
+    <color name="brown">#3d3b3c</color>
 
     <color name="grey_100">#F5F5F5</color>
     <color name="grey_300">#E0E0E0</color>
@@ -16,4 +17,7 @@
     <color name="lightbluegreen">#4FB99F</color>
     <color name="yellow">#F2B134</color>
     <color name="redyellow">#ED553B</color>
+
+    <color name="colorWhite">#fff</color>
+    <color name="colorBlack">#000</color>
 </resources>

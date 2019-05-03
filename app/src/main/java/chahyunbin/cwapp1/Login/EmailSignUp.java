@@ -1,11 +1,18 @@
 package chahyunbin.cwapp1.Login;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.os.Build;
 import android.support.annotation.NonNull;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -19,19 +26,28 @@ import chahyunbin.cwapp1.R;
 
 public class EmailSignUp extends BaseActivity implements View.OnClickListener {
 
-    EditText userName, userEmail, userPassword;
+    EditText userConfirmPassword, userEmail, userPassword;
     ProgressBar progressBar;
+    ImageView userImage;
 
     private FirebaseAuth mAuth;
+
+    static int PReqCode = 1;
+    static int REQUESTCODE = 1;
+    Uri pickedImgUri;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_email_sign_up);
-        userName = (EditText) findViewById(R.id.fieldUserNameSignUp);
         userEmail = (EditText) findViewById(R.id.fieldEmailSignUp);
         userPassword = (EditText) findViewById(R.id.fieldPasswordSignUp);
+        userConfirmPassword = (EditText) findViewById(R.id.fieldConfirmPassword);
+
+
+
+
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -40,18 +56,35 @@ public class EmailSignUp extends BaseActivity implements View.OnClickListener {
 
          progressBar = (ProgressBar)findViewById(R.id.progressbar);
 
+
+
+
+
+    }
+
+
+
+
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(resultCode == RESULT_OK && requestCode ==REQUESTCODE && data != null){
+            // the user has successfully picked an image
+            // we need to save its reference to a Uri variable
+            pickedImgUri = data.getData();
+            userImage.setImageURI(pickedImgUri);
+        }
     }
 
 
     private void registerUser(){
-        String username = userName.getText().toString().trim();
+        String userconfirmpassword = userConfirmPassword.getText().toString().trim();
         String useremail = userEmail.getText().toString().trim();
         String userpassword = userPassword.getText().toString().trim();
 
-        if(username.isEmpty()){
-            userName.setError("Name is required");
-            userName.requestFocus();
-        }
         if(useremail.isEmpty()){
             userEmail.setError("Email is required");
             userEmail.requestFocus();
@@ -61,9 +94,9 @@ public class EmailSignUp extends BaseActivity implements View.OnClickListener {
            userPassword.setError("Password is required");
            userPassword.requestFocus();
         }
-        if(username.isEmpty()){
-            userName.setError("Name is required");
-            userName.requestFocus();
+        if(userconfirmpassword.isEmpty()){
+            userConfirmPassword.setError("Name is required");
+            userConfirmPassword.requestFocus();
         }
         if(!Patterns.EMAIL_ADDRESS.matcher(useremail).matches()){
             userEmail.setError("Please enter a valid Email");
@@ -72,6 +105,9 @@ public class EmailSignUp extends BaseActivity implements View.OnClickListener {
         }
         if(userpassword.length()<6){
             userPassword.setError("Minimum length of password should be 6");
+        }
+        if(userpassword != userconfirmpassword){
+            userConfirmPassword.setError("The password is not equal as the confirm password");
         }
 
         progressBar.setVisibility( View.VISIBLE);

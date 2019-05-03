@@ -5,28 +5,39 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.github.florent37.singledateandtimepicker.SingleDateAndTimePicker;
+import com.github.florent37.singledateandtimepicker.dialog.SingleDateAndTimePickerDialog;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Date;
 import java.util.HashMap;
 
+import chahyunbin.cwapp1.Database.AddMember;
 import chahyunbin.cwapp1.MainActivity.LeaderMainActivity;
 
 public class FirebaseDatabase_Input extends Activity {
-    EditText nameInput, phonenumberInput, ageInput, dayInput, monthInput;
-    String name, phonenumber, age, day, month;
+    EditText nameInput, phonenumberInput, ageInput;
+    TextView birthdayInput;
+    String name, phonenumber, age, datedata;
     Boolean btn;
     Button savebtn, backbtn;
     private DatabaseReference mDatabase;
     LeaderMainActivity leaderMainActivity;
     HashMap<String, String> personData;
+    long now;
+    Date date;
+
+    String saveYear;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -38,12 +49,20 @@ public class FirebaseDatabase_Input extends Activity {
         nameInput = (EditText)findViewById(R.id.nameInput);
         phonenumberInput = (EditText)findViewById(R.id.phonenumberInput);
         ageInput = (EditText)findViewById(R.id.ageInput);
-        dayInput = (EditText)findViewById(R.id.birthDayInput);
-        monthInput = (EditText)findViewById(R.id.birthMonthInput);
+        birthdayInput = (TextView) findViewById(R.id.birthDayInput);
         savebtn = (Button)findViewById(R.id.btnSaveInfo);
         backbtn = (Button)findViewById(R.id.btnBackInAdd);
 
+        birthdayInput.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDatePicker();
+            }
+        });
 
+        now = System.currentTimeMillis();
+        date = new Date(now);
+        saveYear =  String.valueOf(date.getYear());
 
 
 
@@ -75,8 +94,8 @@ public class FirebaseDatabase_Input extends Activity {
         name = nameInput.getText().toString().trim();
         phonenumber = phonenumberInput.getText().toString().trim();
         age= ageInput.getText().toString().trim();
-        day = dayInput.getText().toString().trim();
-        month = monthInput.getText().toString().trim();
+
+
         btn = true;
 
         if(name.isEmpty()){
@@ -94,6 +113,11 @@ public class FirebaseDatabase_Input extends Activity {
             ageInput.requestFocus();
             btn = false;
         }
+        if(birthdayInput.equals("00월 00일")){
+            birthdayInput.setError("생일을 입력하세요");
+            birthdayInput.requestFocus();
+            btn = false;
+        }
 
         if(btn == true) {
 
@@ -101,8 +125,9 @@ public class FirebaseDatabase_Input extends Activity {
             personData.put("Name", name);
             personData.put("Phonenumber", phonenumber);
             personData.put("Age", age);
-            personData.put("Month", month);
-            personData.put("Day", day);
+            personData.put("Birthday", datedata);
+            personData.put("SaveYear",saveYear);
+
 
             mDatabase.push().setValue(personData).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
@@ -113,5 +138,34 @@ public class FirebaseDatabase_Input extends Activity {
                 }
             });
         }
+    }
+    private void showDatePicker() {
+        new SingleDateAndTimePickerDialog.Builder(FirebaseDatabase_Input.this)
+                .bottomSheet()
+                .curved()
+                .displayMinutes(false)
+                .displayHours(false)
+                .displayDays(false)
+                .displayYears(false)
+                .displayDaysOfMonth(true)
+                .displayMonth(true)
+                .displayListener(new SingleDateAndTimePickerDialog.DisplayListener() {
+                    @Override
+                    public void onDisplayed(SingleDateAndTimePicker picker) {
+                        //retrieve the SingleDateAndTimePicker
+                        Log.d("Date", "onDisplayed : "+String.valueOf(picker));
+                    }
+                })
+
+                .title("생일")
+                .listener(new SingleDateAndTimePickerDialog.Listener() {
+                    @Override
+                    public void onDateSelected(Date date) {
+                        Log.d("Date", "onDateSelected : "+String.valueOf(date));
+                        datedata = date.getMonth()+1+"월 "+date.getDate()+"일";
+                        birthdayInput.setText(String.valueOf(datedata));
+                    }
+                }).display();
+
     }
 }

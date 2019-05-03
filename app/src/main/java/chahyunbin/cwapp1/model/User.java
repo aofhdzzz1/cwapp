@@ -4,23 +4,21 @@ public class User {
     public String id;
     private  String Name;
     private  String Phone;
-    private  String Age;
-    private  String Month;
-    private  String Day;
-    private String Leader;
-    public String key;
 
+    private  String BirthDay;
+    private String Leader;
+    public String Key;
+    private String Mycell;
     public User() {
 
     }
 
-    public User(String name, String phonenumber, String age, String month, String day, String leader) {
+    public User(String name, String phonenumber,  String birthday, String leader, String mycell) {
         Name = name;
         Phone = phonenumber;
-        Age = age;
-        Month = month;
-        Day = day;
+        BirthDay = birthday;
         Leader = leader;
+        Mycell = mycell;
     }
 
     public String getName() {
@@ -39,28 +37,14 @@ public class User {
         Phone = phonenumber;
     }
 
-    public String getAge() {
-        return Age;
+
+
+    public String getBirthDay() {
+        return BirthDay;
     }
 
-    public void setAge(String age) {
-        Age = age;
-    }
-
-    public String getMonth() {
-        return Month;
-    }
-
-    public void setMonth(String month) {
-        Month = month;
-    }
-
-    public String getDay() {
-        return Day;
-    }
-
-    public void setDay(String day) {
-        Day = day;
+    public void setBirthDay(String birthDay) {
+        BirthDay = birthDay;
     }
 
     public String getLeader() {
@@ -69,5 +53,9 @@ public class User {
 
     public void setLeader(String leader) {
         Leader = leader;
+    }
+    public String getMycell(){return Mycell;}
+    public void setMycell(String mycell){
+        Mycell = mycell;
     }
 }

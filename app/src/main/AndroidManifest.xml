@@ -17,6 +17,10 @@
         android:supportsRtl="true"
         android:theme="@android:style/Theme.NoTitleBar"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".Personal_Info_Fix"
+            android:theme="@android:style/Theme.NoTitleBar"></activity>
+        <activity android:name=".Video.Video_ListView"
+            android:theme="@android:style/Theme.NoTitleBar"/>
         <activity android:name=".Login.LoginHome">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,6 +28,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".BottomBar.Tabbar_activity"
             android:theme="@style/AppTheme.TransNav" />
@@ -45,9 +50,13 @@
         <activity
             android:name=".Personal_Info"
             android:theme="@android:style/Theme.NoTitleBar" />
-        <activity android:name=".AdminMember.MemberInfo" />
+        <activity
+            android:name=".MemberInfo.MemberInfo"
+            android:theme="@style/Theme.AppCompat.Dialog" /> <!-- android:theme="@android:style/Theme.Dialog"/> -->
         <activity android:name=".MainActivity.MemberMainActivity" />
-        <activity android:name=".LodingActivity"></activity>
+        <activity android:name=".LodingActivity" />
+        <activity android:name=".MemberCheck" />
+        <activity android:name=".MemberInfo.ExpandableListView.CheckedActivity" />
     </application>
 
 </manifest>

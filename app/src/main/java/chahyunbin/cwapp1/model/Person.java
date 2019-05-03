@@ -10,27 +10,25 @@ public class Person {
     private  String Name;
     private  String Phonenumber;
     private  String Age;
-    private  String Month;
-    private  String Day;
+    private  String Birthday;
+
     private Map<String, String> mp;
      public String Key;
 
-    public Person(String id, String name, String phonenumber,String age, String month, String day) {
+    public Person(String id, String name, String phonenumber,String age, String birthday) {
         super();
         this.id = id;
         this.Name = name;
         this.Phonenumber = phonenumber;
         this.Age = age;
-        this.Month = month;
-        this.Day = day;
+        this.Birthday = birthday;
     }
-    public Person(String name, String phonenumber,String age, String month, String day) {
+    public Person(String name, String phonenumber,String age, String birthday) {
         super();
         this.Name = name;
         this.Phonenumber = phonenumber;
         this.Age = age;
-        this.Month = month;
-        this.Day = day;
+        this.Birthday = birthday;
     }
 
     public Person() {
@@ -71,16 +69,10 @@ public class Person {
         Age = age;
     }
 
-    public String getMonth() {
-        return Month;
-    }
 
-    public void setMonth(String month) {
-        Month = month;
-    }
 
-    public String getDay() {
-        return Day;
+    public String getBirthday() {
+        return Birthday;
     }
     @Exclude
     public String getmKey() {
@@ -91,8 +83,8 @@ public class Person {
         this.Key = mKey;
     }
 
-    public void setDay(String day) {
-        Day = day;
+    public void setBirthday(String birthday) {
+        this.Birthday = birthday;
     }
     public Map<String, String> toMap() {
         mp = new HashMap<>();
@@ -100,8 +92,8 @@ public class Person {
         mp.put("Phonenumber", this.Phonenumber);
         mp.put("Age", this.Age);
 
-        mp.put("Month",this.Month);
-        mp.put("Day",this.Day);
+        mp.put("Birthday",this.Birthday);
+
 
 
         return mp;

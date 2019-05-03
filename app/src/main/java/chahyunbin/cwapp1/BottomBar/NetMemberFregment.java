@@ -43,7 +43,7 @@ public class NetMemberFregment extends Fragment {
 
 
     Button button;
-    final String TAG = "BookDatabase";
+    final String TAG = "NetMember";
     private int CALL_PERMISSION_CODE = 1;
     Activity activity;
 
@@ -76,7 +76,9 @@ public class NetMemberFregment extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 User user = dataSnapshot.getValue(User.class);
-                myCell = user.getLeader();
+                myCell = user.getMycell();
+                Log.d(TAG, "myCell = "+ myCell);
+
             }
 
             @Override
@@ -86,7 +88,7 @@ public class NetMemberFregment extends Fragment {
         });
 
 
-        Query query =ref.child("User").orderByChild("Leader");
+        Query query =ref.child("User").orderByChild("Mycell").equalTo(myCell);
         query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -94,17 +96,20 @@ public class NetMemberFregment extends Fragment {
 
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     User user = snapshot.child("UserInfo").getValue(User.class);
-                    if(user.getLeader().equals(myCell));
+                    if(user.getMycell().equals(myCell))
                     {
+
                         if(!user.getName().equals(LeaderMainActivity.username)) {
+                            Log.d(TAG, "divide myCell = "+ myCell);
+                            Log.d(TAG, "so my cell is ... " + user.getMycell());
                             list.add(user);
                             adapter.add(user);
                         }
                     }
                 }
-                if (adapter.getCount() == 0) {
-                    Toast.makeText(getActivity(), "셀이 없어?", Toast.LENGTH_SHORT).show();
-                }
+//                if (adapter.getCount() == 0) {
+//                    Toast.makeText(getActivity(), "셀이 없어?", Toast.LENGTH_SHORT).show();
+//                }
                 listView.setAdapter(adapter);
             }
 

@@ -21,7 +21,9 @@ import chahyunbin.cwapp1.Login.EmailSignIn;
 import chahyunbin.cwapp1.Login.LoginHome;
 
 
+import chahyunbin.cwapp1.Personal_Info_Fix;
 import chahyunbin.cwapp1.R;
+import chahyunbin.cwapp1.Video.Video_ListView;
 import chahyunbin.cwapp1.model.User;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -33,7 +35,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class LeaderMainActivity extends Activity {
 
-    Button button1,button2,button3;
+    Button button1,button2,button3, button4;
     ImageView imageView;
     public static String username = null;
     String phonenumber;
@@ -51,15 +53,13 @@ public class LeaderMainActivity extends Activity {
     FirebaseUser user;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_main);
-
+        setContentView(R.layout.activity_main_leader);
 
 
         user = FirebaseAuth.getInstance().getCurrentUser();
@@ -86,11 +86,13 @@ public class LeaderMainActivity extends Activity {
 
         GetUserName();
 
-
-
-
-
-
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LeaderMainActivity.this, Personal_Info_Fix.class);
+                startActivity(intent);
+            }
+        });
 
 
         //textView.setText(firebaseUI.userName);
@@ -99,7 +101,10 @@ public class LeaderMainActivity extends Activity {
         findViewById(R.id.button1).setOnClickListener(myClick);
         findViewById(R.id.button2).setOnClickListener(myClick);
         findViewById(R.id.button3).setOnClickListener(myClick);
+        findViewById(R.id.button4).setOnClickListener(myClick);
     }
+
+
 
     private void GetUserName() {
         Query query =  FirebaseDatabase.getInstance().getReference("User/"+email).orderByChild("UserInfo");
@@ -148,6 +153,9 @@ public class LeaderMainActivity extends Activity {
                         break;
                     case R.id.button3:
                         startActivity(new Intent(LeaderMainActivity.this, Bible.class));
+                        break;
+                    case R.id.button4:
+                        startActivity(new Intent(LeaderMainActivity.this, Video_ListView.class));
                         break;
                     case R.id.logoutbtn:
                         googlelogin.signOut();
