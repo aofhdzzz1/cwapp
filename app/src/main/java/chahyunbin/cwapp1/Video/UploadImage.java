@@ -1,5 +1,6 @@
 package chahyunbin.cwapp1.Video;
 
+
 public class UploadImage {
     private String mName;
     private String mImageUri;
@@ -10,6 +11,7 @@ public class UploadImage {
             name = "No Name";
 
         }
+
 
 
         mName = name;

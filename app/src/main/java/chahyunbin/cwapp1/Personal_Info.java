@@ -49,7 +49,8 @@ public class Personal_Info extends Activity implements View.OnClickListener {
     public static String imleader;
 
     String userName, userPhone;
-    String datedata, saveYear;
+    String datedata;
+    String saveYear;
     public static String spinerval;
     String email;
 
@@ -179,6 +180,7 @@ public class Personal_Info extends Activity implements View.OnClickListener {
             year  = selectedYear;
             month = selectedMonth;
             day   = selectedDay;
+            datedata = String.valueOf(selectedYear)+String.valueOf(selectedMonth-1)+String.valueOf(selectedDay);
 
             birthDayInput.setText(new StringBuilder().append(year).append("년 ").append(month + 1)
                     .append("월 ").append(day).append("일"));

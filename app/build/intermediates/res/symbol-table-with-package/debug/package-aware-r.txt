@@ -1033,6 +1033,10 @@ drawable googleg_standard_color_18
 drawable ic_delete
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable ic_media_fullscreen_shrink
+drawable ic_media_fullscreen_stretch
+drawable ic_media_pause
+drawable ic_media_play
 drawable ic_phone
 drawable ic_undo
 drawable icon_1
@@ -1221,6 +1225,7 @@ id exitUntilCollapsed
 id expand_activities_button
 id expandableListView
 id expanded_menu
+id ffwd
 id fieldConfirmPassword
 id fieldEmail
 id fieldEmailSignUp
@@ -1232,6 +1237,7 @@ id fill_vertical
 id fixed
 id fontchangebtn
 id forever
+id fullscreen
 id ghost_view
 id gohome
 id gone
@@ -1251,6 +1257,7 @@ id image2
 id image3
 id image_view
 id image_view_upload
+id img_viewpager_childimage
 id info
 id inline
 id invisible
@@ -1274,6 +1281,7 @@ id logoutbtn
 id main_layout
 id masked
 id media_actions
+id mediacontroller_progress
 id menu
 id message
 id messenger_send_button
@@ -1289,6 +1297,7 @@ id navigation_header_container
 id netMember
 id never
 id never_display
+id next
 id none
 id normal
 id notification_background
@@ -1298,10 +1307,12 @@ id number
 id open_graph
 id packed
 id page
+id pager
 id parallax
 id parent
 id parentPanel
 id parent_matrix
+id pause
 id percent
 id phonenumberInput
 id phonenumberView
@@ -1310,6 +1321,7 @@ id pickerTitleHeader
 id picker_tab_0
 id picker_tab_1
 id pin
+id prev
 id progress_bar
 id progress_circle
 id progress_circular
@@ -1319,6 +1331,7 @@ id progressbarSignin
 id radio
 id recycler_view
 id relativelayout
+id rew
 id right
 id right_icon
 id right_side
@@ -1392,6 +1405,7 @@ id text_view_show_uploads
 id textinput_counter
 id textinput_error
 id time
+id time_current
 id title
 id titleDividerNoCustom
 id title_template
@@ -1419,6 +1433,10 @@ id userPhonenumberInput
 id userbtnSaveInfo
 id verse
 id verseSpinner
+id videoSurface
+id videoSurfaceContainer
+id videoView
+id video_container
 id video_view
 id viewDivider
 id view_offset_helper
@@ -1476,6 +1494,8 @@ layout activity_member_check
 layout activity_member_info
 layout activity_personal__info__fix
 layout activity_personal_info
+layout activity_video_player
+layout activity_video_view
 layout activity_videos
 layout addmember
 layout admin_tabbar
@@ -1517,6 +1537,7 @@ layout group_list_layout_choose_cartegroy
 layout group_list_layout_my_cartegories
 layout list_row
 layout login_menu
+layout media_controller
 layout member_item
 layout member_item2
 layout messenger_button_send_blue_large
@@ -1553,6 +1574,7 @@ layout undo
 layout video_item
 layout video_listview
 layout video_listview_adapter
+layout viewpager_childview
 menu mainmenu
 mipmap ic_adminicon
 mipmap ic_adminicon_round
@@ -1651,6 +1673,7 @@ string desc_google_sign_in
 string desc_passwordless
 string desc_phone_auth
 string desc_twitter_login
+string description
 string disconnect
 string email_fmt
 string emailpassword_status_fmt

@@ -17,6 +17,10 @@ public class UploadVideo {
 
     }
 
+    public UploadVideo(){
+
+    }
+
     public String getmName() {
         return mName;
     }

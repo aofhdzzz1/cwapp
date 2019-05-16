@@ -34,7 +34,7 @@ import com.google.firebase.storage.StorageTask;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  {
 
     private static final int PICK_VIDEO_REQUEST = 3;
     private static final int PICK_IMAGE_REQUEST = 4;
@@ -292,4 +292,6 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, VideosActivity.class);
         startActivity(intent);
     }
+
+
 }

@@ -1,6 +1,5 @@
 package com.example.uploadvideoapp;
 
-import android.net.Uri;
 
 public class UploadImage {
     private String mName;
