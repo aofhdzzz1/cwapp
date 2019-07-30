@@ -6,18 +6,18 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 
-import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
 import com.baoyz.swipemenulistview.SwipeMenu;
 import com.baoyz.swipemenulistview.SwipeMenuCreator;
@@ -25,10 +25,9 @@ import com.baoyz.swipemenulistview.SwipeMenuItem;
 import com.baoyz.swipemenulistview.SwipeMenuListView;
 
 import chahyunbin.cwapp1.AdminMember.SingleAdapter;
-import chahyunbin.cwapp1.Bible.Bible;
 import chahyunbin.cwapp1.MainActivity.LeaderMainActivity;
 
-import chahyunbin.cwapp1.MemberInfo.MemberInfo;
+import chahyunbin.cwapp1.MemberInfo.MemberInfoActivity;
 import chahyunbin.cwapp1.R;
 import chahyunbin.cwapp1.model.Person;
 import chahyunbin.cwapp1.model.User;
@@ -94,7 +93,7 @@ public class CellMemberFregment extends Fragment {
         list = new ArrayList<>();
         adapter = new SingleAdapter();
 
-        Log.d(TAG, "username :"+username);
+        //리더 이름구하기
         ref.child("User").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -195,7 +194,7 @@ public class CellMemberFregment extends Fragment {
                 String name = adapter.getItem_Name(i);
                 cellmemberInfo = name;
                 Toast.makeText(getActivity(), "선택" + name, Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getActivity(), MemberInfo.class));
+                startActivity(new Intent(getActivity(), MemberInfoActivity.class));
 
             }
         });

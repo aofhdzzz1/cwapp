@@ -5,12 +5,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Parcelable;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -23,12 +22,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -101,7 +97,7 @@ public class VideosActivity extends AppCompatActivity implements VideoAdapter.On
 
     @Override
     public void onItemClick(int position) {
-        Intent intent = new Intent(this, Video_View.class);
+        Intent intent = new Intent(this, VideoviewActivity.class);
 
         if(mUploadVideo.get(position).getmVideoUri() != null) {
             intent.putExtra("VideoUri", mUploadVideo.get(position).getmVideoUri());
@@ -158,6 +154,12 @@ public class VideosActivity extends AppCompatActivity implements VideoAdapter.On
             }
         });
     }
+
+    @Override
+    public void onDeleteClick(int position) {
+
+    }
+
     public void downloadFile(Context context, String fileName, String fileExtension, String destinationDirectory, String url) {
 
 

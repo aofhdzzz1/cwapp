@@ -4,12 +4,11 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Message;
-import android.support.annotation.NonNull;
-import android.util.Log;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+
+import androidx.annotation.NonNull;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -19,10 +18,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.Timer;
-import java.util.TimerTask;
-
-import chahyunbin.cwapp1.Login.LoginHome;
+import chahyunbin.cwapp1.Login.LoginHomeActivity;
 import chahyunbin.cwapp1.MainActivity.LeaderMainActivity;
 import chahyunbin.cwapp1.MainActivity.MemberMainActivity;
 import chahyunbin.cwapp1.model.User;
@@ -31,7 +27,7 @@ import chahyunbin.cwapp1.model.User;
 public class LodingActivity extends Activity {
     private String TAG = "LodingActivity";
     ImageView imageView1, imageView2, imageView3;
-    LoginHome loginHome;
+    LoginHomeActivity loginHome;
     public String username ;
     public String imLeader ;
     public static FirebaseAuth mAuth;
@@ -69,19 +65,19 @@ public class LodingActivity extends Activity {
             @Override
 
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                User user=null;
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    user= snapshot.getValue(User.class);
 
+               User user =null;
+               for(DataSnapshot snapshot : dataSnapshot.getChildren()){
+                   user = snapshot.getValue(User.class);
+               }
 
-                }
                 if(user!=null) {
                     username = user.getName();
                     imLeader = user.getLeader();
 
 
                     if (username == null) {
-                        Intent intent = new Intent(LodingActivity.this, Personal_Info.class);
+                        Intent intent = new Intent(LodingActivity.this, PersonalInfoActivity.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(intent);
@@ -101,7 +97,7 @@ public class LodingActivity extends Activity {
                     }
                 }
                 if(user == null) {
-                    Intent intent = new Intent(LodingActivity.this, Personal_Info.class);
+                    Intent intent = new Intent(LodingActivity.this, PersonalInfoActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);

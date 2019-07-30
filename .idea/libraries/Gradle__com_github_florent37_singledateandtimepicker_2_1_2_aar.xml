@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.florent37:singledateandtimepicker:2.1.2@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/fc76178edced3aeaba0104993235bf58/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/fc76178edced3aeaba0104993235bf58/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/bfa65878fb5dda6f4ae7891aa655f4f8/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/bfa65878fb5dda6f4ae7891aa655f4f8/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

@@ -1,8 +1,9 @@
 package chahyunbin.cwapp1.MemberInfo.ExpandableListView;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import chahyunbin.cwapp1.R;
 

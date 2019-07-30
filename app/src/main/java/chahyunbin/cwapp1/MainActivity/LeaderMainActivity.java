@@ -4,8 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v4.view.ViewPager;
+
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -15,17 +14,19 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import chahyunbin.cwapp1.Bible.Bible;
+import androidx.annotation.NonNull;
+import androidx.viewpager.widget.ViewPager;
+
+import chahyunbin.cwapp1.Bible.BibleActivity;
 import chahyunbin.cwapp1.BottomBar.Tabbar_activity;
-import chahyunbin.cwapp1.FirebaseDatabase_Input;
-import chahyunbin.cwapp1.Login.EmailSignIn;
-import chahyunbin.cwapp1.Login.LoginHome;
+import chahyunbin.cwapp1.Login.EmailSignInActivity;
+import chahyunbin.cwapp1.Login.LoginHomeActivity;
 
 
 import chahyunbin.cwapp1.MainActivity.Transformer.DepthPageTransformer;
 import chahyunbin.cwapp1.Personal_Info_Fix;
 import chahyunbin.cwapp1.R;
-import chahyunbin.cwapp1.Video.Video_ListView;
+import chahyunbin.cwapp1.Video.VideoListActivity;
 import chahyunbin.cwapp1.model.User;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -47,8 +48,8 @@ public class LeaderMainActivity extends Activity implements AdFirebaseLoad, Valu
     public static String username = null;
     String phonenumber;
     String emaildata;
-    LoginHome googlelogin;
-    EmailSignIn signIn;
+    LoginHomeActivity googlelogin;
+    EmailSignInActivity signIn;
     // FirebaseUI firebaseUI;
     TextView textView;
 
@@ -86,7 +87,7 @@ public class LeaderMainActivity extends Activity implements AdFirebaseLoad, Valu
         }
 
         if (email == null) {
-            Intent intent = new Intent(LeaderMainActivity.this, LoginHome.class);
+            Intent intent = new Intent(LeaderMainActivity.this, LoginHomeActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             FirebaseAuth.getInstance().signOut();
@@ -111,43 +112,46 @@ public class LeaderMainActivity extends Activity implements AdFirebaseLoad, Valu
 
         adref = FirebaseDatabase.getInstance().getReference("AD");
         adFirebaseLoad = this;
-        loadAd();
+
 
         viewPager = (ViewPager) findViewById(R.id.pager);
         viewPager.setPageTransformer(true, new DepthPageTransformer());
-
+        loadAd();
 
 
         //textView.setText(firebaseUI.userName);
 
         findViewById(R.id.logoutbtn).setOnClickListener(myClick);
-        findViewById(R.id.button1).setOnClickListener(myClick);
+//        findViewById(R.id.button1).setOnClickListener(myClick);
         findViewById(R.id.button2).setOnClickListener(myClick);
         findViewById(R.id.button3).setOnClickListener(myClick);
         findViewById(R.id.button4).setOnClickListener(myClick);
     }
 
     private void loadAd() {
-//        adref.addListenerForSingleValueEvent(new ValueEventListener() {
-//            List<AD> adList = new ArrayList<>();
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-//                for(DataSnapshot snapshot : dataSnapshot.getChildren()){
-//                    adList.add(snapshot.getValue(AD.class));
-//                    adFirebaseLoad.onFirebaseLoadSuccess(adList);
-//
-//                }
-//
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//                adFirebaseLoad.onFirebaseLoadFailed(databaseError.getMessage() );
-//            }
-//        });
-        adref.addValueEventListener(this);
+
+        adref.addValueEventListener(new ValueEventListener() {
+            List<AD> adList = new ArrayList<>();
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for(DataSnapshot snapshot : dataSnapshot.getChildren()){
+                    adList.add(snapshot.getValue(AD.class));
+//                    Toast.makeText(LeaderMainActivity.this, "ADname : "+snapshot.getValue(AD.class).getmName()+"\n ADad : "+snapshot.getValue(AD.class).getmADUri(), Toast.LENGTH_SHORT).show();
+
+
+                }
+                adFirebaseLoad.onFirebaseLoadSuccess(adList);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                adFirebaseLoad.onFirebaseLoadFailed(databaseError.getMessage());
+            }
+        });
     }
+
 
 
     private void GetUserName() {
@@ -178,7 +182,7 @@ public class LeaderMainActivity extends Activity implements AdFirebaseLoad, Valu
         }
 
 //        if (username == null) {
-//            Intent intent = new Intent(LeaderMainActivity.this, Personal_Info.class);
+//            Intent intent = new Intent(LeaderMainActivity.this, PersonalInfoActivity.class);
 //            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 //            startActivity(intent);
 //        }
@@ -188,25 +192,25 @@ public class LeaderMainActivity extends Activity implements AdFirebaseLoad, Valu
         @Override
         public void onClick(View v) {
             switch (v.getId()) {
-                case R.id.button1:
-                    startActivity(new Intent(LeaderMainActivity.this, FirebaseDatabase_Input.class));
-
-                    break;
+//                case R.id.button1:
+//                    startActivity(new Intent(LeaderMainActivity.this, FirebaseDatabase_Input.class));
+//
+//                    break;
                 case R.id.button2:
                     startActivity(new Intent(LeaderMainActivity.this, Tabbar_activity.class));
                     break;
                 case R.id.button3:
-                    startActivity(new Intent(LeaderMainActivity.this, Bible.class));
+                    startActivity(new Intent(LeaderMainActivity.this, BibleActivity.class));
                     break;
                 case R.id.button4:
-                    startActivity(new Intent(LeaderMainActivity.this, Video_ListView.class));
+                    startActivity(new Intent(LeaderMainActivity.this, VideoListActivity.class));
                     break;
                 case R.id.logoutbtn:
                     googlelogin.signOut();
                     email = null;
                     //AuthUI.getInstance().signOut(getApplicationContext());
                     finish();
-                    startActivity(new Intent(LeaderMainActivity.this, LoginHome.class));
+                    startActivity(new Intent(LeaderMainActivity.this, LoginHomeActivity.class));
 
             }
         }
@@ -232,7 +236,7 @@ public class LeaderMainActivity extends Activity implements AdFirebaseLoad, Valu
 
     @Override
     public void onFirebaseLoadSuccess(List<AD> mAdList) {
-        pagerAdapter = new PagerAdapter(this, mAdList);
+        pagerAdapter = new PagerAdapter(LeaderMainActivity.this, mAdList);
         viewPager.setAdapter(pagerAdapter);
 
 
@@ -256,5 +260,23 @@ public class LeaderMainActivity extends Activity implements AdFirebaseLoad, Valu
     @Override
     public void onCancelled(@NonNull DatabaseError databaseError) {
         adFirebaseLoad.onFirebaseLoadFailed(databaseError.getMessage());
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        adref.addValueEventListener(this);
+    }
+
+    @Override
+    protected void onDestroy() {
+        adref.removeEventListener(this);
+        super.onDestroy();
+    }
+
+    @Override
+    protected void onStop() {
+        adref.removeEventListener(this);
+        super.onStop();
     }
 }

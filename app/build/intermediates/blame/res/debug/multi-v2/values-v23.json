@@ -4,7 +4,7 @@
             "outputFile": "/Users/chahyunbin/Desktop/cwapp/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v23/values-v23.xml",
             "map": [
                 {
-                    "source": "/Users/chahyunbin/.gradle/caches/transforms-2/files-2.1/fc30dc255e94108c390e12a207675c72/res/values-v23/values-v23.xml",
+                    "source": "/Users/chahyunbin/.gradle/caches/transforms-2/files-2.1/8c4723b84e2975147b8d6c9b9f0427cb/res/values-v23/values-v23.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "/Users/chahyunbin/.gradle/caches/transforms-2/files-2.1/8408752c47d6d27ae82650e59d9ad87c/res/values-v23/values-v23.xml",
+                    "source": "/Users/chahyunbin/.gradle/caches/transforms-2/files-2.1/235bffa43648d7f4b091f1243d7bf2ce/res/values-v23/values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,19,32,33,34,35,36",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4",

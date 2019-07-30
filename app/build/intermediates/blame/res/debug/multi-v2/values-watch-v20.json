@@ -4,7 +4,7 @@
             "outputFile": "/Users/chahyunbin/Desktop/cwapp/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
-                    "source": "/Users/chahyunbin/.gradle/caches/transforms-2/files-2.1/f483803464753821f16b47cd64b7317d/res/values-watch-v20/values.xml",
+                    "source": "/Users/chahyunbin/.gradle/caches/transforms-2/files-2.1/5ebc8b2fc13b99ac2e68af13d69494df/res/values-watch-v20/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11",
                         "startColumns": "0,0,0,0,0,0,0,0",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/Users/chahyunbin/.gradle/caches/transforms-2/files-2.1/8408752c47d6d27ae82650e59d9ad87c/res/values-watch-v20/values-watch-v20.xml",
+                    "source": "/Users/chahyunbin/.gradle/caches/transforms-2/files-2.1/235bffa43648d7f4b091f1243d7bf2ce/res/values-watch-v20/values-watch-v20.xml",
                     "from": {
                         "startLines": "2,5,8",
                         "startColumns": "4,4,4",

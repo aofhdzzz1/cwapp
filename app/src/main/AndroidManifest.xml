@@ -23,8 +23,9 @@
             android:name=".Personal_Info_Fix"
             android:theme="@android:style/Theme.NoTitleBar" />
         <activity
-            android:name=".Video.Video_ListView" />
-        <activity android:name=".Login.LoginHome">
+            android:name=".Video.VideoListActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".Login.LoginHomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -38,27 +39,32 @@
             android:name=".FirebaseDatabase_Input"
             android:theme="@android:style/Theme.NoTitleBar" />
         <activity
-            android:name=".Bible.Bible"
+            android:name=".Bible.BibleActivity"
             android:theme="@android:style/Theme.NoTitleBar" />
         <activity
             android:name=".MainActivity.LeaderMainActivity"
             android:theme="@android:style/Theme.NoTitleBar" />
         <activity
-            android:name=".Login.EmailSignUp"
+            android:name=".Login.EmailSignUpActivity"
             android:theme="@android:style/Theme.NoTitleBar" />
         <activity
-            android:name=".Login.EmailSignIn"
+            android:name=".Login.EmailSignInActivity"
             android:theme="@android:style/Theme.NoTitleBar" />
         <activity
-            android:name=".Personal_Info"
+            android:name=".PersonalInfoActivity"
             android:theme="@android:style/Theme.NoTitleBar" />
         <activity
-            android:name=".MemberInfo.MemberInfo"
+            android:name=".MemberInfo.MemberInfoActivity"
             android:theme="@style/Theme.AppCompat.Dialog" /> <!-- android:theme="@android:style/Theme.Dialog"/> -->
         <activity android:name=".MainActivity.MemberMainActivity" />
         <activity android:name=".LodingActivity" />
         <activity android:name=".MemberCheck" />
         <activity android:name=".MemberInfo.ExpandableListView.CheckedActivity" />
+        <service android:name=".FirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

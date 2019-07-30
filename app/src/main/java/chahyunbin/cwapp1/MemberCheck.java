@@ -5,15 +5,15 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
-import android.support.annotation.NonNull;
-import android.support.constraint.solver.widgets.Snapshot;
-import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
 
 import com.baoyz.swipemenulistview.SwipeMenu;
 import com.baoyz.swipemenulistview.SwipeMenuCreator;
@@ -72,6 +72,7 @@ public class MemberCheck extends Activity {
         ref = database.getReference();
         list = new ArrayList<>();
         adapter = new SingleAdapter();
+
         //리더의 이름 구하기
         ref.child("User/" + MemberMainActivity.email + "/UserInfo").addValueEventListener(new ValueEventListener() {
             @Override

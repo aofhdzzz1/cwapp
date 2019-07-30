@@ -1,8 +1,8 @@
 package com.example.uploadvideoapp;
 
 import android.content.Context;
-import android.net.Uri;
-import android.support.v7.widget.RecyclerView;
+
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -41,7 +41,7 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
         Picasso.with(mContext)
                 .load(uploadCurrent.getmImageUri())
                 .placeholder(R.mipmap.ic_launcher)
-                .fit()
+//                .fit()
                 .into(holder.imageView);
     }
 
@@ -80,9 +80,10 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
         public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
 
             MenuItem download = menu.add(Menu.NONE, 1, 1, "내 폰에 저장");
-
+            MenuItem delete = menu.add(Menu.NONE, 2,2,"삭제");
 
             download.setOnMenuItemClickListener(this);
+            delete.setOnMenuItemClickListener(this);
         }
 
         @Override
@@ -107,6 +108,8 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
         void onItemClick(int position);
 
         void onDownloadClick(int position);
+
+        void onDeleteClick(int position);
 
     }
 

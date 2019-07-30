@@ -2,12 +2,12 @@ package chahyunbin.cwapp1.MainActivity;
 
 public class AD {
     private String mName;
-    private String mAdad;
+    private String mADUri;
 
-    public AD(String mName, String mAdad) {
+    public AD(String mName, String mADUri) {
 
         this.mName = mName;
-        this.mAdad = mAdad;
+        this.mADUri = mADUri;
     }
 
     public AD() {
@@ -21,11 +21,11 @@ public class AD {
         this.mName = mName;
     }
 
-    public String getmAdad() {
-        return mAdad;
+    public String getmADUri() {
+        return mADUri;
     }
 
-    public void setmAdad(String mAdad) {
-        this.mAdad = mAdad;
+    public void setmADUri(String mADUri) {
+        this.mADUri = mADUri;
     }
 }

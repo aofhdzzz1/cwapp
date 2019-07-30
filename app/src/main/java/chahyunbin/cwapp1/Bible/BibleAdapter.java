@@ -69,8 +69,8 @@ public class BibleAdapter extends BaseAdapter {
 
 
            //글씨크기변경
-           holder.verseText.setTextSize(TypedValue.COMPLEX_UNIT_PX, Bible.globProg);
-           holder.contentsText.setTextSize(TypedValue.COMPLEX_UNIT_PX, Bible.globProg );
+           holder.verseText.setTextSize(TypedValue.COMPLEX_UNIT_PX, BibleActivity.globProg);
+           holder.contentsText.setTextSize(TypedValue.COMPLEX_UNIT_PX, BibleActivity.globProg );
 
            convertView.setTag(holder);
 

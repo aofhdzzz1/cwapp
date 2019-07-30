@@ -50,7 +50,6 @@
 
 
 
-
         <LinearLayout
             android:id="@+id/buttonsParent"
             android:layout_width="match_parent"
@@ -59,13 +58,33 @@
             android:layout_gravity="bottom"
             android:layout_marginBottom="50dp"
             android:orientation="vertical">
-            <android.support.v4.view.ViewPager
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:id="@+id/pager">
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@color/mainAcBG">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="광   고"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:background="@color/brown"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
 
-            </android.support.v4.view.ViewPager>
-
+                    />
+                <androidx.viewpager.widget.ViewPager
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:id="@+id/pager"
+                    android:layout_marginBottom="25dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp">
+                </androidx.viewpager.widget.ViewPager>
+            </LinearLayout>
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -74,29 +93,30 @@
                 android:layout_marginBottom="15dp"
                 android:orientation="horizontal">
 
-                <Button
-                    android:id="@+id/button1"
-                    android:layout_width="120dp"
-                    android:layout_height="50dp"
-                    android:background="@drawable/rounded_button"
-                    android:text="셀원 등록"
-                    android:textColor="#FFFFFF"
-                    android:textSize="22dp"
-                    android:textStyle="bold" />
+                <!--<Button-->
+                    <!--android:id="@+id/button1"-->
+                    <!--android:layout_width="120dp"-->
+                    <!--android:layout_height="50dp"-->
+                    <!--android:background="@drawable/rounded_button"-->
+                    <!--android:text="셀원 등록"-->
+                    <!--android:textColor="#FFFFFF"-->
+                    <!--android:textSize="22dp"-->
+                    <!--android:textStyle="bold" />-->
 
-                <Button
-                    android:id="@+id/button2"
-                    android:layout_width="120dp"
-                    android:layout_height="50dp"
-                    android:layout_marginLeft="20dp"
-                    android:background="@drawable/rounded_button"
-                    android:text="셀원 관리"
-                    android:textColor="#FFFFFF"
-                    android:textSize="22dp"
-                    android:textStyle="bold" />
+
 
             </LinearLayout>
-
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="290dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/rounded_button"
+                android:text="셀원 관리"
+                android:textColor="#FFFFFF"
+                android:textSize="22dp"
+                android:textStyle="bold" />
             <Button
                 android:id="@+id/button3"
                 android:layout_width="290dp"

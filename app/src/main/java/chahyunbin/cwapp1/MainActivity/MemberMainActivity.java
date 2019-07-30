@@ -2,7 +2,6 @@ package chahyunbin.cwapp1.MainActivity;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.annotation.NonNull;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -13,31 +12,40 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.viewpager.widget.ViewPager;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
-import chahyunbin.cwapp1.Bible.Bible;
-import chahyunbin.cwapp1.Login.EmailSignIn;
-import chahyunbin.cwapp1.Login.LoginHome;
+import java.util.ArrayList;
+import java.util.List;
+
+import chahyunbin.cwapp1.Bible.BibleActivity;
+import chahyunbin.cwapp1.Login.EmailSignInActivity;
+import chahyunbin.cwapp1.Login.LoginHomeActivity;
+import chahyunbin.cwapp1.MainActivity.Transformer.DepthPageTransformer;
 import chahyunbin.cwapp1.MemberCheck;
+import chahyunbin.cwapp1.Personal_Info_Fix;
 import chahyunbin.cwapp1.R;
-import chahyunbin.cwapp1.Video.Video_ListView;
+import chahyunbin.cwapp1.Video.VideoListActivity;
 import chahyunbin.cwapp1.model.User;
 
-public class MemberMainActivity extends Activity {
+public class MemberMainActivity extends Activity implements AdFirebaseLoad, ValueEventListener {
 
     Button button1,button2,button3;
     ImageView imageView;
     public static String username = null;
     String phonenumber;
     String emaildata;
-    LoginHome googlelogin;
-    EmailSignIn signIn;
+    LoginHomeActivity googlelogin;
+    EmailSignInActivity signIn;
     // FirebaseUI firebaseUI;
     TextView textView;
 
@@ -48,6 +56,10 @@ public class MemberMainActivity extends Activity {
     public static String email;
     FirebaseUser user;
 
+    ViewPager viewPager;
+    PagerAdapter pagerAdapter;
+    DatabaseReference adref;
+    AdFirebaseLoad adFirebaseLoad;
 
 
     @Override
@@ -57,7 +69,6 @@ public class MemberMainActivity extends Activity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main_member);
-
 
 
         user = FirebaseAuth.getInstance().getCurrentUser();
@@ -72,7 +83,7 @@ public class MemberMainActivity extends Activity {
         }
 
         if(email == null){
-            Intent intent = new Intent(MemberMainActivity.this, LoginHome.class);
+            Intent intent = new Intent(MemberMainActivity.this, LoginHomeActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             FirebaseAuth.getInstance().signOut();
@@ -84,6 +95,25 @@ public class MemberMainActivity extends Activity {
 
         GetUserName();
 
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MemberMainActivity.this, Personal_Info_Fix.class);
+                startActivity(intent);
+            }
+        });
+
+
+        //ad load
+
+        adref = FirebaseDatabase.getInstance().getReference("AD");
+        adFirebaseLoad = this;
+
+
+        viewPager = (ViewPager) findViewById(R.id.pager);
+        viewPager.setPageTransformer(true, new DepthPageTransformer());
+        loadAd();
+
 
 
 
@@ -93,12 +123,35 @@ public class MemberMainActivity extends Activity {
 
         //textView.setText(firebaseUI.userName);
 
-        findViewById(R.id.logoutbtn).setOnClickListener(myClick);
-        findViewById(R.id.button1).setOnClickListener(myClick);
-        findViewById(R.id.button2).setOnClickListener(myClick);
-        findViewById(R.id.button3).setOnClickListener(myClick);
+        findViewById(R.id.memberlogoutbtn).setOnClickListener(myClick);
+        findViewById(R.id.memberbutton1).setOnClickListener(myClick);
+        findViewById(R.id.memberbutton2).setOnClickListener(myClick);
+        findViewById(R.id.memberbutton3).setOnClickListener(myClick);
 
     }
+    private void loadAd() {
+
+
+        adref.addValueEventListener(new ValueEventListener() {
+            List<AD> adList = new ArrayList<>();
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for(DataSnapshot snapshot : dataSnapshot.getChildren()){
+                    adList.add(snapshot.getValue(AD.class));
+
+
+                }
+                adFirebaseLoad.onFirebaseLoadSuccess(adList);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                adFirebaseLoad.onFirebaseLoadFailed(databaseError.getMessage());
+            }
+        });
+    }
+
 
     private void GetUserName() {
         Query query =  FirebaseDatabase.getInstance().getReference("User/"+email).orderByChild("UserInfo");
@@ -127,35 +180,31 @@ public class MemberMainActivity extends Activity {
             e.printStackTrace();
         }
 
-//        if (username == null) {
-//            Intent intent = new Intent(LeaderMainActivity.this, Personal_Info.class);
-//            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-//            startActivity(intent);
-//        }
+
     }
 
     Button.OnClickListener myClick = new Button.OnClickListener(){
         @Override
         public void onClick(View v) {
             switch(v.getId()){
-                case R.id.button1:
+                case R.id.memberbutton1:
                     startActivity(new Intent(MemberMainActivity.this,MemberCheck.class));
 
                     break;
-                case R.id.button2:
-                    startActivity(new Intent(MemberMainActivity.this,Bible.class));
+                case R.id.memberbutton2:
+                    startActivity(new Intent(MemberMainActivity.this, BibleActivity.class));
                     break;
 
-                case R.id.button3:
-                    startActivity(new Intent(MemberMainActivity.this, Video_ListView.class));
+                case R.id.memberbutton3:
+                    startActivity(new Intent(MemberMainActivity.this, VideoListActivity.class));
                     break;
 
-                case R.id.logoutbtn:
+                case R.id.memberlogoutbtn:
                     googlelogin.signOut();
                     email = null;
                     //AuthUI.getInstance().signOut(getApplicationContext());
                     finish();
-                    startActivity(new Intent(MemberMainActivity.this,LoginHome.class));
+                    startActivity(new Intent(MemberMainActivity.this, LoginHomeActivity.class));
 
             }
         }
@@ -180,6 +229,52 @@ public class MemberMainActivity extends Activity {
 
 
     }
+    @Override
+    public void onFirebaseLoadSuccess(List<AD> mAdList) {
+        pagerAdapter = new PagerAdapter(MemberMainActivity.this, mAdList);
+        viewPager.setAdapter(pagerAdapter);
 
 
+    }
+
+    @Override
+    public void onFirebaseLoadFailed(String massage) {
+        Toast.makeText(this, "" + massage, Toast.LENGTH_SHORT).show();
+
+    }
+
+    @Override
+    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+        List<AD> adList = new ArrayList<>();
+        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+            adList.add(snapshot.getValue(AD.class));
+            adFirebaseLoad.onFirebaseLoadSuccess(adList);
+        }
+    }
+
+    @Override
+    public void onCancelled(@NonNull DatabaseError databaseError) {
+        adFirebaseLoad.onFirebaseLoadFailed(databaseError.getMessage());
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        adref.addValueEventListener(this);
+    }
+
+    @Override
+    protected void onDestroy() {
+        adref.removeEventListener(this);
+        super.onDestroy();
+    }
+
+    @Override
+    protected void onStop() {
+        adref.removeEventListener(this);
+        super.onStop();
+    }
 }
+
+
+
